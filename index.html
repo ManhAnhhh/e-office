@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-office</title>
+  <!-- favicon -->
+  <link rel="shortcut icon"
+    href="data:image/png;base64,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"
+    type="image/x-icon">
+
+  <!-- gg font -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto&display=swap');
+  </style>
+
+  <!-- bootstraps -->
+  <link rel="stylesheet" href="./assets/bootstraps/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+    integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+    crossorigin="anonymous"></script>
+
+  <!-- font icon -->
+  <link rel="stylesheet" href="./assets/themify/themify-icons.css">
+  <link rel="stylesheet" href="./assets/uicons-regular-rounded/css/uicons-regular-rounded.css">
+  <script src="https://kit.fontawesome.com/203ae9be09.js" crossorigin="anonymous"></script>
+
+  <!-- customize -->
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>
+  <aside class="position-fixed top-0 bottom-0 left-0">
+    <div class="logo px-2">
+      <a href="/" class="">
+        <img class="logo-top" src="./assets/img/logo-top.png" alt="">
+      </a>
+    </div>
+    <ul class="list-group nav">
+      <li class="active list-group-item">
+        <a class="text-decoration-none" href="">
+          <i class="fi fi-rr-chart-histogram"></i>
+          Tổng quan
+        </a>
+      </li>
+      <li class="list-group-item sidebar-group">
+        <i class="fi fi-rr-bullhorn icon"></i>
+        <a class="text-decoration-none" href="">Thảo luận</a>
+      </li>
+      <li class="list-group-item sidebar-group">
+        <i class="fi fi-rr-envelope-open-text icon"></i>
+        <a class="text-decoration-none" href="">Văn bản đến</a>
+      </li>
+      <li class="list-group-item sidebar-group">
+        <i class="fi fi-rr-pen-field icon"></i>
+        <a class="text-decoration-none" href="">Văn bản đi</a>
+      </li>
+      <li class="list-group-item sidebar-group">
+        <i class="fi fi-rr-briefcase icon"></i>
+        <a class="text-decoration-none" href="">Công việc</a>
+      </li>
+      <li class="list-group-item sidebar-group">
+        <i class="fi fi-rr-megaphone icon"></i>
+        <a class="text-decoration-none" href="">Thông báo chung</a>
+      </li>
+      <li class="list-group-item sidebar-group">
+        <i class="fi fi-rr-challenge-alt icon"></i>
+        <a class="text-decoration-none" href="">Quản lý sản phẩm</a>
+      </li>
+      <li class="list-group-item sidebar-group">
+        <i class="fi fi-rr-user-gear icon"></i>
+        <a class="text-decoration-none" href="">Quản lý nhân sự</a>
+      </li>
+      <li class="list-group-item sidebar-group">
+        <i class="fi fi-rr-document icon"></i>
+        <a class="text-decoration-none" href="">Tài liệu</a>
+      </li>
+    </ul>
+  </aside>
+  <header class="p-3 fixed-top  ">
+    <div class="container-fluid">
+      <div class="d-flex flex-wrap align-items-center justify-content-between justify-content-lg-start">
+        <div class="me-auto fs-3">Tổng quan</div>
+        <form class="mb-3 mb-lg-0 me-lg-3" role="search">
+          <input type="search" class="form-control" placeholder="Tìm kiếm" aria-label="Search">
+        </form>
+        <div class="notice-icon mx-3 curo">
+          <i class="fa-regular fa-bell icon"></i>
+          <span></span>
+        </div>
+        <div class="dropdown text-end">
+          <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            <span class="img-infor">A</span>
+            <!-- <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle"> -->
+          </a>
+          <ul class="infor-dropdown dropdown-menu text-small">
+            <li><a class="dropdown-item" href="#">New project...</a></li>
+            <li><a class="dropdown-item" href="#">Settings</a></li>
+            <li><a class="dropdown-item" href="#">Profile</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="#">Sign out</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-9">
+          <div class="main-top border border-1 col-12">
+            <section class="text-center d-flex justify-content-center align-items-center gap-4 border-bottom border-2">
+              <p class="col-lg-2 col-md-2 col-sm-2">Văn bản đến</p>
+              <p class="col-lg-2 col-md-2 col-sm-2">Văn bản dự thảo</p>
+              <p class="col-lg-2 col-md-2 col-sm-2">Đã phát hành</p>
+              <p class="col-lg-2 col-md-2 col-sm-2">Công việc</p>
+            </section>
+
+            <section class="mt-2 d-flex justify-content-center align-items-center gap-4 border-bottom border-2">
+              <p class="col-lg-2 col-md-2 col-sm-2 text-center">1 <sup><span class="news-span">0 Mới</span></sup> </p>
+              <p class="col-lg-2 col-md-2 col-sm-2 text-center">14 <sup><span class="news-span">6 mới</span></sup></p>
+              <p class="col-lg-2 col-md-2 col-sm-2 text-center">2 <sup><span class="news-span">Mới</span></sup></p>
+              <p class="col-lg-2 col-md-2 col-sm-2 text-center">21 <sup><span class="news-span">10 mới</span></sup>
+              </p>
+            </section>
+          </div>
+
+          <div class="col-12 main-center  mt-4 border border-1 ">
+            <div class="row px-2">
+              <div class="col-4 item border border-1 px-3 pt-2 pb-2 ">
+                <div class="item-top mt-2 d-flex gap-2">
+                  <div class="pt-1"><i style="color: #377dff" class="fs-5 fi fi-rr-envelope-open-text icon"></i></div>
+                  <div class="content border-1 border-bottom pb-2">
+                    <div class="fw-bold">Văn bản đến</div>
+                    <div class="fz-12">3 chờ xử lý <span class="news-span">0 mới</span> </div>
+                  </div>
+                </div>
+                <div class="desc">
+                  <div class="fz-12 mp-2 mt-2"><i class="fi fi-rr-memo-circle-check"></i> <span>Công văn đối thoại giữa
+                      các phòng ban</span></div>
+                  <div class="fz-12 mp-2 mt-2"><i class="fi fi-rr-memo-circle-check"></i> <span>Thông báo tuyên truyền
+                      văn
+                      hóa công ty</span></div>
+                  <div class="fz-12 mp-2 mt-2"><i class="fi fi-rr-memo-circle-check"></i> <span>Báo cáo doanh thu quý
+                      II</span></div>
+                </div>
+                <div class="text-center mt-4 border-2 border-top ">
+                  <a class="text-decoration-none" href="#">
+                    &#8810; Xem thêm &#8811; </a>
+                </div>
+
+              </div>
+              <div class="col-4 item border border-1 px-3 pt-2 pb-2 ">
+                <div class="item-top mt-2 d-flex gap-2">
+                  <div class="pt-1"><i style="color: #377dff" class="fs-5 fi fi-rr-envelope-open-text icon"></i></div>
+                  <div class="content border-1 border-bottom pb-2">
+                    <div class="fw-bold">Văn bản đến</div>
+                    <div class="fz-12">3 chờ xử lý <span class="news-span">0 mới</span> </div>
+                  </div>
+                </div>
+                <div class="desc">
+                  <div class="fz-12 mp-2 mt-2"><i class="fi fi-rr-memo-circle-check"></i> <span>Công văn đối thoại giữa
+                      các phòng ban</span></div>
+                  <div class="fz-12 mp-2 mt-2"><i class="fi fi-rr-memo-circle-check"></i> <span>Thông báo tuyên truyền
+                      văn
+                      hóa công ty</span></div>
+                  <div class="fz-12 mp-2 mt-2"><i class="fi fi-rr-memo-circle-check"></i> <span>Báo cáo doanh thu quý
+                      II</span></div>
+                </div>
+                <div class="text-center mt-4 border-2 border-top ">
+                  <a class="text-decoration-none" href="#">
+                    &#8810; Xem thêm &#8811; </a>
+                </div>
+
+              </div>
+              <div class="col-4 item border border-1 px-3 pt-2 pb-2 ">
+                <div class="item-top mt-2 d-flex gap-2">
+                  <div class="pt-1"><i style="color: #377dff" class="fs-5 fi fi-rr-envelope-open-text icon"></i></div>
+                  <div class="content border-1 border-bottom pb-2">
+                    <div class="fw-bold">Văn bản đến</div>
+                    <div class="fz-12">3 chờ xử lý <span class="news-span">0 mới</span> </div>
+                  </div>
+                </div>
+                <div class="desc">
+                  <div class="fz-12 mp-2 mt-2"><i class="fi fi-rr-memo-circle-check"></i> <span>Công văn đối thoại giữa
+                      các phòng ban</span></div>
+                  <div class="fz-12 mp-2 mt-2"><i class="fi fi-rr-memo-circle-check"></i> <span>Thông báo tuyên truyền
+                      văn
+                      hóa công ty</span></div>
+                  <div class="fz-12 mp-2 mt-2"><i class="fi fi-rr-memo-circle-check"></i> <span>Báo cáo doanh thu quý
+                      II</span></div>
+                </div>
+                <div class="text-center mt-4 border-2 border-top ">
+                  <a class="text-decoration-none" href="#">
+                    &#8810; Xem thêm &#8811; </a>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="col-3 border-1 border main-right">
+          <div class="row ">
+            <div class="col-12 d-flex gap-2">
+              <div class="content-top ">
+                <i style="font-size: 30px;" class="mt-1 fa-solid fa-bell"></i>
+              </div>
+              <div>
+                <div><strong>Thông báo</strong></div>
+                <div class="fz-12">
+                  21 thông báo mới
+                  <span class="news-span">10 mới</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 item-right fz-12 mt-2 mb-2 pt-2 px-2">
+              <div class="item border-bottom border-1 mb-1 pb-1">
+                <span class="item-circle mb-1 d-inline-block">LTT</span>
+                Ông/bà <strong>Ngô Mạnh Anh</strong> đã <span style="color: #0dcaf0">chuyển xử lý</span> văn bản qua phòng
+                đối ngoại.
+              </div>
+              <div class="item border-bottom border-1 mb-1 pb-1">
+                <span class="item-circle mb-1 d-inline-block">LTT</span>
+                Ông/bà <strong>Ngô Mạnh Anh</strong> đã <span style="color: #0dcaf0">chuyển xử lý</span> văn bản qua phòng
+                đối ngoại.
+              </div>
+              <div class="item border-bottom border-1 mb-1 pb-1">
+                <span class="item-circle mb-1 d-inline-block">LTT</span>
+                Ông/bà <strong>Ngô Mạnh Anh</strong> đã <span style="color: #0dcaf0">chuyển xử lý</span> văn bản qua phòng
+                đối ngoại.
+              </div>
+              <div class="item border-bottom border-1 pb-1">
+                <span class="item-circle d-inline-block">LTT</span>
+                Ông/bà <strong>Ngô Mạnh Anh</strong> đã <span style="color: #0dcaf0">chuyển xử lý</span> văn bản qua phòng
+                đối ngoại.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</body>
+
+<script src="./assets/jquery/jquery-3.7.1.min.js"></script>
+<script src="./index.js"></script>
+
+</html>
+
+<!-- <ul class="list-unstyled ps-0">
+  <li class="mb-1">
+    <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">
+      Home
+    </button>
+    <div class="collapse" id="home-collapse" style="">
+      <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+        <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Overview</a></li>
+        <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Updates</a></li>
+        <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Reports</a></li>
+      </ul>
+    </div>
+  </li>
+  <li class="mb-1">
+    <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
+      Dashboard
+    </button>
+    <div class="collapse" id="dashboard-collapse">
+      <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+        <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Overview</a></li>
+        <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Weekly</a></li>
+        <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Monthly</a></li>
+        <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Annually</a></li>
+      </ul>
+    </div>
+  </li>
+  <li class="mb-1">
+    <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
+      Orders
+    </button>
+    <div class="collapse" id="orders-collapse">
+      <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+        <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">New</a></li>
+        <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Processed</a></li>
+        <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Shipped</a></li>
+        <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Returned</a></li>
+      </ul>
+    </div>
+  </li>
+  <li class="border-top my-3"></li>
+  <li class="mb-1">
+    <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
+      Account
+    </button>
+    <div class="collapse" id="account-collapse">
+      <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+        <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">New...</a></li>
+        <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Profile</a></li>
+        <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Settings</a></li>
+        <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Sign out</a></li>
+      </ul>
+    </div>
+  </li>
+</ul> -->

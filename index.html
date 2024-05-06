@@ -17,6 +17,7 @@
 
   <!-- bootstraps -->
   <link rel="stylesheet" href="./assets/bootstraps/css/bootstrap.min.css">
+  <!-- popper bootstraps -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
     integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
     crossorigin="anonymous"></script>
@@ -25,81 +26,168 @@
     crossorigin="anonymous"></script>
 
   <!-- font icon -->
-  <link rel="stylesheet" href="./assets/themify/themify-icons.css">
   <link rel="stylesheet" href="./assets/uicons-regular-rounded/css/uicons-regular-rounded.css">
   <script src="https://kit.fontawesome.com/203ae9be09.js" crossorigin="anonymous"></script>
 
   <!-- customize -->
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./assets/my-style/style.css">
 
 </head>
 
 <body>
   <aside class="position-fixed top-0 bottom-0 left-0">
     <div class="logo px-2">
-      <a href="/" class="">
+      <a href="/" title="Logo-top">
         <img class="logo-top" src="./assets/img/logo-top.png" alt="">
       </a>
     </div>
-    <ul class="list-group nav">
-      <li class="active list-group-item">
-        <a class="text-decoration-none" href="">
+    <!-- sử dụng "JavaScript behavior" trong bootstrap 5.3 -->
+    <!-- https://getbootstrap.com/docs/5.3/components/list-group/#basic-example -->
+    <div class="list-group" id="list-tab" role="tablist">
+      <div class="mt-1 wrapper-list-group-js">
+        <a class="list-js list-group-item list-group-item-action active" id="list-home-list" data-bs-toggle="list"
+          href="#list-home" role="tab" aria-controls="">
           <i class="fi fi-rr-chart-histogram"></i>
           Tổng quan
         </a>
-      </li>
-      <li class="list-group-item sidebar-group">
-        <i class="fi fi-rr-bullhorn icon"></i>
-        <a class="text-decoration-none" href="">Thảo luận</a>
-      </li>
-      <li class="list-group-item sidebar-group">
-        <i class="fi fi-rr-envelope-open-text icon"></i>
-        <a class="text-decoration-none" href="">Văn bản đến</a>
-      </li>
-      <li class="list-group-item sidebar-group">
-        <i class="fi fi-rr-pen-field icon"></i>
-        <a class="text-decoration-none" href="">Văn bản đi</a>
-      </li>
-      <li class="list-group-item sidebar-group">
-        <i class="fi fi-rr-briefcase icon"></i>
-        <a class="text-decoration-none" href="">Công việc</a>
-      </li>
-      <li class="list-group-item sidebar-group">
-        <i class="fi fi-rr-megaphone icon"></i>
-        <a class="text-decoration-none" href="">Thông báo chung</a>
-      </li>
-      <li class="list-group-item sidebar-group">
-        <i class="fi fi-rr-challenge-alt icon"></i>
-        <a class="text-decoration-none" href="">Quản lý sản phẩm</a>
-      </li>
-      <li class="list-group-item sidebar-group">
-        <i class="fi fi-rr-user-gear icon"></i>
-        <a class="text-decoration-none" href="">Quản lý nhân sự</a>
-      </li>
-      <li class="list-group-item sidebar-group">
-        <i class="fi fi-rr-document icon"></i>
-        <a class="text-decoration-none" href="">Tài liệu</a>
-      </li>
-    </ul>
+        <span class="list-js list-group-item list-group-item-action list-discuss-list " id="list-discuss-list" data-bs-toggle="list">
+          <i class="fi fi-rr-bullhorn icon"></i>
+          Thảo luận
+        </span>
+        <!-- text-come nav -->
+        <div class="border-end border-1">
+          <button class="btn btn-toggle d-inline-flex align-items-center rounded collapsed" data-bs-toggle="collapse"
+            data-bs-target="#text-come-collapse" aria-expanded="false">
+            &nbsp; <i class="fi fi-rr-envelope-open-text icon"></i> &nbsp;
+            Văn bản đến &nbsp; <sup><span class="badge text-bg-primary">4</span></sup>
+          </button>
+          <div class="collapse" id="text-come-collapse">
+            <ul class="my-pb-0 btn-toggle-nav list-unstyled fw-normal pb-1 small mb-0 pb-0">
+              <li>
+                <a class="list-js border-0 list-group-item list-group-item-action ps-4" id="list-text-come-1-list"
+                  data-bs-toggle="list" href="#list-text-come-1" aria-controls="">
+                  <i class="fi fi-rr-duration-alt icon"></i>
+                  Chờ xử lý
+                </a>
+              </li>
+              <li>
+                <a class="list-js border-0 list-group-item list-group-item-action ps-4" id="list-text-come-2-list"
+                  data-bs-toggle="list" href="#list-text-come-2" aria-controls="">
+                  <i class="fi fi-rr-check-circle icon"></i>
+                  Đã xử lý
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- end text-come nav -->
+
+        <!-- text-out nav -->
+        <div class="border-end border-1">
+          <button class="btn btn-toggle d-inline-flex align-items-center rounded collapsed" data-bs-toggle="collapse"
+            data-bs-target="#text-out-collapse" aria-expanded="false">
+            &nbsp; <i class="fi fi-rr-pen-field icon"></i> &nbsp;
+            Văn bản đi &nbsp; <sup><span class="badge text-bg-primary">2</span></sup>
+          </button>
+          <div class="collapse" id="text-out-collapse">
+            <ul class="my-pb-0 btn-toggle-nav list-unstyled fw-normal pb-1 small mb-0 pb-0">
+              <li>
+                <a class="list-js border-0 list-group-item list-group-item-action ps-4" id="list-text-out-1-list"
+                  data-bs-toggle="list" href="#list-text-out-1" aria-controls="">
+                  <i class="fi fi-rr-blueprint"></i>
+                  Văn bản dự thảo
+                </a>
+              </li>
+              <li>
+                <a class="list-js border-0 list-group-item list-group-item-action ps-4" id="list-text-out-2-list"
+                  data-bs-toggle="list" href="#list-text-out-2" aria-controls="">
+                  <i class="fi fi-rr-paper-plane-top"></i>
+                  Văn bản đã phát hành
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- end text-out nav -->
+
+        <a class="list-js list-group-item list-group-item-action" id="list-notify-list" data-bs-toggle="list"
+          href="#list-notify" role="tab" aria-controls="">
+          <i class="fi fi-rr-megaphone icon"></i>
+          Thông báo chung
+        </a>
+
+        <!-- work nav -->
+        <div class="border-end border-1">
+          <button class="btn btn-toggle d-inline-flex align-items-center rounded collapsed" data-bs-toggle="collapse"
+            data-bs-target="#work-collapse" aria-expanded="false">
+            &nbsp; <i class="fi fi-rr-briefcase icon"></i> &nbsp;
+            Công việc
+          </button>
+          <div class="collapse" id="work-collapse">
+            <ul class="my-pb-0 btn-toggle-nav list-unstyled fw-normal pb-1 small mb-0 pb-0">
+              <li>
+                <a class="list-js border-0 list-group-item list-group-item-action ps-4" id="list-docss-list"
+                  data-bs-toggle="list" href="#list-discuss" aria-controls="">
+                  <i class="fi fi-rr-document icon"></i>
+                  Công việc tôi giao
+                </a>
+              </li>
+              <li>
+                <a class="list-js border-0 list-group-item list-group-item-action ps-4" id="list-docsss-list"
+                  data-bs-toggle="list" href="#list-docsss" aria-controls="">
+                  <i class="fi fi-rr-document icon"></i>
+                  Công việc được giao
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- end work nav -->
+
+        <a class="list-js list-group-item list-group-item-action" id="list-pm-list" data-bs-toggle="list"
+          href="#list-pm" role="tab" aria-controls="">
+          <i class="fi fi-rr-challenge-alt icon"></i>
+          Quản lý sản phẩm
+        </a>
+        <a class="list-js list-group-item list-group-item-action" id="list-hm-list" data-bs-toggle="list"
+          href="#list-hm" role="tab" aria-controls="">
+          <i class="fi fi-rr-user-gear icon"></i>
+          Quản lý nhân sự
+        </a>
+        <a class="list-js list-group-item list-group-item-action" id="list-docs-list" data-bs-toggle="list"
+          href="#list-docs" role="tab" aria-controls="">
+          <i class="fi fi-rr-document icon"></i>
+          Tài liệu
+        </a>
+      </div>
+    </div>
   </aside>
-  <header class="p-3 fixed-top  ">
+  <header class="sticky-lg-top">
     <div class="container-fluid">
-      <div class="d-flex flex-wrap align-items-center justify-content-between justify-content-lg-start">
-        <div class="me-auto fs-3">Tổng quan</div>
-        <form class="mb-3 mb-lg-0 me-lg-3" role="search">
+      <div
+        class="navbar navbar-expand-lg d-flex flex-wrap align-items-center justify-content-between justify-content-lg-start py-0">
+        <div class="logo px-2">
+          <a href="/" title="Logo-top">
+            <img class="logo-top" src="./assets/img/logo-top.png" alt="">
+          </a>
+        </div>
+        <div class="mx-lg-auto fs-3 title-js">Tổng quan</div>
+        <form id="form-search-top" class="mb-lg-0" role="search">
           <input type="search" class="form-control" placeholder="Tìm kiếm" aria-label="Search">
         </form>
-        <div class="notice-icon mx-3 curo">
+        <div class="notice-icon mx-3 position-relative rounded-circle ">
           <i class="fa-regular fa-bell icon"></i>
-          <span></span>
+          <span
+            class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle">
+          </span>
         </div>
-        <div class="dropdown text-end">
+        <div class="dropdown text-end position-relative">
           <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown"
             aria-expanded="false">
             <span class="img-infor">A</span>
             <!-- <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle"> -->
           </a>
-          <ul class="infor-dropdown dropdown-menu text-small">
+          <ul class="infor-dropdown dropdown-menu text-small position-absolute">
             <li><a class="dropdown-item" href="#">New project...</a></li>
             <li><a class="dropdown-item" href="#">Settings</a></li>
             <li><a class="dropdown-item" href="#">Profile</a></li>
@@ -109,205 +197,1141 @@
             <li><a class="dropdown-item" href="#">Sign out</a></li>
           </ul>
         </div>
+
+
+        <button class="navbar-toggler collapsed ms-2" type="button" data-bs-toggle="collapse"
+          data-bs-target="#navMobile" aria-controls="navMobile" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="navbar-collapse collapse" id="navMobile">
+          <div id="list-tab-mobile" role="tablist" class="list-group navbar-nav me-auto mb-2 mb-lg-0">
+            <div class="nav-item">
+              <a class="list-js list-group-item list-group-item-action nav-link active border-0 rounded" id="list-home-list"
+                data-bs-toggle="list" href="#list-home" role="tab" aria-controls="">
+                <i class="fi fi-rr-chart-histogram"></i>
+                Tổng quan
+              </a>
+              <!-- <a class="nav-link active" aria-current="page" href="/">Home</a> -->
+            </div>
+            <div class="nav-item">
+              <span class="nav-link list-js list-discuss-list list-group-item list-group-item-action border-0 rounded" id="list-discuss-list"
+                data-bs-toggle="list">
+                <i class="fi fi-rr-bullhorn icon"></i>
+                Thảo luận
+              </span>
+            </div>
+            <div class="nav-item">
+              <button class="btn btn-toggle d-inline-flex align-items-center rounded collapsed border-0"
+                data-bs-toggle="collapse" data-bs-target="#text-come-collapse" aria-expanded="false">
+                &nbsp; <i class="fi fi-rr-envelope-open-text icon"></i> &nbsp;
+                Văn bản đến &nbsp; <sup><span class="badge text-bg-primary">4</span></sup>
+              </button>
+              <div class="collapse" id="text-come-collapse">
+                <ul class="my-pb-0 btn-toggle-nav list-unstyled fw-normal pb-1 small mb-0 pb-0">
+                  <li>
+                    <a class="nav-link list-js border-0 list-group-item list-group-item-action border-0 ps-4 rounded"
+                      id="list-text-come-1-list" data-bs-toggle="list" href="#list-text-come-1" aria-controls="">
+                      <i class="fi fi-rr-duration-alt icon"></i>
+                      Chờ xử lý
+                    </a>
+                  </li>
+                  <li>
+                    <a class="nav-link list-js border-0 list-group-item list-group-item-action border-0 ps-4 rounded"
+                      id="list-text-come-2-list" data-bs-toggle="list" href="#list-text-come-2" aria-controls="">
+                      <i class="fi fi-rr-check-circle icon"></i>
+                      Đã xử lý
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="nav-item">
+              <button class="btn btn-toggle d-inline-flex align-items-center rounded collapsed border-0"
+                data-bs-toggle="collapse" data-bs-target="#text-out-collapse" aria-expanded="false">
+                &nbsp; <i class="fi fi-rr-pen-field icon"></i> &nbsp;
+                Văn bản đi &nbsp; <sup><span class="badge text-bg-primary">2</span></sup>
+              </button>
+              <div class="collapse" id="text-out-collapse">
+                <ul class="my-pb-0 btn-toggle-nav list-unstyled fw-normal pb-1 small mb-0 pb-0">
+                  <li>
+                    <a class="list-js border-0 list-group-item list-group-item-action ps-4 rounded" id="list-text-out-1-list"
+                      data-bs-toggle="list" href="#list-text-out-1" aria-controls="">
+                      <i class="fi fi-rr-blueprint"></i>
+                      Văn bản dự thảo
+                    </a>
+                  </li>
+                  <li>
+                    <a class="list-js border-0 list-group-item list-group-item-action ps-4 rounded" id="list-text-out-2-list"
+                      data-bs-toggle="list" href="#list-text-out-2" aria-controls="">
+                      <i class="fi fi-rr-paper-plane-top"></i>
+                      Văn bản đã phát hành
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="nav-item">
+              <a class="list-js list-group-item list-group-item-action rounded border-0" id="list-notify-list" data-bs-toggle="list"
+                href="#list-notify" role="tab" aria-controls="">
+                <i class="fi fi-rr-megaphone icon"></i>
+                Thông báo chung
+              </a>
+            </div>
+            <div class="nav-item">
+
+            </div>
+            <div class="nav-item">
+
+            </div>
+            <div class="nav-item">
+
+            </div>
+            <div class="nav-item">
+
+            </div>
+          </div>
+          <form role="search">
+            <input class="form-control" type="search" placeholder="Tìm kiếm" aria-label="search">
+          </form>
+        </div>
+
+
       </div>
     </div>
   </header>
   <main>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-9">
-          <div class="main-top border border-1 col-12">
-            <section class="text-center d-flex justify-content-center align-items-center gap-4 border-bottom border-2">
-              <p class="col-lg-2 col-md-2 col-sm-2">Văn bản đến</p>
-              <p class="col-lg-2 col-md-2 col-sm-2">Văn bản dự thảo</p>
-              <p class="col-lg-2 col-md-2 col-sm-2">Đã phát hành</p>
-              <p class="col-lg-2 col-md-2 col-sm-2">Công việc</p>
-            </section>
+    <div class="tab-content" id="nav-tabContent">
+      <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
+        <div id="index" class="container-fluid">
+          <div class="row">
+            <div class="col-lg-9 col-md-8 d-flex flex-column wrapper-main-index">
+              <div class="main-top border border-1 col-12">
+                <section
+                  class="text-center d-flex justify-content-center align-items-center gap-4 border-bottom border-2">
+                  <p class="col-lg-2 col-md-2 col-sm-2">Văn bản đến</p>
+                  <p class="col-lg-2 col-md-2 col-sm-2">Văn bản dự thảo</p>
+                  <p class="col-lg-2 col-md-2 col-sm-2">Đã phát hành</p>
+                  <p class="col-lg-2 col-md-2 col-sm-2">Công việc</p>
+                </section>
 
-            <section class="mt-2 d-flex justify-content-center align-items-center gap-4 border-bottom border-2">
-              <p class="col-lg-2 col-md-2 col-sm-2 text-center">1 <sup><span class="news-span">0 Mới</span></sup> </p>
-              <p class="col-lg-2 col-md-2 col-sm-2 text-center">14 <sup><span class="news-span">6 mới</span></sup></p>
-              <p class="col-lg-2 col-md-2 col-sm-2 text-center">2 <sup><span class="news-span">Mới</span></sup></p>
-              <p class="col-lg-2 col-md-2 col-sm-2 text-center">21 <sup><span class="news-span">10 mới</span></sup>
-              </p>
-            </section>
-          </div>
-
-          <div class="col-12 main-center  mt-4 border border-1 ">
-            <div class="row px-2">
-              <div class="col-4 item border border-1 px-3 pt-2 pb-2 ">
-                <div class="item-top mt-2 d-flex gap-2">
-                  <div class="pt-1"><i style="color: #377dff" class="fs-5 fi fi-rr-envelope-open-text icon"></i></div>
-                  <div class="content border-1 border-bottom pb-2">
-                    <div class="fw-bold">Văn bản đến</div>
-                    <div class="fz-12">3 chờ xử lý <span class="news-span">0 mới</span> </div>
-                  </div>
-                </div>
-                <div class="desc">
-                  <div class="fz-12 mp-2 mt-2"><i class="fi fi-rr-memo-circle-check"></i> <span>Công văn đối thoại giữa
-                      các phòng ban</span></div>
-                  <div class="fz-12 mp-2 mt-2"><i class="fi fi-rr-memo-circle-check"></i> <span>Thông báo tuyên truyền
-                      văn
-                      hóa công ty</span></div>
-                  <div class="fz-12 mp-2 mt-2"><i class="fi fi-rr-memo-circle-check"></i> <span>Báo cáo doanh thu quý
-                      II</span></div>
-                </div>
-                <div class="text-center mt-4 border-2 border-top ">
-                  <a class="text-decoration-none" href="#">
-                    &#8810; Xem thêm &#8811; </a>
-                </div>
-
+                <section class=" mt-2 d-flex justify-content-center align-items-center gap-4 border-bottom border-2">
+                  <p class="text-primary col-lg-2 col-md-2 col-sm-2 text-center">1 <sup><span class="news-span">0
+                        Mới</span></sup>
+                  </p>
+                  <p class="text-primary col-lg-2 col-md-2 col-sm-2 text-center">14 <sup><span class="news-span">6
+                        mới</span></sup>
+                  </p>
+                  <p class="text-primary col-lg-2 col-md-2 col-sm-2 text-center">2 <sup><span
+                        class="news-span">Mới</span></sup></p>
+                  <p class="text-primary col-lg-2 col-md-2 col-sm-2 text-center">21 <sup><span class="news-span">10
+                        mới</span></sup>
+                  </p>
+                </section>
               </div>
-              <div class="col-4 item border border-1 px-3 pt-2 pb-2 ">
-                <div class="item-top mt-2 d-flex gap-2">
-                  <div class="pt-1"><i style="color: #377dff" class="fs-5 fi fi-rr-envelope-open-text icon"></i></div>
-                  <div class="content border-1 border-bottom pb-2">
-                    <div class="fw-bold">Văn bản đến</div>
-                    <div class="fz-12">3 chờ xử lý <span class="news-span">0 mới</span> </div>
-                  </div>
-                </div>
-                <div class="desc">
-                  <div class="fz-12 mp-2 mt-2"><i class="fi fi-rr-memo-circle-check"></i> <span>Công văn đối thoại giữa
-                      các phòng ban</span></div>
-                  <div class="fz-12 mp-2 mt-2"><i class="fi fi-rr-memo-circle-check"></i> <span>Thông báo tuyên truyền
-                      văn
-                      hóa công ty</span></div>
-                  <div class="fz-12 mp-2 mt-2"><i class="fi fi-rr-memo-circle-check"></i> <span>Báo cáo doanh thu quý
-                      II</span></div>
-                </div>
-                <div class="text-center mt-4 border-2 border-top ">
-                  <a class="text-decoration-none" href="#">
-                    &#8810; Xem thêm &#8811; </a>
-                </div>
 
-              </div>
-              <div class="col-4 item border border-1 px-3 pt-2 pb-2 ">
-                <div class="item-top mt-2 d-flex gap-2">
-                  <div class="pt-1"><i style="color: #377dff" class="fs-5 fi fi-rr-envelope-open-text icon"></i></div>
-                  <div class="content border-1 border-bottom pb-2">
-                    <div class="fw-bold">Văn bản đến</div>
-                    <div class="fz-12">3 chờ xử lý <span class="news-span">0 mới</span> </div>
+              <div class="col-12 main-center mt-4 border border-1 flex-grow-1 ">
+                <div class="row px-2">
+                  <div class="col-lg-4 col-md-6 item border border-1 mb-2 px-3 pt-2 pb-2 ">
+                    <div class="item-top mt-2 d-flex gap-2">
+                      <div class="pt-1"><i class="fs-5 fi fi-rr-envelope-open-text text-primary icon"></i>
+                      </div>
+                      <div class="content border-1 border-bottom pb-2">
+                        <div class="fw-bold">Văn bản đến</div>
+                        <div class=" fz-12">3 chờ xử lý <span class="news-span">0 mới</span> </div>
+                      </div>
+                    </div>
+                    <div class="desc">
+                      <div class="fz-12 mp-2 mt-2">
+                        <i class="fi fi-rr-memo-circle-check"></i>
+                        <span>Công văn đối thoại giữa các phòng ban</span>
+                      </div>
+                      <div class="fz-12 mp-2 mt-2">
+                        <i class="fi fi-rr-memo-circle-check"></i>
+                        <span>Thông báo tuyên truyền văn hóa công ty</span>
+                      </div>
+                      <div class="fz-12 mp-2 mt-2">
+                        <i class="fi fi-rr-memo-circle-check"></i>
+                        <span>Báo cáo doanh thu quý II</span>
+                      </div>
+                    </div>
+                    <div class="text-center mt-4 border-2 border-top ">
+                      <a class="text-decoration-none" href="#">
+                        &#8810; Xem thêm &#8811; </a>
+                    </div>
+
                   </div>
-                </div>
-                <div class="desc">
-                  <div class="fz-12 mp-2 mt-2"><i class="fi fi-rr-memo-circle-check"></i> <span>Công văn đối thoại giữa
-                      các phòng ban</span></div>
-                  <div class="fz-12 mp-2 mt-2"><i class="fi fi-rr-memo-circle-check"></i> <span>Thông báo tuyên truyền
-                      văn
-                      hóa công ty</span></div>
-                  <div class="fz-12 mp-2 mt-2"><i class="fi fi-rr-memo-circle-check"></i> <span>Báo cáo doanh thu quý
-                      II</span></div>
-                </div>
-                <div class="text-center mt-4 border-2 border-top ">
-                  <a class="text-decoration-none" href="#">
-                    &#8810; Xem thêm &#8811; </a>
+                  <div class="col-lg-4 col-md-6 item border border-1 mb-2 px-3 pt-2 pb-2 ">
+                    <div class="item-top mt-2 d-flex gap-2">
+                      <div class="pt-1">
+                        <i class="fs-5 fi fi-rr-blueprint text-primary icon"></i>
+                      </div>
+                      <div class="content border-1 border-bottom pb-2">
+                        <div class="fw-bold">Văn bản dự thảo</div>
+                        <div class="fz-12">3 chờ xử lý <span class="news-span">0 mới</span> </div>
+                      </div>
+                    </div>
+                    <div class="desc">
+                      <div class="fz-12 mp-2 mt-2"><i class="fi fi-rr-memo-circle-check"></i> <span>Công văn đối thoại
+                          giữa
+                          các phòng ban</span></div>
+                      <div class="fz-12 mp-2 mt-2"><i class="fi fi-rr-memo-circle-check"></i> <span>Thông báo tuyên
+                          truyền
+                          văn
+                          hóa công ty</span></div>
+                      <div class="fz-12 mp-2 mt-2"><i class="fi fi-rr-memo-circle-check"></i> <span>Báo cáo doanh thu
+                          quý
+                          II</span></div>
+                    </div>
+                    <div class="text-center mt-4 border-2 border-top ">
+                      <a class="text-decoration-none" href="#">
+                        &#8810; Xem thêm &#8811; </a>
+                    </div>
+
+                  </div>
+                  <div class="col-lg-4 col-md-6 item border border-1 mb-2 px-3 pt-2 pb-2 ">
+                    <div class="item-top mt-2 d-flex gap-2">
+                      <div class="pt-1">
+                        <i class="fs-5 fi fi-rr-inbox-out text-primary icon"></i>
+                      </div>
+                      <div class="content border-1 border-bottom pb-2">
+                        <div class="fw-bold">Văn bản phát hành</div>
+                        <div class="fz-12">3 chờ xử lý <span class="news-span">0 mới</span> </div>
+                      </div>
+                    </div>
+                    <div class="desc">
+                      <div class="fz-12 mp-2 mt-2"><i class="fi fi-rr-memo-circle-check"></i> <span>Công văn đối thoại
+                          giữa
+                          các phòng ban</span></div>
+                      <div class="fz-12 mp-2 mt-2"><i class="fi fi-rr-memo-circle-check"></i> <span>Thông báo tuyên
+                          truyền
+                          văn
+                          hóa công ty</span></div>
+                      <div class="fz-12 mp-2 mt-2"><i class="fi fi-rr-memo-circle-check"></i> <span>Báo cáo doanh thu
+                          quý
+                          II</span></div>
+                    </div>
+                    <div class="text-center mt-4 border-2 border-top ">
+                      <a class="text-decoration-none" href="#">
+                        &#8810; Xem thêm &#8811; </a>
+                    </div>
+
+                  </div>
                 </div>
 
               </div>
             </div>
-
-          </div>
-        </div>
-        <div class="col-3 border-1 border main-right">
-          <div class="row ">
-            <div class="col-12 d-flex gap-2">
-              <div class="content-top ">
-                <i style="font-size: 30px;" class="mt-1 fa-solid fa-bell"></i>
-              </div>
-              <div>
-                <div><strong>Thông báo</strong></div>
-                <div class="fz-12">
-                  21 thông báo mới
-                  <span class="news-span">10 mới</span>
+            <div class="col-lg-3 col-md-4 border-1 border main-right">
+              <div class="row pt-2 ">
+                <div class="col-12 d-flex gap-2">
+                  <div class="content-top ">
+                    <i class="mt-1 fs-3 fa-solid fa-bell"></i>
+                  </div>
+                  <div>
+                    <div><strong>Thông báo</strong></div>
+                    <div class="fz-12">
+                      21 thông báo mới
+                      <span class="news-span">10 mới</span>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-            <div class="col-12 item-right fz-12 mt-2 mb-2 pt-2 px-2">
-              <div class="item border-bottom border-1 mb-1 pb-1">
-                <span class="item-circle mb-1 d-inline-block">LTT</span>
-                Ông/bà <strong>Ngô Mạnh Anh</strong> đã <span style="color: #0dcaf0">chuyển xử lý</span> văn bản qua phòng
-                đối ngoại.
-              </div>
-              <div class="item border-bottom border-1 mb-1 pb-1">
-                <span class="item-circle mb-1 d-inline-block">LTT</span>
-                Ông/bà <strong>Ngô Mạnh Anh</strong> đã <span style="color: #0dcaf0">chuyển xử lý</span> văn bản qua phòng
-                đối ngoại.
-              </div>
-              <div class="item border-bottom border-1 mb-1 pb-1">
-                <span class="item-circle mb-1 d-inline-block">LTT</span>
-                Ông/bà <strong>Ngô Mạnh Anh</strong> đã <span style="color: #0dcaf0">chuyển xử lý</span> văn bản qua phòng
-                đối ngoại.
-              </div>
-              <div class="item border-bottom border-1 pb-1">
-                <span class="item-circle d-inline-block">LTT</span>
-                Ông/bà <strong>Ngô Mạnh Anh</strong> đã <span style="color: #0dcaf0">chuyển xử lý</span> văn bản qua phòng
-                đối ngoại.
+                <div class="col-12 fz-12 mt-2 mb-2 pt-2 px-2 bg-body-tertiary">
+                  <div class="item border-bottom border-1 mb-1 pb-1">
+                    <span class="p-1 mb-1 d-inline-block bg-primary text-light rounded-circle">LTT</span>
+                    Ông/bà <strong>Ngô Mạnh Anh</strong> đã <span class="text-info">chuyển xử lý</span> văn bản
+                    qua
+                    phòng
+                    đối ngoại.
+                  </div>
+                  <div class="item border-bottom border-1 mb-1 pb-1">
+                    <span class="p-1 mb-1 d-inline-block bg-primary text-light rounded-circle">LTT</span>
+                    Ông/bà <strong>Ngô Mạnh Anh</strong> đã <span class="text-info">chuyển xử lý</span> văn bản
+                    qua
+                    phòng
+                    đối ngoại.
+                  </div>
+                  <div class="item border-bottom border-1 mb-1 pb-1">
+                    <span class="p-1 mb-1 d-inline-block bg-primary text-light rounded-circle">LTT</span>
+                    Ông/bà <strong>Ngô Mạnh Anh</strong> đã <span class="text-info">chuyển xử lý</span> văn bản
+                    qua
+                    phòng
+                    đối ngoại.
+                  </div>
+                  <div class="item border-bottom border-1 pb-1">
+                    <span class="p-1 mb-1 d-inline-block bg-primary text-light rounded-circle">LTT</span>
+                    Ông/bà <strong>Ngô Mạnh Anh</strong> đã <span class="text-info">chuyển xử lý</span> văn bản
+                    qua
+                    phòng
+                    đối ngoại.
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+      <div class="tab-pane fade" id="list-discuss" role="tabpanel" aria-labelledby="list-discuss-list">
+        <div id="work" class="container-fluid">
+          <div class="row">
+            <ul class="col-12 list-unstyled d-flex align-items-center start-end px-4 pt-2 pb-2">
+              <li class="work-item text-light border border-end-0 border-light pt-1 pb-1 px-3 bg-primary">Tất cả</li>
+              <li class="work-item text-light border border-end-0 border-light pt-1 pb-1 px-3 bg-primary">Chờ phê
+                duyệt
+              </li>
+              <li class="work-item text-light border border-end-0 border-light pt-1 pb-1 px-3 bg-primary">Chưa hoàn
+                thành
+              </li>
+              <li class="work-item text-light border border-end-0 border-light pt-1 pb-1 px-3 bg-primary">Hoàn thành
+              </li>
+              <li class="work-item text-light border border-end-0 border-light pt-1 pb-1 px-3 bg-primary">Kết thúc
+              </li>
+              <li class="work-item text-light border border-light pt-1 pb-1 px-3 bg-primary">Tạm dừng</li>
+            </ul>
+          </div>
+          <div class="row">
+          </div>
 
+        </div>
+      </div>
+      <!-- tab-text-come -->
+      <div class="tab-pane fade" id="list-text-come-1" role="tabpanel" aria-labelledby="list-text-come-1-list">
+        <div id="text-come-1">
+          <div class="container-fluid">
+            <div class="row mt-2">
+              <div class="col-12">
+                <div class="d-flex align-items-center border border-1">
+                  <div class="col-auto px-2">
+                    Ngày chuyển
+                  </div>
+                  <div class="col-auto px-2"><input type="date" class="border-0"></div>
+                  <div class="col-auto px-2 d-flex align-items-center">
+                    <div class="mt-1"><i class="fi fi-rr-settings-sliders"></i></div>
+                    <select class="btn" name="selectItemA" id="selectItemA" title="Tất cả">
+                      <option class="text-start" value="all" selected>Tất cả</option>
+                      <option class="text-start" value="unread">Chưa đọc</option>
+                      <option class="text-start" value="read">Đã đọc</option>
+                    </select>
+                  </div>
+                  <div class="col-auto px-2 btn"><i class="fi fi-rr-settings"></i> &nbsp; Nâng cao</div>
+                </div>
+              </div>
+              <div class="col-12 table-responsive">
+                <table class="table table-sm table align-middle text-center table-hover mt-2 mb-2 border border-1 ">
+                  <thead class="table-light border-end-0">
+                    <tr>
+                      <th class="pt-3 pb-3 text-light-emphasis">
+                        <input type="checkbox">
+                      </th>
+                      <th class="pt-3 pb-3 text-light-emphasis">STT</th>
+                      <th class="pt-3 pb-3 text-light-emphasis">Trích yếu</th>
+                      <th class="pt-3 pb-3 text-light-emphasis">Ngày văn bản</th>
+                      <th class="pt-3 pb-3 text-light-emphasis">Người chuyển</th>
+                      <th class="pt-3 pb-3 text-light-emphasis">Thời gian chuyển</th>
+                      <th class="pt-3 pb-3 text-light-emphasis">Hạn xử lý</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><input type="checkbox"></td>
+                      <td>1</td>
+                      <td>
+                        <div>Thông báo về việc thi đua tháng 4</div>
+                        <div class="d-flex justify-content-center gap-3 mt-1">
+                          <div
+                            class="border border-primary-subtle border-1 p-1 bg-primary-subtle text-primary my-fz-10">
+                            Công văn</div>
+                          <div
+                            class="border border-warning-subtle border-1 p-1 bg-warning-subtle text-warning my-fz-10">
+                            <i class="text-warning fi fi-rr-user"></i> Chủ trì
+                          </div>
+                        </div>
+                      </td>
+                      <td><input type="date" class="border border-0" value="2024-04-10"></td>
+                      <td>Ngô Mạnh Anh</td>
+                      <td><input type="date" class="border border-0" value="2024-04-20"></td>
+                      <td><input type="date" class="border border-0" value="2024-04-21"></td>
+                    </tr>
+                    <tr>
+                      <td><input type="checkbox"></td>
+                      <td>2</td>
+                      <td>
+                        <div>Thông báo về việc thi đua tháng 4</div>
+                        <div class="d-flex justify-content-center gap-3 mt-1">
+                          <div
+                            class="border border-primary-subtle border-1 p-1 bg-primary-subtle text-primary my-fz-10">
+                            Công văn</div>
+                          <div
+                            class="border border-warning-subtle border-1 p-1 bg-warning-subtle text-warning my-fz-10">
+                            <i class="text-warning fi fi-rr-user"></i> Chủ trì
+                          </div>
+                        </div>
+                      </td>
+                      <td><input type="date" class="border border-0" value="2024-04-10"></td>
+                      <td>Ngô Mạnh Anh</td>
+                      <td><input type="date" class="border border-0" value="2024-04-20"></td>
+                      <td><input type="date" class="border border-0" value="2024-04-21"></td>
+                    </tr>
+                    <tr>
+                      <td><input type="checkbox"></td>
+                      <td>3</td>
+                      <td>
+                        <div>Thông báo về việc thi đua tháng 4</div>
+                        <div class="d-flex justify-content-center gap-3 mt-1">
+                          <div
+                            class="border border-primary-subtle border-1 p-1 bg-primary-subtle text-primary my-fz-10">
+                            Công văn</div>
+                          <div
+                            class="border border-warning-subtle border-1 p-1 bg-warning-subtle text-warning my-fz-10">
+                            <i class="text-warning fi fi-rr-user"></i> Chủ trì
+                          </div>
+                        </div>
+                      </td>
+                      <td><input type="date" class="border border-0" value="2024-04-10"></td>
+                      <td>Ngô Mạnh Anh</td>
+                      <td><input type="date" class="border border-0" value="2024-04-20"></td>
+                      <td><input type="date" class="border border-0" value="2024-04-21"></td>
+                    </tr>
+                    <tr>
+                      <td><input type="checkbox"></td>
+                      <td>4</td>
+                      <td>
+                        <div>Thông báo về việc thi đua tháng 4</div>
+                        <div class="d-flex justify-content-center gap-3 mt-1">
+                          <div
+                            class="border border-primary-subtle border-1 p-1 bg-primary-subtle text-primary my-fz-10">
+                            Công văn</div>
+                          <div
+                            class="border border-warning-subtle border-1 p-1 bg-warning-subtle text-warning my-fz-10">
+                            <i class="text-warning fi fi-rr-user"></i> Chủ trì
+                          </div>
+                        </div>
+                      </td>
+                      <td><input type="date" class="border border-0" value="2024-04-10"></td>
+                      <td>Ngô Mạnh Anh</td>
+                      <td><input type="date" class="border border-0" value="2024-04-20"></td>
+                      <td><input type="date" class="border border-0" value="2024-04-21"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="list-text-come-2" role="tabpanel" aria-labelledby="list-text-come-2-list">
+        <div id="text-come-2">
+          <div class="container-fluid">
+            <div class="row mt-2">
+              <div class="col-12 d-flex justify-content-start align-items-center gap-4">
+                <div>Ngày chuyển</div>
+                <input type="date" class="border-0">
+                <div class="d-flex align-items-center">
+                  <div class="mt-1"><i class="fi fi-rr-settings-sliders"></i></div>
+                  <select class="btn" name="selectItem" id="selectItem" title="Tất cả">
+                    <option class="text-start" value="all" selected>Tất cả</option>
+                    <option class="text-start" value="unread">Chưa đọc</option>
+                    <option class="text-start" value="read">Đã đọc</option>
+                  </select>
+                </div>
+                <div class="btn"><i class="fi fi-rr-settings"></i> &nbsp; Nâng cao</div>
+              </div>
+              <div class="col-12 table-responsive">
+                <table class="table table-sm table align-middle text-center table-hover mt-2 mb-2 border border-1 ">
+                  <thead class="table-light border-end-0">
+                    <tr>
+                      <th class="pt-3 pb-3 text-light-emphasis">STT</th>
+                      <th class="pt-3 pb-3 text-light-emphasis">Trích yếu</th>
+                      <th class="pt-3 pb-3 text-light-emphasis">Ngày văn bản</th>
+                      <th class="pt-3 pb-3 text-light-emphasis">Người chuyển</th>
+                      <th class="pt-3 pb-3 text-light-emphasis">Thời gian chuyển</th>
+                      <th class="pt-3 pb-3 text-light-emphasis">Hạn xử lý</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>
+                        <div>Thông báo về việc thi đua tháng 4</div>
+                        <div class="d-flex justify-content-center gap-3 mt-1">
+                          <div
+                            class="border border-primary-subtle border-1 p-1 bg-primary-subtle text-primary my-fz-10">
+                            Công văn</div>
+                          <div
+                            class="border border-primary-subtle border-1 p-1 bg-primary-subtle text-primary my-fz-10">
+                            <i class="text-primary fi fi-rr-user"></i> Chủ trì
+                          </div>
+                        </div>
+                      </td>
+                      <td><input type="date" class="border border-0" value="2024-04-10"></td>
+                      <td>Ngô Mạnh Anh</td>
+                      <td><input type="date" class="border border-0" value="2024-04-20"></td>
+                      <td><input type="date" class="border border-0" value="2024-04-21"></td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>
+                        <div>Thông báo về việc thi đua tháng 4</div>
+                        <div class="d-flex justify-content-center gap-3 mt-1">
+                          <div
+                            class="border border-primary-subtle border-1 p-1 bg-primary-subtle text-primary my-fz-10">
+                            Công văn</div>
+                          <div
+                            class="border border-primary-subtle border-1 p-1 bg-primary-subtle text-primary my-fz-10">
+                            <i class="text-primary fi fi-rr-user"></i> Chủ trì
+                          </div>
+                        </div>
+                      </td>
+                      <td><input type="date" class="border border-0" value="2024-04-10"></td>
+                      <td>Ngô Mạnh Anh</td>
+                      <td><input type="date" class="border border-0" value="2024-04-20"></td>
+                      <td><input type="date" class="border border-0" value="2024-04-21"></td>
+                    </tr>
+                    <tr>
+                      <td>3</td>
+                      <td>
+                        <div>Thông báo về việc thi đua tháng 4</div>
+                        <div class="d-flex justify-content-center gap-3 mt-1">
+                          <div
+                            class="border border-primary-subtle border-1 p-1 bg-primary-subtle text-primary my-fz-10">
+                            Công văn</div>
+                          <div
+                            class="border border-primary-subtle border-1 p-1 bg-primary-subtle text-primary my-fz-10">
+                            <i class="text-primary fi fi-rr-user"></i> Chủ trì
+                          </div>
+                        </div>
+                      </td>
+                      <td><input type="date" class="border border-0" value="2024-04-10"></td>
+                      <td>Ngô Mạnh Anh</td>
+                      <td><input type="date" class="border border-0" value="2024-04-20"></td>
+                      <td><input type="date" class="border border-0" value="2024-04-21"></td>
+                    </tr>
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end tab-text-come -->
+
+      <!-- tab-text-out -->
+      <div class="tab-pane fade" id="list-text-out-1" role="tabpanel" aria-labelledby="list-text-out-1-list">
+        <div id="text-out-1">
+          <div class="container-fluid">
+            <div class="row mt-2">
+              <div class="col-12 d-flex justify-content-between align-items-center">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="pills-all-tab" data-bs-toggle="tab"
+                      data-bs-target="#all-tab-pane" type="button" role="tab" aria-controls="all-tab-pane"
+                      aria-selected="true">Tất cả</button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="waiting-tab" data-bs-toggle="tab" data-bs-target="#waiting-tab-pane"
+                      type="button" role="tab" aria-controls="waiting-tab-pane" aria-selected="false">Chờ xử lý</button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="processed-tab" data-bs-toggle="tab"
+                      data-bs-target="#processed-tab-pane" type="button" role="tab" aria-controls="processed-tab-pane"
+                      aria-selected="false">Đã xử lý</button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="coordinate-tab" data-bs-toggle="tab"
+                      data-bs-target="#coordinate-tab-pane" type="button" role="tab" aria-controls="coordinate-tab-pane"
+                      aria-selected="false">Phối hợp</button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="authorize-tab" data-bs-toggle="tab"
+                      data-bs-target="#authorize-tab-pane" type="button" role="tab" aria-controls="authorize-tab-pane"
+                      aria-selected="false">Ủy quyền</button>
+                  </li>
+                </ul>
+                <button class="btn btn-primary" type="button">
+                  <i class="text-light fas fa-plus-circle"></i>
+                  Thêm mới
+                </button>
+              </div>
+
+              <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="all-tab-pane" role="tabpanel" aria-labelledby="all-tab"
+                  tabindex="0">
+                  <div class="col-12 d-flex justify-content-end align-items-center gap-4">
+                    <div>Ngày chuyển</div>
+                    <input type="date" class="border-0">
+                    <div class="d-flex align-items-center">
+                      <div class="mt-1"><i class="fi fi-rr-settings-sliders"></i></div>
+                      <select class="btn" name="selectItem" id="selectItem" title="Tất cả">
+                        <option class="text-start" value="all" selected>Tất cả</option>
+                        <option class="text-start" value="unread">Chưa đọc</option>
+                        <option class="text-start" value="read">Đã đọc</option>
+                      </select>
+                    </div>
+                    <div class="btn"><i class="fi fi-rr-settings"></i> &nbsp; Nâng cao</div>
+                  </div>
+                  <div class="col-12 table-responsive">
+                    <table class="table table-sm table align-middle text-center table-hover mt-2 mb-2 border border-1 ">
+                      <thead class="table-light border-end-0">
+                        <tr>
+                          <th class="pt-3 pb-3 text-light-emphasis">STT</th>
+                          <th class="pt-3 pb-3 text-light-emphasis">Trích yếu</th>
+                          <th class="pt-3 pb-3 text-light-emphasis">Ngày văn bản</th>
+                          <th class="pt-3 pb-3 text-light-emphasis">Người chuyển</th>
+                          <th class="pt-3 pb-3 text-light-emphasis">Thời gian chuyển</th>
+                          <th class="pt-3 pb-3 text-light-emphasis">Hạn xử lý</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>1</td>
+                          <td>
+                            <div>Thông báo về việc thi đua tháng 4</div>
+                            <div class="d-flex justify-content-center gap-3 mt-1">
+                              <div
+                                class="border border-primary-subtle border-1 p-1 bg-primary-subtle text-primary my-fz-10">
+                                Công văn</div>
+                              <div
+                                class="border border-warning-subtle border-1 p-1 bg-warning-subtle text-warning my-fz-10">
+                                <i class="text-warning fi fi-rr-user"></i> Chủ trì
+                              </div>
+                            </div>
+                          </td>
+                          <td><input type="date" class="border border-0" value="2024-04-10"></td>
+                          <td>
+                            <div>Ngô Mạnh Anh</div>
+                          </td>
+                          <td><input type="date" class="border border-0" value="2024-04-20"></td>
+                          <td><input type="date" class="border border-0" value="2024-04-21"></td>
+                        </tr>
+                        <tr>
+                          <td>2</td>
+                          <td>
+                            <div>Thông báo về việc thi đua tháng 4</div>
+                            <div class="d-flex justify-content-center gap-3 mt-1">
+                              <div
+                                class="border border-primary-subtle border-1 p-1 bg-primary-subtle text-primary my-fz-10">
+                                Công văn</div>
+                              <div
+                                class="border border-warning-subtle border-1 p-1 bg-warning-subtle text-warning my-fz-10">
+                                <i class="text-warning fi fi-rr-user"></i> Chủ trì
+                              </div>
+                            </div>
+                          </td>
+                          <td><input type="date" class="border border-0" value="2024-04-10"></td>
+                          <td>
+                            <div>Ngô Mạnh Anh</div>
+                          </td>
+                          <td><input type="date" class="border border-0" value="2024-04-20"></td>
+                          <td><input type="date" class="border border-0" value="2024-04-21"></td>
+                        </tr>
+                        <tr>
+                          <td>3</td>
+                          <td>
+                            <div>Thông báo về việc thi đua tháng 4</div>
+                            <div class="d-flex justify-content-center gap-3 mt-1">
+                              <div
+                                class="border border-primary-subtle border-1 p-1 bg-primary-subtle text-primary my-fz-10">
+                                Công văn</div>
+                              <div
+                                class="border border-warning-subtle border-1 p-1 bg-warning-subtle text-warning my-fz-10">
+                                <i class="text-warning fi fi-rr-user"></i> Chủ trì
+                              </div>
+                            </div>
+                          </td>
+                          <td><input type="date" class="border border-0" value="2024-04-10"></td>
+                          <td>
+                            <div>Ngô Mạnh Anh</div>
+                          </td>
+                          <td><input type="date" class="border border-0" value="2024-04-20"></td>
+                          <td><input type="date" class="border border-0" value="2024-04-21"></td>
+                        </tr>
+                        <tr>
+                          <td>4</td>
+                          <td>
+                            <div>Thông báo về việc thi đua tháng 4</div>
+                            <div class="d-flex justify-content-center gap-3 mt-1">
+                              <div
+                                class="border border-primary-subtle border-1 p-1 bg-primary-subtle text-primary my-fz-10">
+                                Công văn</div>
+                              <div
+                                class="border border-warning-subtle border-1 p-1 bg-warning-subtle text-warning my-fz-10">
+                                <i class="text-warning fi fi-rr-user"></i> Chủ trì
+                              </div>
+                            </div>
+                          </td>
+                          <td><input type="date" class="border border-0" value="2024-04-10"></td>
+                          <td>
+                            <div>Ngô Mạnh Anh</div>
+                          </td>
+                          <td><input type="date" class="border border-0" value="2024-04-20"></td>
+                          <td><input type="date" class="border border-0" value="2024-04-21"></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="tab-pane fade" id="waiting-tab-pane" role="tabpanel" aria-labelledby="waiting-tab"
+                  tabindex="0">
+                  <div class="col-12 d-flex justify-content-end align-items-center gap-4">
+                    <div>Ngày chuyển</div>
+                    <input type="date" class="border-0">
+                    <div class="d-flex align-items-center">
+                      <div class="mt-1"><i class="fi fi-rr-settings-sliders"></i></div>
+                      <select class="btn" name="selectItem" id="selectItem" title="Tất cả">
+                        <option class="text-start" value="all" selected>Tất cả</option>
+                        <option class="text-start" value="unread">Chưa đọc</option>
+                        <option class="text-start" value="read">Đã đọc</option>
+                      </select>
+                    </div>
+                    <div class="btn"><i class="fi fi-rr-settings"></i> &nbsp; Nâng cao</div>
+                  </div>
+                  <div class="col-12 table-responsive">
+                    <table class="table table-sm table align-middle text-center table-hover mt-2 mb-2 border border-1 ">
+                      <thead class="table-light border-end-0">
+                        <tr>
+                          <th class="pt-3 pb-3 text-light-emphasis">STT</th>
+                          <th class="pt-3 pb-3 text-light-emphasis">Trích yếu</th>
+                          <th class="pt-3 pb-3 text-light-emphasis">Ngày tạo</th>
+                          <th class="pt-3 pb-3 text-light-emphasis">Người chuyển</th>
+                          <th class="pt-3 pb-3 text-light-emphasis">Thời gian chuyển</th>
+                          <th class="pt-3 pb-3 text-light-emphasis">Trạng thái</th>
+                          <th class="pt-3 pb-3 text-light-emphasis"></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>1</td>
+                          <td>
+                            <div class="text-start">Đề xuất về nâng cấp dự án của doanh nghiệp Đức Anh</div>
+                            <div class="my-fz-10 fw-bold text-start text-primary">
+                              Đề xuất
+                            </div>
+                          </td>
+                          <td><input type="date" class="border border-0" value="2024-04-01"></td>
+                          <td>
+                            <div>Nguyễn Đăng Đức</div>
+                          </td>
+                          <td><input type="date" class="border border-0" value="2024-04-02"></td>
+                          <td class="text-success">Tạo mới</td>
+                          <td class=""><i class="fa-solid fa-trash-can icon"></i></td>
+                        </tr>
+                        <tr>
+                          <td>2</td>
+                          <td>
+                            <div class="text-start">Báo cáo kế hoạch phát triển dự án Thương mại điện tử</div>
+                            <div class="my-fz-10 fw-bold text-start text-warning">
+                              Báo cáo
+                            </div>
+                          </td>
+                          <td><input type="date" class="border border-0" value="2024-04-02"></td>
+                          <td>
+                            <div>Ngô Mạnh Anh</div>
+                          </td>
+                          <td><input type="date" class="border border-0" value="2024-04-03"></td>
+                          <td class="text-primary">Đang trình ký</td>
+                          <td class=""><i class="fa-solid fa-trash-can icon"></i></td>
+                        </tr>
+                        <tr>
+                          <td>3</td>
+                          <td>
+                            <div class="text-start">Công văn thông báo thay đổi chính sách công ty</div>
+                            <div class="my-fz-10 fw-bold text-start text-info">
+                              Công văn
+                            </div>
+                          </td>
+                          <td><input type="date" class="border border-0" value="2024-04-04"></td>
+                          <td>
+                            <div>Nguyễn Đăng Đức</div>
+                          </td>
+                          <td><input type="date" class="border border-0" value="2024-04-05"></td>
+                          <td class="text-danger">Chờ duyệt</td>
+                          <td class=""><i class="fa-solid fa-trash-can icon"></i></td>
+                        </tr>
+                        <tr>
+                          <td>4</td>
+                          <td>
+                            <div class="text-start">Biên bản họp Ban Giám đốc thường niên quí II</div>
+                            <div class="my-fz-10 fw-bold text-start text-danger">
+                              Biên bản
+                            </div>
+                          </td>
+                          <td><input type="date" class="border border-0" value="2024-04-01"></td>
+                          <td>
+                            <div>Ngô Đức Anh</div>
+                          </td>
+                          <td><input type="date" class="border border-0" value="2024-04-02"></td>
+                          <td class="text-success">Tạo mới</td>
+                          <td class="">
+                            <i class="fa-solid fa-trash-can icon"></i>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="tab-pane fade" id="processed-tab-pane" role="tabpanel" aria-labelledby="processed-tab"
+                  tabindex="0">
+                  <div class="col-12 d-flex justify-content-end align-items-center gap-4">
+                    <div>Ngày chuyển</div>
+                    <input type="date" class="border-0">
+                    <div class="d-flex align-items-center">
+                      <div class="mt-1"><i class="fi fi-rr-settings-sliders"></i></div>
+                      <select class="btn" name="selectItem" id="selectItem" title="Tất cả">
+                        <option class="text-start" value="all" selected>Tất cả</option>
+                        <option class="text-start" value="unread">Chưa đọc</option>
+                        <option class="text-start" value="read">Đã đọc</option>
+                      </select>
+                    </div>
+                    <div class="btn"><i class="fi fi-rr-settings"></i> &nbsp; Nâng cao</div>
+                  </div>
+                  <div class="col-12 table-responsive">
+                    <table class="table table-sm table align-middle text-center table-hover mt-2 mb-2 border border-1 ">
+                      <thead class="table-light border-end-0">
+                        <tr>
+                          <th class="pt-3 pb-3 text-light-emphasis">STT</th>
+                          <th class="pt-3 pb-3 text-light-emphasis">Trích yếu</th>
+                          <th class="pt-3 pb-3 text-light-emphasis">Trạng thái</th>
+                          <th class="pt-3 pb-3 text-light-emphasis">Người chuyển</th>
+                          <th class="pt-3 pb-3 text-light-emphasis">Thời gian xử lý</th>
+                          <th class="pt-3 pb-3 text-light-emphasis"></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>1</td>
+                          <td>
+                            <div class="text-start">Đề xuất giải pháp cho doanh nghiệp Đức Anh</div>
+                            <div class="my-fz-10 fw-bold text-start text-primary">
+                              Đề xuất
+                            </div>
+                          </td>
+                          <td>
+                            <div class="text-warning">
+                              <i class="fa-solid fa-clock-rotate-left text-warning"></i>
+                              Chờ ban hành
+                            </div>
+                          </td>
+                          <td>
+                            <div>Nguyễn Đăng Đức</div>
+                          </td>
+                          <td>08/04/2024 21:10</td>
+                          <td class=""><i class="fa-solid fa-trash-can icon"></i></td>
+                        </tr>
+                        <tr>
+                          <td>2</td>
+                          <td>
+                            <div class="text-start">Báo cáo dự án quý I</div>
+                            <div class="my-fz-10 fw-bold text-start text-warning">
+                              Báo cáo
+                            </div>
+                          </td>
+                          <td>
+                            <div class="text-danger">
+                              <i class="fa-solid fa-circle-minus text-danger"></i>
+                              Từ chối ban hành
+                            </div>
+
+                          </td>
+                          <td>
+                            <div>Nguyễn Đăng Đức</div>
+                          </td>
+                          <td>03/04/2024 13:10</td>
+                          <td class=""><i class="fa-solid fa-trash-can icon"></i></td>
+                        </tr>
+                        <tr>
+                          <td>3</td>
+                          <td>
+                            <div class="text-start">Công văn họp nội bộ</div>
+                            <div class="my-fz-10 fw-bold text-start text-info">
+                              Công văn
+                            </div>
+                          </td>
+                          <td>
+                            <div class="text-danger">
+                              <i class="fa-solid fa-circle-minus text-danger"></i>
+                              Từ chối ban hành
+                            </div>
+                          </td>
+                          <td>
+                            <div>Nguyễn Anh Đức</div>
+                          </td>
+                          <td>04/04/2024 09:10</td>
+                          <td class=""><i class="fa-solid fa-trash-can icon"></i></td>
+                        </tr>
+                        <tr>
+                          <td>4</td>
+                          <td>
+                            <div class="text-start">Biên bản họp Ban Giám đốc thường niên quí II</div>
+                            <div class="my-fz-10 fw-bold text-start text-danger">
+                              Biên bản
+                            </div>
+                          </td>
+                          <td>
+                            <div class="text-warning">
+                              <i class="fa-solid fa-clock-rotate-left text-warning"></i>
+                              Chờ ban hành
+                            </div>
+                          </td>
+                          <td>
+                            <div>Ngô Đức Anh</div>
+                          </td>
+                          <td>07/04/2024 07:10</td>
+                          <td class=""><i class="fa-solid fa-trash-can icon"></i></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="tab-pane fade" id="coordinate-tab-pane" role="tabpanel" aria-labelledby="coordinate-tab"
+                  tabindex="0">
+                  <div class="col-12 d-flex justify-content-start align-items-center gap-4">
+                    <div>Ngày chuyển</div>
+                    <input type="date" class="border-0">
+                    <div class="d-flex align-items-center">
+                      <div class="mt-1"><i class="fi fi-rr-settings-sliders"></i></div>
+                      <select class="btn" name="selectItem" id="selectItem" title="Tất cả">
+                        <option class="text-start" value="all" selected>Tất cả</option>
+                        <option class="text-start" value="unread">Chưa đọc</option>
+                        <option class="text-start" value="read">Đã đọc</option>
+                      </select>
+                    </div>
+                    <div class="btn"><i class="fi fi-rr-settings"></i> &nbsp; Nâng cao</div>
+                  </div>
+                  <div class="col-12 table-responsive">
+                    <table class="table table-sm table align-middle text-center table-hover mt-2 mb-2 border border-1 ">
+                      <thead class="table-light border-end-0">
+                        <tr>
+                          <th class="pt-3 pb-3 text-light-emphasis">STT</th>
+                          <th class="pt-3 pb-3 text-light-emphasis">Trích yếu</th>
+                          <th class="pt-3 pb-3 text-light-emphasis">Ngày tạo</th>
+                          <th class="pt-3 pb-3 text-light-emphasis">Người chuyển</th>
+                          <th class="pt-3 pb-3 text-light-emphasis">Người phối hợp</th>
+                          <th class="pt-3 pb-3 text-light-emphasis">Thời gian chuyển</th>
+                          <th class="pt-3 pb-3 text-light-emphasis"></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>1</td>
+                          <td>
+                            <div class="text-start">Đề xuất về nâng cấp dự án của doanh nghiệp Đức Anh</div>
+                            <div class="my-fz-10 fw-bold text-start text-primary">
+                              Đề xuất
+                            </div>
+                          </td>
+                          <td><input type="date" class="border border-0" value="2024-04-01"></td>
+                          <td>
+                            <div>Nguyễn Đăng Đức</div>
+                          </td>
+                          <td>
+                            <div>Ngô Mạnh Anh</div>
+                          </td>
+                          <td><input type="date" class="border border-0" value="2024-04-02"></td>
+                          <td class=""><i class="fa-solid fa-trash-can icon"></i></td>
+                        </tr>
+                        <tr>
+                          <td>2</td>
+                          <td>
+                            <div class="text-start">Báo cáo kế hoạch phát triển dự án Thương mại điện tử</div>
+                            <div class="my-fz-10 fw-bold text-start text-warning">
+                              Báo cáo
+                            </div>
+                          </td>
+                          <td><input type="date" class="border border-0" value="2024-04-02"></td>
+                          <td>
+                            <div>Ngô Mạnh Anh</div>
+                          </td>
+                          <td>
+                            <div>Ngô Linh Anh</div>
+                          </td>
+                          <td><input type="date" class="border border-0" value="2024-04-03"></td>
+                          <td class=""><i class="fa-solid fa-trash-can icon"></i></td>
+                        </tr>
+                        <tr>
+                          <td>3</td>
+                          <td>
+                            <div class="text-start">Công văn thông báo thay đổi chính sách công ty</div>
+                            <div class="my-fz-10 fw-bold text-start text-info">
+                              Công văn
+                            </div>
+                          </td>
+                          <td><input type="date" class="border border-0" value="2024-04-04"></td>
+                          <td>
+                            <div>Nguyễn Đăng Đức</div>
+                          </td>
+                          <td>
+                            <div>Ngô Mạnh Anh</div>
+                          </td>
+                          <td><input type="date" class="border border-0" value="2024-04-05"></td>
+                          <td class=""><i class="fa-solid fa-trash-can icon"></i></td>
+                        </tr>
+                        <tr>
+                          <td>4</td>
+                          <td>
+                            <div class="text-start">Biên bản họp Ban Giám đốc thường niên quí II</div>
+                            <div class="my-fz-10 fw-bold text-start text-danger">
+                              Biên bản
+                            </div>
+                          </td>
+                          <td><input type="date" class="border border-0" value="2024-04-01"></td>
+                          <td>
+                            <div>Ngô Đức Anh</div>
+                          </td>
+                          <td>
+                            <div>Ngô Mạnh Anh</div>
+                          </td>
+                          <td><input type="date" class="border border-0" value="2024-04-02"></td>
+                          <td class="">
+                            <i class="fa-solid fa-trash-can icon"></i>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="tab-pane fade" id="authorize-tab-pane" role="tabpanel" aria-labelledby="authorize-tab"
+                  tabindex="0">
+                  <div class="col-12 d-flex justify-content-start align-items-center gap-4">
+                    <div>Ngày chuyển</div>
+                    <input type="date" class="border-0">
+                    <div class="d-flex align-items-center">
+                      <div class="mt-1"><i class="fi fi-rr-settings-sliders"></i></div>
+                      <select class="btn" name="selectItem" id="selectItem" title="Tất cả">
+                        <option class="text-start" value="all" selected>Tất cả</option>
+                        <option class="text-start" value="unread">Chưa đọc</option>
+                        <option class="text-start" value="read">Đã đọc</option>
+                      </select>
+                    </div>
+                    <div class="btn"><i class="fi fi-rr-settings"></i> &nbsp; Nâng cao</div>
+                  </div>
+                  <div class="col-12 table-responsive">
+                    <table class="table table-sm table align-middle text-center table-hover mt-2 mb-2 border border-1 ">
+                      <thead class="table-light border-end-0">
+                        <tr>
+                          <th class="pt-3 pb-3 text-light-emphasis">STT</th>
+                          <th class="pt-3 pb-3 text-light-emphasis">Trích yếu</th>
+                          <th class="pt-3 pb-3 text-light-emphasis">Ngày tạo</th>
+                          <th class="pt-3 pb-3 text-light-emphasis">Người chuyển</th>
+                          <th class="pt-3 pb-3 text-light-emphasis">Người ủy quyền</th>
+                          <th class="pt-3 pb-3 text-light-emphasis">Thời gian chuyển</th>
+                          <th class="pt-3 pb-3 text-light-emphasis"></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>1</td>
+                          <td>
+                            <div class="text-start">Đề xuất về việc thay đổi cơ sở hạ tầng doanh nghiệp Đức Anh</div>
+                            <div class="my-fz-10 fw-bold text-start text-primary">
+                              Đề xuất
+                            </div>
+                          </td>
+                          <td><input type="date" class="border border-0" value="2024-04-01"></td>
+                          <td>
+                            <div>Nguyễn Đăng Đức</div>
+                          </td>
+                          <td>
+                            <div>Ngô Mạnh Anh</div>
+                          </td>
+                          <td><input type="date" class="border border-0" value="2024-04-02"></td>
+                          <td class=""><i class="fa-solid fa-trash-can icon"></i></td>
+                        </tr>
+                        <tr>
+                          <td>2</td>
+                          <td>
+                            <div class="text-start">Báo cáo kế hoạch phát triển dự án Thương mại điện tử</div>
+                            <div class="my-fz-10 fw-bold text-start text-warning">
+                              Báo cáo
+                            </div>
+                          </td>
+                          <td><input type="date" class="border border-0" value="2024-04-02"></td>
+                          <td>
+                            <div>Ngô Mạnh Anh</div>
+                          </td>
+                          <td>
+                            <div>Ngô Linh Anh</div>
+                          </td>
+                          <td><input type="date" class="border border-0" value="2024-04-03"></td>
+                          <td class=""><i class="fa-solid fa-trash-can icon"></i></td>
+                        </tr>
+                        <tr>
+                          <td>3</td>
+                          <td>
+                            <div class="text-start">Công văn thông báo thay đổi chính sách công ty</div>
+                            <div class="my-fz-10 fw-bold text-start text-info">
+                              Công văn
+                            </div>
+                          </td>
+                          <td><input type="date" class="border border-0" value="2024-04-04"></td>
+                          <td>
+                            <div>Nguyễn Đăng Đức</div>
+                          </td>
+                          <td>
+                            <div>Ngô Mạnh Anh</div>
+                          </td>
+                          <td><input type="date" class="border border-0" value="2024-04-05"></td>
+                          <td class=""><i class="fa-solid fa-trash-can icon"></i></td>
+                        </tr>
+                        <tr>
+                          <td>4</td>
+                          <td>
+                            <div class="text-start">Biên bản họp Ban Giám đốc thường niên quí II</div>
+                            <div class="my-fz-10 fw-bold text-start text-danger">
+                              Biên bản
+                            </div>
+                          </td>
+                          <td><input type="date" class="border border-0" value="2024-04-01"></td>
+                          <td>
+                            <div>Ngô Đức Anh</div>
+                          </td>
+                          <td>
+                            <div>Ngô Mạnh Anh</div>
+                          </td>
+                          <td><input type="date" class="border border-0" value="2024-04-02"></td>
+                          <td class="">
+                            <i class="fa-solid fa-trash-can icon"></i>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="list-text-out-2" role="tabpanel" aria-labelledby="list-text-out-2-list">
+        <div id="text-out-2">b</div>
+      </div>
+      <!-- end tab-text-out -->
+
+      <!-- tab-work -->
+      <div class="tab-pane fade" id="list-work-1" role="tabpanel" aria-labelledby="list-work-1-list">
+        <div id="work-1">work 1</div>
+      </div>
+      <div class="tab-pane fade" id="list-work-2" role="tabpanel" aria-labelledby="list-work-2-list">
+        <div id="work-2">work 2</div>
+      </div>
+      <!-- end-tab-work -->
+      <div class="tab-pane fade" id="list-notify" role="tabpanel" aria-labelledby="list-notify-list">
+        <div id="notify">notify</div>
+      </div>
+      <div class="tab-pane fade" id="list-pm" role="tabpanel" aria-labelledby="list-pm-list">
+        <div id="pm">pm</div>
+      </div>
+      <div class="tab-pane fade" id="list-hm" role="tabpanel" aria-labelledby="list-hm-list">
+        <div id="hm">hm</div>
+      </div>
+      <div class="tab-pane fade" id="list-docs" role="tabpanel" aria-labelledby="list-docs-list">
+        <div id="docs">docs</div>
+      </div>
     </div>
   </main>
+
 </body>
 
 <script src="./assets/jquery/jquery-3.7.1.min.js"></script>
 <script src="./index.js"></script>
 
 </html>
-
-<!-- <ul class="list-unstyled ps-0">
-  <li class="mb-1">
-    <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">
-      Home
-    </button>
-    <div class="collapse" id="home-collapse" style="">
-      <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-        <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Overview</a></li>
-        <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Updates</a></li>
-        <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Reports</a></li>
-      </ul>
-    </div>
-  </li>
-  <li class="mb-1">
-    <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
-      Dashboard
-    </button>
-    <div class="collapse" id="dashboard-collapse">
-      <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-        <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Overview</a></li>
-        <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Weekly</a></li>
-        <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Monthly</a></li>
-        <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Annually</a></li>
-      </ul>
-    </div>
-  </li>
-  <li class="mb-1">
-    <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
-      Orders
-    </button>
-    <div class="collapse" id="orders-collapse">
-      <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-        <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">New</a></li>
-        <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Processed</a></li>
-        <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Shipped</a></li>
-        <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Returned</a></li>
-      </ul>
-    </div>
-  </li>
-  <li class="border-top my-3"></li>
-  <li class="mb-1">
-    <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
-      Account
-    </button>
-    <div class="collapse" id="account-collapse">
-      <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-        <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">New...</a></li>
-        <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Profile</a></li>
-        <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Settings</a></li>
-        <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Sign out</a></li>
-      </ul>
-    </div>
-  </li>
-</ul> -->

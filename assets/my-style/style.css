@@ -25,13 +25,22 @@ body {
 }
 
 .my-fz-10 {
+  
   font-size: 0.6rem !important;
 }
-
+.outline-none {
+  outline: none!important;
+}
+.border-bottom-active {
+  border-bottom: 2px solid #377dff !important;
+  transition: border-color .6s ease;
+}
 i.icon {
   color: #677788
 }
-
+i.heart-icon {
+  color: red!important;
+}
 i.icon:hover {
   cursor: pointer;
   color: #377dff;
@@ -233,5 +242,14 @@ a.nav-link.active {
 
   header {
     height: auto !important;
+  }
+}
+
+.calendar-content {
+  height: calc(100vh - var(--h-header) - 54px);
+}
+@media (max-width: 576px) {
+  .calendar-content {
+    height: calc(100vh - var(--h-header) - 96px);
   }
 }

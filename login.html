@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="shortcut icon"
+      href="./assets/img/logo-top.png"
+      type="image/x-icon"
+    />
+    <!-- bootstrap 5.3 -->
+    <link rel="stylesheet" href="./assets/bootstraps/css/bootstrap.min.css" />
+    <script
+      src="https://kit.fontawesome.com/203ae9be09.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- customize css -->
+    <link rel="stylesheet" href="./assets/my-style/login.css" />
+    <title>Đăng nhập</title>
+  </head>
+
+  <body>
+    <div class="container d-flex align-items-center justify-content-center">
+      <!-- sign in  -->
+      <div class="signin content w-100 p-5 rounded">
+        <h1 class="text-center">Đăng nhập</h1>
+        <div class="d-flex mt-4 gap-4">
+          <button
+            class="btn-social-login btn border border-1 py-2 d-flex justify-content-center align-items-center rounded gap-2 fw-bold cursor-pointer"
+          >
+            <img
+              src="https://cdn.pixabay.com/photo/2021/05/24/09/15/google-logo-6278331_1280.png"
+              alt=""
+              width="20"
+            />
+            Google
+          </button>
+          <button
+            class="btn-social-login btn border border-1 py-2 d-flex justify-content-center align-items-center rounded gap-2 fw-bold cursor-pointer"
+          >
+            <i class="fa-brands fa-facebook fa-lg text-primary"></i>
+            Facebook
+          </button>
+        </div>
+
+        <div class="divider d-flex align-items-center gap-2">
+          <div class="line bg-dark opacity-25 mt-4 mb-2"></div>
+          <div class="mt-2">Hoặc</div>
+          <div class="line bg-dark opacity-25 mt-4 mb-2"></div>
+        </div>
+
+        <form>
+          <label for="email" class="mt-2 text-dark-emphasis fz-14 fw-bold"
+            >Email (admin@gmail.com)</label
+          >
+          <div class="position-relative">
+            <input
+              class="border border-1 w-100 mt-2 py-2 px-3 rounded"
+              type="email"
+              name="email"
+              id="email-signin"
+              placeholder="Nhập email"
+              autocomplete="off"
+            />
+            <i
+              class="fa-solid fa-envelope fa-lg text-secondary position-absolute top-50 end-0 me-3 mt-1"
+            ></i>
+          </div>
+          <label for="password" class="mt-2 text-dark-emphasis fz-14 fw-bold"
+            >Mật khẩu (123456)</label
+          >
+          <div class="position-relative">
+            <input
+              class="border border-1 w-100 mt-2 py-2 px-3 rounded"
+              type="password"
+              name="password"
+              id="password-signin"
+              placeholder="Nhập mật khẩu"
+            />
+            <i
+              class="fa-solid fa-lock fa-lg text-secondary position-absolute top-50 end-0 me-3 mt-1"
+            ></i>
+          </div>
+          <button
+            type="button"
+            id="btn-login"
+            class="login btn btn-primary w-100 mt-4 fs-5 cursor-pointer fw-bold border-0"
+          >
+            Đăng nhập
+          </button>
+          <div class="links d-flex justify-content-between mt-4">
+            <span
+              class="tranfer-forget-pass text-primary link-primary text-decoration-none cursor-pointer fw-medium"
+              >Quên mật khẩu
+            </span>
+            <span
+              id="tranfer-signup"
+              class="text-primary link-primary text-decoration-none cursor-pointer fw-medium"
+              >Đăng ký tài khoản
+            </span>
+          </div>
+        </form>
+      </div>
+      <!-- end sign in -->
+
+      <!-- sign up -->
+      <div class="signup content w-100 py-4 px-5 rounded d-none">
+        <h1 class="text-center">Đăng ký</h1>
+        <form>
+          <label for="name" class="mt-2 text-dark-emphasis fz-14 fw-bold"
+            >Tên của bạn
+          </label>
+          <div class="position-relative">
+            <input
+              class="border border-1 w-100 mt-2 py-2 px-3 rounded"
+              type="email"
+              name="name"
+              id="name"
+              placeholder="Nhập họ và tên"
+              autocomplete="off"
+            />
+            <i
+              class="fa-solid fa-font fa-lg text-secondary position-absolute top-50 end-0 me-3 mt-1"
+            ></i>
+          </div>
+          <label for="email" class="mt-2 text-dark-emphasis fz-14 fw-bold"
+            >Email</label
+          >
+          <div class="position-relative">
+            <input
+              class="border border-1 w-100 mt-2 py-2 px-3 rounded"
+              type="email"
+              name="email"
+              placeholder="Nhập email"
+              autocomplete="off"
+            />
+            <i
+              class="fa-solid fa-envelope fa-lg text-secondary position-absolute top-50 end-0 me-3 mt-1"
+            ></i>
+          </div>
+          <label for="password" class="mt-2 text-dark-emphasis fz-14 fw-bold"
+            >Mật khẩu</label
+          >
+          <div class="position-relative">
+            <input
+              class="border border-1 w-100 mt-2 py-2 px-3 rounded"
+              type="password"
+              name="password"
+              placeholder="Nhập mật khẩu"
+            />
+            <i
+              class="fa-solid fa-lock fa-lg text-secondary position-absolute top-50 end-0 me-3 mt-1"
+            ></i>
+          </div>
+          <label for="" class="mt-2 text-dark-emphasis fz-14 fw-bold"
+            >Xác nhận mật khẩu</label
+          >
+          <div class="position-relative">
+            <input
+              class="border border-1 w-100 mt-2 py-2 px-3 rounded"
+              type="password"
+              name="password"
+              placeholder="Nhập mật khẩu"
+            />
+            <i
+              class="fa-solid fa-lock fa-lg text-secondary position-absolute top-50 end-0 me-3 mt-1"
+            ></i>
+          </div>
+
+          <button
+            type="button"
+            class="login btn btn-primary w-100 mt-4 fs-5 cursor-pointer fw-bold border-0"
+          >
+            Đăng ký
+          </button>
+          <div class="links text-center mt-4">
+            Bạn đã có tài khoản ?
+            <span
+              class="tranfer-login text-primary text-decoration-none fw-medium cursor-pointer"
+              >Đăng nhập</span
+            >
+          </div>
+        </form>
+      </div>
+      <!-- end sign up -->
+
+      <!-- forget pass -->
+      <div class="forget-pass content w-100 py-4 px-5 rounded d-none">
+        <h1 class="text-center">Quên mật khẩu</h1>
+        <form>
+          <div class="d-flex align-items-end">
+            <div>
+              <label for="email" class="mt-2 text-dark-emphasis fz-14 fw-bold"
+                >Email</label
+              >
+              <div class="position-relative">
+                <input
+                  class="border border-1 mt-2 py-2 px-3 rounded"
+                  type="email"
+                  name="email"
+                  placeholder="Nhập email"
+                  autocomplete="off"
+                />
+                <i
+                  class="fa-solid fa-envelope fa-lg text-secondary position-absolute top-50 end-0 me-3 mt-1"
+                ></i>
+              </div>
+            </div>
+            <button
+              type="button"
+              style="text-wrap: nowrap;"
+              class="ms-2 btn btn-outline-primary py-2"
+            >
+              Lấy mã OTP
+            </button>
+          </div>
+
+          <label for="email" class="mt-2 text-dark-emphasis fz-14 fw-bold"
+            >OTP</label
+          >
+          <div class="position-relative">
+            <input
+              class="border border-1 w-100 mt-2 py-2 px-3 rounded"
+              type="text"
+              name=""
+              placeholder="Nhập mã OTP"
+              autocomplete="off"
+            />
+            <i
+              class="fa-solid fa-key fa-lg text-secondary position-absolute top-50 end-0 me-3 mt-1"
+            ></i>
+          </div>
+
+          <label for="email" class="mt-2 text-dark-emphasis fz-14 fw-bold"
+            >Mật khẩu mới</label
+          >
+          <div class="position-relative">
+            <input
+              class="border border-1 w-100 mt-2 py-2 px-3 rounded"
+              type="password"
+              name=""
+              placeholder="Nhập mật khẩu mới"
+              autocomplete="off"
+            />
+            <i
+              class="fa-solid fa-lock fa-lg text-secondary position-absolute top-50 end-0 me-3 mt-1"
+            ></i>
+          </div>
+
+          <button
+            type="button"
+            class="login btn btn-primary w-100 mt-4 fs-5 cursor-pointer fw-bold border-0"
+          >
+            Xác nhận
+          </button>
+          <div class="links text-center mt-4">
+            Bạn đã có tài khoản ?
+            <span
+              class="tranfer-login text-primary text-decoration-none fw-medium cursor-pointer"
+              >Đăng nhập</span
+            >
+          </div>
+        </form>
+      </div>
+    </div>
+    <script src="./assets/jquery/jquery-3.7.1.min.js"></script>
+    <scribpt src="./assets/bootstraps/js/bootstrap.bundle.min.js"></scribpt>
+    <script>
+      $(document).ready(function () {
+        $("#tranfer-signup").on("click", function () {
+          $(".signup").removeClass("d-none"); // signup //forget-pass
+          $(".signin").addClass("d-none");
+          $(".forget-pass").addClass("d-none");
+        });
+        $(".tranfer-forget-pass").on("click", function () {
+          $(".forget-pass").removeClass("d-none");
+          $(".signin").addClass("d-none");
+          $(".signup").addClass("d-none");
+        });
+        $(".tranfer-login").each(function (index, e) {
+          $(this).on("click", function () {
+            $(".signin").removeClass("d-none");
+            $(".signup").addClass("d-none");
+            $(".forget-pass").addClass("d-none");
+          });
+        });
+        $("#btn-login").on("click", login);
+        $("#password-signin").on("keydown", function (e) {
+          if (event.keyCode === 13) {
+            login();
+          }
+        });
+        function login() {
+          const email = $("#email-signin").val();
+          const password = $("#password-signin").val();
+          if (email == "admin@gmail.com" && password == "123456") {
+            location.href = "/admin.html";
+            return;
+          }
+          if (email == "a@gmail.com" && password == "123456") {
+            location.href = "/index.html";
+          } else {
+            alert("Sai tài khoản hoặc mật khẩu! ");
+            $("#email-signin").focus();
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

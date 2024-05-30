@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-office | Admin</title>
+    <!-- favicon -->
+    <link
+      rel="shortcut icon"
+      href="./assets/img/logo-top.png"
+      type="image/x-icon"
+    />
+
+    <!-- gg font -->
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto&display=swap");
+    </style>
+
+    <!-- bootstrap 5.3 -->
+    <link rel="stylesheet" href="./assets/bootstraps/css/bootstrap.min.css" />
+
+    <!-- font icon -->
+    <link
+      rel="stylesheet"
+      href="./assets/uicons-regular-rounded/css/uicons-regular-rounded.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/203ae9be09.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- customize -->
+    <link rel="stylesheet" href="./assets/my-style/style.css" />
+    <link rel="stylesheet" href="./assets/my-style/admin.css" />
+  </head>
+  <body>
+    <header class="sticky-top">
+      <div class="container-fluid">
+        <div
+          class="navbar navbar-expand-lg d-flex flex-wrap align-items-center justify-content-lg-start py-0 justify-content-end"
+        >
+          <div class="logo px-2">
+            <a href="/" title="Logo-top">
+              <img class="logo-top" src="./assets/img/logo-top.png" alt="" />
+            </a>
+          </div>
+          <div class="ms-md-4 mx-auto fs-3 title-js text-primary">
+            &nbsp; Tài khoản của tôi
+          </div>
+
+          <button
+            class="navbar-toggler collapsed mb-3 ms-sm-2 mb-sm-0"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navMobile"
+            aria-controls="navMobile"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="navbar-collapse collapse" id="navMobile">
+            <div
+              id="list-tab-mobile"
+              role="tablist"
+              class="list-group navbar-nav me-auto mb-2 mb-lg-0"
+            >
+              <div class="nav-item">
+                <a
+                  class="nav-admin-js list-js nav-active text-decoration-none p-2 text-black-50 fw-bold d-inline-block active"
+                  id="list-account-list"
+                  data-bs-toggle="list"
+                  href="#list-account"
+                  role="tab"
+                  aria-controls=""
+                >
+                  <i class="fa-regular fa-circle-user"></i> &nbsp; Tài khoản của
+                  tôi
+                </a>
+              </div>
+              <div class="nav-item">
+                <a
+                  class="nav-admin-js list-js text-decoration-none p-2 text-black-50 fw-bold d-inline-block"
+                  id="list-pass-list"
+                  data-bs-toggle="list"
+                  href="#list-pass"
+                  role="tab"
+                  aria-controls=""
+                >
+                  <i class="fa-solid fa-key"></i> &nbsp; Đổi mật khẩu
+                </a>
+              </div>
+              <div class="nav-item">
+                <span
+                  style="cursor: pointer;"
+                  class="logout-js nav-admin-js list-js text-decoration-none p-2 text-black-50 fw-bold d-inline-block"
+                  id="logout-js"
+                  data-bs-toggle="list"
+                >
+                  <i class="fa-solid fa-right-from-bracket"></i> &nbsp; Đăng
+                  xuất
+                </span>
+              </div>
+              <div class="nav-item">
+                <a
+                  class="nav-admin-js list-js text-decoration-none p-2 text-black-50 fw-bold d-inline-block"
+                  id="list-member-list"
+                  data-bs-toggle="list"
+                  href="#list-member"
+                  role="tab"
+                  aria-controls=""
+                >
+                  <i class="fi fi-rr-user-gear icon"></i> &nbsp; Quản lý thành
+                  viên
+                </a>
+              </div>
+              <div class="nav-item">
+                <a
+                  class="nav-admin-js list-js text-decoration-none p-2 text-black-50 fw-bold d-inline-block"
+                  id="list-brand-list"
+                  data-bs-toggle="list"
+                  href="#list-brand"
+                  role="tab"
+                  aria-controls=""
+                >
+                  <i class="fa-regular fa-star"></i> &nbsp; Logo và thương hiệu
+                </a>
+              </div>
+            </div>
+            <form role="search" class="mb-2 shadow rounded">
+              <input
+                class="form-control"
+                type="search"
+                placeholder="Tìm kiếm"
+                aria-label="search"
+              />
+            </form>
+          </div>
+        </div>
+      </div>
+    </header>
+    <aside class="position-fixed top-0 bottom-0 left-0 admin-nav">
+      <div class="logo px-2">
+        <a href="/" title="Logo-top">
+          <img class="logo-top" src="./assets/img/logo-top.png" alt="" />
+        </a>
+      </div>
+      <div class="m-2">
+        <div
+          class="py-3 d-flex align-items-center border-bottom border-2 border-light-subtle"
+        >
+          <span class="position-relative rounded-circle text-bg-primary p-2">
+            MA
+            <span
+              class="position-absolute camera-icon rounded-circle bg-body-secondary"
+            >
+              <i class="fa-solid fa-camera fs-10"></i>
+            </span>
+          </span>
+          <div class="mx-3">
+            <div class="text-dark">Ngô Mạnh Anh</div>
+            <div class="text fs-12">Admin</div>
+          </div>
+        </div>
+        <div>
+          <div class="list-group mb-2" id="list-tab" role="tablist">
+            <div
+              class="px-2 pt-3 pb-1 border-bottom border-2 border-light-subtle text-uppercase text-secondary text-opacity-50"
+            >
+              Tài khoản của tôi
+            </div>
+            <a
+              class="nav-admin-js list-js nav-active text-decoration-none p-2 text-black-50 fw-bold active fs-14"
+              id="list-account-list"
+              data-bs-toggle="list"
+              href="#list-account"
+              role="tab"
+              aria-controls=""
+            >
+              <i class="fa-regular fa-circle-user"></i> &nbsp; Tài khoản của tôi
+            </a>
+            <a
+              class="nav-admin-js list-js text-decoration-none p-2 text-black-50 fw-bold fs-14"
+              id="list-pass-list"
+              data-bs-toggle="list"
+              href="#list-pass"
+              role="tab"
+              aria-controls=""
+            >
+              <i class="fa-solid fa-key"></i> &nbsp; Đổi mật khẩu
+            </a>
+            <span
+              style="cursor: pointer;"
+              class="logout-js nav-admin-js list-js text-decoration-none p-2 text-black-50 fw-bold fs-14"
+              id="logout-js"
+              data-bs-toggle="list"
+            >
+              <i class="fa-solid fa-right-from-bracket"></i> &nbsp; Đăng xuất
+            </span>
+
+            <!-- quan tri -->
+            <div
+              class="px-2 pt-3 pb-1 border-bottom border-2 border-light-subtle text-uppercase text-secondary text-opacity-50"
+            >
+              Quản trị
+            </div>
+            <a
+              class="nav-admin-js list-js text-decoration-none p-2 text-black-50 fw-bold fs-14"
+              id="list-member-list"
+              data-bs-toggle="list"
+              href="#list-member"
+              role="tab"
+              aria-controls=""
+            >
+              <i class="fa-solid fa-user-gear"></i> &nbsp; Quản lý thành viên
+            </a>
+            <a
+              class="nav-admin-js list-js text-decoration-none p-2 text-black-50 fw-bold fs-14"
+              id="list-brand-list"
+              data-bs-toggle="list"
+              href="#list-brand"
+              role="tab"
+              aria-controls=""
+            >
+              <i class="fa-regular fa-star"></i> &nbsp; Logo và thương hiệu
+            </a>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <main>
+      <div class="tab-content" id="nav-tabContent">
+        <div
+          class="tab-pane fade show active"
+          id="list-account"
+          role="tabpanel"
+          aria-labelledby="list-account-list"
+        >
+          <div class="container-fluid">
+            <div class="py-2">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="fs-6 text-uppercase">Thông tin chung</div>
+                <div class="text-primary cursor-pointer">
+                  <i class="fa-solid fa-pencil text-primary"></i> &nbsp; Chỉnh
+                  sửa
+                </div>
+              </div>
+              <form action="" class="row m-3">
+                <div class="col-12 col-sm-6">
+                  <div class="inputGroup">
+                    <input type="text" required="" autocomplete="off" />
+                    <label for="name">Họ tên</label>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-6">
+                  <div class="inputGroup">
+                    <input type="text" required="" autocomplete="off" />
+                    <label for="">Email</label>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-6">
+                  <div class="inputGroup">
+                    <input type="number" required="" autocomplete="off" />
+                    <label for="">Số điện thoại</label>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-6">
+                  <div class="inputGroup">
+                    <input type="date" required="" autocomplete="off" />
+                  </div>
+                </div>
+                <div class="col-12 col-sm-6">
+                  <div class="inputGroup">
+                    <input type="text" required="" autocomplete="off" />
+                    <label for="">Chức danh</label>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-6">
+                  <div class="inputGroup">
+                    <input type="text" required="" autocomplete="off" />
+                    <label for="">Đơn vị</label>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="fs-6 text-uppercase">Liên kết tài khoản</div>
+                <div class="text-primary cursor-pointer">
+                  <i class="fa-solid fa-pencil text-primary"></i> &nbsp; Chỉnh
+                  sửa
+                </div>
+              </div>
+              <div class="row m-3">
+                <div
+                  class="col-12 col-sm-6 d-flex align-items-center justify-content-center justify-content-lg-center justify-content-xxl-start"
+                >
+                  <div
+                    class="border border-2 rounded-start-pill py-2 px-3 border-end-0"
+                  >
+                    <img
+                      src="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico"
+                      width="21"
+                      alt=""
+                    />
+                  </div>
+                  <div class="inputGroup">
+                    <input
+                      class="rounded-end-pill border border-2"
+                      type="text"
+                      required=""
+                      autocomplete="off"
+                    />
+                    <label for="">Gmail</label>
+                  </div>
+                </div>
+                <div
+                  class="col-12 col-sm-6 d-flex align-items-center justify-content-center justify-content-lg-start"
+                >
+                  <div
+                    class="border border-2 rounded-start-pill py-2 px-3 border-end-0"
+                  >
+                    <i class="fa-brands fa-facebook fa-xl text-primary"></i>
+                  </div>
+                  <div class="inputGroup">
+                    <input
+                      class="rounded-end-pill border border-2"
+                      type="text"
+                      required=""
+                      autocomplete="off"
+                    />
+                    <label for="">Facebook</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="d-md-flex align-items-center gap-4">
+              <div class="fs-6 text-uppercase">Phân quyền</div>
+              <div class="m-3 m-md-0">
+                <input
+                  type="text"
+                  class="rounded-pill ms-4 p-2 border border-2"
+                  value="Admin"
+                  disabled
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="tab-pane fade show"
+          id="list-pass"
+          role="tabpanel"
+          aria-labelledby="list-pass-list"
+        >
+          <div class="container-fluid">
+            <div class="py-2">
+              <div class="fs-6 text-uppercase">Đổi mật khẩu</div>
+              <form class="row m-3">
+                <div class="inputGroup col-12 col-sm-6 col-xl-12">
+                  <div class="d-inline position-relative">
+                    <input
+                      class="pass-js"
+                      type="password"
+                      required=""
+                      autocomplete="off"
+                    />
+                    <i
+                      class="eye-icon-js cursor-pointer fa-solid fa-eye-slash text-body-tertiary position-absolute top-50 end-0 translate-middle"
+                    ></i>
+                    <label for="">Mật khẩu cũ</label>
+                  </div>
+                </div>
+                <div class="inputGroup col-12 col-sm-6 col-xl-12">
+                  <div class="d-inline position-relative">
+                    <input
+                      class="pass-js"
+                      type="password"
+                      required=""
+                      autocomplete="off"
+                    />
+                    <i
+                      class="eye-icon-js cursor-pointer fa-solid fa-eye-slash text-body-tertiary position-absolute top-50 end-0 translate-middle"
+                    ></i>
+                    <label for="">Mật khẩu mới</label>
+                  </div>
+                </div>
+                <div class="inputGroup col-12 col-sm-6 col-xl-12">
+                  <div class="d-inline position-relative">
+                    <input
+                      class="pass-js"
+                      type="password"
+                      required=""
+                      autocomplete="off"
+                    />
+                    <i
+                      class="eye-icon-js cursor-pointer fa-solid fa-eye-slash text-body-tertiary position-absolute top-50 end-0 translate-middle"
+                    ></i>
+                    <label for="">Xác nhận mật khẩu</label>
+                  </div>
+                </div>
+              </form>
+              <button class="btn btn-primary mx-4 rounded-pill">
+                Xác nhận
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          class="tab-pane fade show"
+          id="list-member"
+          role="tabpanel"
+          aria-labelledby="list-member-list"
+        >
+          <div class="container-fluid">
+            <div
+              class="d-flex justify-content-between align-items-start py-2 mb-2"
+            >
+              <div class="">
+                <button class="btn btn-primary">
+                  <i class="text-light fas fa-plus-circle"></i>
+                  Thêm mới
+                </button>
+                <div class="mt-2 ms-2">28 thành viên</div>
+              </div>
+              <form>
+                <input
+                  class="border border-0 border-bottom border-2 outline-none search-input-js fs-5 text"
+                  type="text"
+                  placeholder="Tìm kiếm"
+                />
+                <button class="btn btn-primary text-light" type="button">
+                  <i class="fa-solid fa-magnifying-glass text-light"></i>
+                </button>
+              </form>
+            </div>
+            <div class="col-12">
+              <table
+                class="table-responsive table table-sm table align-middle text-center table-hover mt-2 mb-2 border border-1 fs-6"
+              >
+                <thead class="table-light  border-end-0">
+                  <tr>
+                    <th class="pt-3 pb-3 text-light-emphasis">
+                      <input type="checkbox" />
+                    </th>
+                    <th class="pt-3 pb-3 text-light-emphasis">
+                      Họ và tên
+                    </th>
+                    <th class="pt-3 pb-3 text-light-emphasis">
+                      Chức vụ
+                    </th>
+                    <th class="pt-3 pb-3 text-light-emphasis">
+                      Email
+                    </th>
+                    <th class="pt-3 pb-3 text-light-emphasis">
+                      Số điện thoại
+                    </th>
+                    <th class="pt-3 pb-3 text-light-emphasis"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <input type="checkbox" />
+                    </td>
+                    <td class="py-3">
+                      <div>
+                        <span
+                          class="rounded-circle p-2 bg-warning text-light fw-bold border border-2 border-subtle"
+                          >MA</span
+                        >
+                        &nbsp; Ngô Mạnh Anh
+                      </div>
+                    </td>
+                    <td>
+                      <div>
+                        <i class="fa-regular fa-circle-user fa-lg"></i> &nbsp;
+                        Chuyên viên
+                      </div>
+                    </td>
+                    <td>
+                      <div>
+                        <i
+                          class="fa-regular fa-envelope text-warning fa-lg"
+                        ></i>
+                        &nbsp; anhanh@gmail.com
+                      </div>
+                    </td>
+                    <td>
+                      <div>
+                        <i class="fa-solid fa-phone text-primary fa-lg"></i>
+                        &nbsp; 0326674590
+                      </div>
+                    </td>
+                    <td>
+                      <i class="fa-solid fa-pencil icon"></i>
+                      &nbsp;
+                      <i class="fa-solid fa-trash-can icon"></i>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="checkbox" />
+                    </td>
+                    <td class="py-3">
+                      <div>
+                        <span
+                          class="rounded-circle p-2 bg-warning text-light fw-bold border border-2 border-subtle"
+                          >MA</span
+                        >
+                        &nbsp; Ngô Mạnh Anh
+                      </div>
+                    </td>
+                    <td>
+                      <div>
+                        <i class="fa-regular fa-circle-user fa-lg"></i> &nbsp;
+                        Chuyên viên
+                      </div>
+                    </td>
+                    <td>
+                      <div>
+                        <i
+                          class="fa-regular fa-envelope text-warning fa-lg"
+                        ></i>
+                        &nbsp; anhanh@gmail.com
+                      </div>
+                    </td>
+                    <td>
+                      <div>
+                        <i class="fa-solid fa-phone text-primary fa-lg"></i>
+                        &nbsp; 0326674590
+                      </div>
+                    </td>
+                    <td>
+                      <i class="fa-solid fa-pencil icon"></i>
+                      &nbsp;
+                      <i class="fa-solid fa-trash-can icon"></i>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="checkbox" />
+                    </td>
+                    <td class="py-3">
+                      <div>
+                        <span
+                          class="rounded-circle p-2 bg-warning text-light fw-bold border border-2 border-subtle"
+                          >MA</span
+                        >
+                        &nbsp; Ngô Mạnh Anh
+                      </div>
+                    </td>
+                    <td>
+                      <div>
+                        <i class="fa-regular fa-circle-user fa-lg"></i> &nbsp;
+                        Chuyên viên
+                      </div>
+                    </td>
+                    <td>
+                      <div>
+                        <i
+                          class="fa-regular fa-envelope text-warning fa-lg"
+                        ></i>
+                        &nbsp; anhanh@gmail.com
+                      </div>
+                    </td>
+                    <td>
+                      <div>
+                        <i class="fa-solid fa-phone text-primary fa-lg"></i>
+                        &nbsp; 0326674590
+                      </div>
+                    </td>
+                    <td>
+                      <i class="fa-solid fa-pencil icon"></i>
+                      &nbsp;
+                      <i class="fa-solid fa-trash-can icon"></i>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="checkbox" />
+                    </td>
+                    <td class="py-3">
+                      <div>
+                        <span
+                          class="rounded-circle p-2 bg-warning text-light fw-bold border border-2 border-subtle"
+                          >MA</span
+                        >
+                        &nbsp; Ngô Mạnh Anh
+                      </div>
+                    </td>
+                    <td>
+                      <div>
+                        <i class="fa-regular fa-circle-user fa-lg"></i> &nbsp;
+                        Chuyên viên
+                      </div>
+                    </td>
+                    <td>
+                      <div>
+                        <i
+                          class="fa-regular fa-envelope text-warning fa-lg"
+                        ></i>
+                        &nbsp; anhanh@gmail.com
+                      </div>
+                    </td>
+                    <td>
+                      <div>
+                        <i class="fa-solid fa-phone text-primary fa-lg"></i>
+                        &nbsp; 0326674590
+                      </div>
+                    </td>
+                    <td>
+                      <i class="fa-solid fa-pencil icon"></i>
+                      &nbsp;
+                      <i class="fa-solid fa-trash-can icon"></i>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="checkbox" />
+                    </td>
+                    <td class="py-3">
+                      <div>
+                        <span
+                          class="rounded-circle p-2 bg-warning text-light fw-bold border border-2 border-subtle"
+                          >MA</span
+                        >
+                        &nbsp; Ngô Mạnh Anh
+                      </div>
+                    </td>
+                    <td>
+                      <div>
+                        <i class="fa-regular fa-circle-user fa-lg"></i> &nbsp;
+                        Chuyên viên
+                      </div>
+                    </td>
+                    <td>
+                      <div>
+                        <i
+                          class="fa-regular fa-envelope text-warning fa-lg"
+                        ></i>
+                        &nbsp; anhanh@gmail.com
+                      </div>
+                    </td>
+                    <td>
+                      <div>
+                        <i class="fa-solid fa-phone text-primary fa-lg"></i>
+                        &nbsp; 0326674590
+                      </div>
+                    </td>
+                    <td>
+                      <i class="fa-solid fa-pencil icon"></i>
+                      &nbsp;
+                      <i class="fa-solid fa-trash-can icon"></i>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <nav aria-label="">
+                <ul class="pagination justify-content-center">
+                  <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Previous">
+                      <span aria-hidden="true">&laquo;</span>
+                    </a>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Next">
+                      <span aria-hidden="true">&raquo;</span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+        <div
+          class="tab-pane fade show"
+          id="list-brand"
+          role="tabpanel"
+          aria-labelledby="list-brand-list"
+        >
+          <div class="container-fluid">
+            <div class="py-3 border-bottom border-2 fw-bold d-flex justify-content-between align-items-center">
+              <div>
+                <h4 class="text-uppercase text-black">
+                  Doanh nghiệp Đức Anh
+                </h4>
+                <div class="text-black-50">
+                  Mã doanh nghiệp: #ducanh2k3.vn
+                </div>
+              </div>
+              <div>
+                <i class="fa-solid fa-circle-info text-primary fs-1"></i>
+              </div>
+            </div>
+            <div>
+              <div class="d-flex justify-content-between align-items-center py-2">
+                <div class="fs-6 text-uppercase">Thông tin chung</div>
+                <div class="text-primary cursor-pointer">
+                  <i class="fa-solid fa-pencil text-primary"></i> &nbsp; Chỉnh sửa
+                </div>
+              </div>
+              <form action="" class="row mx-3 my-1">
+                <div class="col-12 col-sm-6">
+                  <div class="inputGroup">
+                    <input type="text" required="" autocomplete="off" value="Doanh nghiệp Đức Anh" />
+                    <label for="">Tên công ty</label>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-6">
+                  <div class="inputGroup">
+                    <input type="text" required="" autocomplete="off" value="8469212338" />
+                    <label for="">Mã số thuế</label>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-6">
+                  <div class="inputGroup">
+                    <input type="text" required="" autocomplete="off" value="Đại học Công Nghiệp Hà Nội"/>
+                    <label for="">Địa chỉ</label>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-6">
+                  <div class="inputGroup">
+                    <input type="email" required="" autocomplete="off" value="ducanh@gmail.com" />
+                    <label for="">Email</label>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-6">
+                  <div class="inputGroup">
+                    <input type="number" required="" autocomplete="off" value="0332425639" />
+                    <label for="">Số điện thoại</label>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-6">
+                  <div class="inputGroup">
+                    <input type="text" required="" autocomplete="off" value="ducanhcompany.com" />
+                    <label for="">Website</label>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="py-2 d-flex ">
+              <div class="fs-6 text-uppercase">Logo doanh nghiệp</div>
+              <div class="ms-5 position-relative">
+                <div class="ms-5 border border-2 p-2 ">
+                  <img src="./assets/img/logo-top.png" width="100" alt="">
+                </div>
+                <span class="position-absolute camera-icon rounded-circle bg-body-secondary">
+                  <i class="fa-solid fa-camera fa-lg" aria-hidden="true"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="./assets/jquery/jquery-3.7.1.min.js"></script>
+    <script src="./assets/bootstraps/js/bootstrap.bundle.js"></script>
+    <script src="./index.js"></script>
+  </body>
+</html>

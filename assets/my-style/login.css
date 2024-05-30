@@ -1,0 +1,57 @@
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.fz-14 {
+    font-size: 0.875rem !important;
+}
+
+.container {
+    height: 100vh;
+    width: 440px;
+}
+
+.content {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.btn-social-login {
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+button.btn-social-login:hover {
+    color: #377dff;
+    border-color: #377dff !important;
+}
+
+.divider .line {
+    height: 1px;
+    width: 100%;
+}
+
+form label {
+    letter-spacing: 0.03rem;
+}
+
+form input {
+    letter-spacing: 0.03rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+form input:focus {
+    border-color: #377dff !important;
+}
+
+form .login {
+    line-height: 50px;
+    letter-spacing: 0.025em;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+.links a {
+    font-weight: 600;
+    /* text-decoration-color: #377dff; */
+}

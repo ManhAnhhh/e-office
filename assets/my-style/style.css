@@ -4,7 +4,6 @@
   font-style: normal;
   font-variation-settings: "wdth"100;
   color: #677788;
-
 }
 
 body {
@@ -24,9 +23,17 @@ body {
   height: var(--h-copyright);
 }
 
-.my-fz-10 {
-  
+.fs-10 {
   font-size: 0.6rem !important;
+}
+.fs-12 {
+  font-size: 0.8rem !important;
+}
+.fs-14 {
+  font-size: 0.875rem !important;
+}
+.cursor-pointer {
+  cursor: pointer;
 }
 .outline-none {
   outline: none!important;
@@ -36,14 +43,14 @@ body {
   transition: border-color .6s ease;
 }
 i.icon {
-  color: #677788
+  color: #677788 !important;
 }
 i.heart-icon {
   color: red!important;
 }
 i.icon:hover {
   cursor: pointer;
-  color: #377dff;
+  color: #377dff!important;
 }
 
 /* aside */
@@ -83,7 +90,6 @@ body::-webkit-scrollbar-thumb {
   cursor: pointer;
 }
 
-#list-discuss-list.active i,
 a.active i {
   color: rgba(255, 255, 255, 0.8) !important;
 }
@@ -227,7 +233,6 @@ a.nav-link.active {
   #navMobile {
     display: none !important;
   }
-
 }
 
 @media (max-width: 990px) {
@@ -253,3 +258,9 @@ a.nav-link.active {
     height: calc(100vh - var(--h-header) - 96px);
   }
 }
+
+.list-js {
+  background-color: #f9fafc;
+}
+
+/* discuss pages */

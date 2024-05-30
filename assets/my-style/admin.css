@@ -1,0 +1,69 @@
+.camera-icon {
+  bottom: -10px;
+  right: -8px;
+  padding: 0 6px;
+  cursor: pointer;
+}
+.camera-icon:nth-child(2) {
+  padding: 10px 12px;
+}
+.camera-icon:hover i {
+  color: #377dff;
+  transition: color .3s ease;
+}
+
+.camera-icon i {
+  vertical-align: middle;
+}
+
+.nav-active,
+.nav-active i {
+  color: #377dff !important;
+  transition: color .3s ease;
+}
+
+.nav-admin-js:hover {
+  background-color: rgb(248, 249, 250);
+}
+
+.inputGroup {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 1em 0 1em 0;
+  position: relative;
+}
+
+.inputGroup input {
+  font-size: 100%;
+  max-width: 300px;
+  padding: .5rem;
+  outline: none;
+  border: 2px solid rgb(200, 200, 200);
+  background-color: transparent;
+  border-radius: 20px;
+  width: 100%;
+}
+
+.inputGroup label {
+  font-size: 100%;
+  position: absolute;
+  left: 0;
+  padding: .6rem;
+  margin-left: 0.5em;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  color: rgb(100, 100, 100);
+}
+
+.inputGroup :is(input:focus, input:valid)~label {
+  transform: translateY(-50%) scale(.8);
+  margin: 0em;
+  margin-left: 1.3em;
+  padding: 0.4em;
+  background-color: #fff;
+  color: #5AB2FF;
+}
+
+.inputGroup :is(input:focus, input:valid) {
+  border-color: #5AB2FF;
+}
+

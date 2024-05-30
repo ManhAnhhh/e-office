@@ -1,0 +1,44 @@
+.list-group-item.active {
+  background-color: #dddddde4;
+  color: #000;
+}
+a.active i {
+  color: #000!important;
+}
+.list-group-item {
+  background-color: inherit;
+}
+.divider .line {
+  height: 1px;
+  width: 100%;
+}
+
+.circle {
+  padding: 6px 12px;
+}
+.bg-f9 {
+  background-color: #f9fafc!important;
+}
+.items-chat .item-chat:hover {
+  background-color: #f6f5f2!important;
+}
+.box-chat {
+  height: calc(100vh - var(--h-header) - 65px);
+}
+.wrapper-items-chat {
+  height: calc(100vh - var(--h-header) - 65px - 60px);
+}
+#send-js {
+  display: none;
+}
+
+@media (max-width: 990px) {
+  main {
+    padding-left:var(--w-nav) !important;
+  }
+  aside {
+    display: block !important;
+  }
+
+  
+}

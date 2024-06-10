@@ -41,20 +41,49 @@
           class="navbar navbar-expand-lg d-flex flex-wrap align-items-center justify-content-between justify-content-lg-start py-0"
         >
           <div class="logo px-2">
-            <a href="/" title="Logo-top">
-              <img class="logo-top" src="../img/logo-top.png" alt="" />
+            <a href="../../index.html" title="Logo-top">
+              <img class="logo-top" src="../../assets/img/logo-top.png" alt="" />
             </a>
           </div>
           <div class="ms-md-4 mx-sm-auto fs-3 title-js text-primary">
-            Thảo luận
+            Tổng quan
           </div>
           <div class="d-flex align-items-center">
-            <div class="notice-icon mx-3 position-relative rounded-circle">
+            <div class="notice-icon mx-3 position-relative rounded-circle border border-secondary-subtle">
               <i class="fa-regular fa-bell icon"></i>
               <span
                 class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle"
               >
               </span>
+              <div
+                class="notice-bubble position-absolute end-50"
+                style="width: 350px; z-index: 9999; top:20px"
+              >
+                <div class="bg-white py-2 px-2 rounded my-2 mx-3 shadow">
+                  <div class="notice-item p-2 rounded d-flex mb-2">
+                    <span class="img-infor mt-2 me-3">A</span>
+                    <div class="position-relative">
+                      <b>Ngô Mạnh Anh</b>
+                      đã nhắc đến bạn trong một bình luận
+                      <div
+                        class="position-absolute start-100 top-50 translate-middle bg-primary rounded-circle"
+                        style="width: 10px; height: 10px;"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="notice-item p-2 rounded d-flex -2">
+                    <span class="img-infor mt-2 me-3">A</span>
+                    <div class="position-relative">
+                      <b>Ngô Mạnh Anh</b>
+                      đã nhắc đến bạn trong một bình luận
+                      <div
+                        class="position-absolute start-100 top-50 translate-middle bg-primary rounded-circle"
+                        style="width: 10px; height: 10px;"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="dropdown text-end position-relative">
               <a
@@ -63,14 +92,21 @@
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                <span class="img-infor">A</span>
+                <div class="text-primary">
+                  <span class="img-infor">A</span> &nbsp;Ngô Mạnh Anh
+                </div>
                 <!-- <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle"> -->
               </a>
               <ul
                 class="infor-dropdown dropdown-menu text-small position-absolute"
               >
                 <li>
-                  <a class="dropdown-item" href="#">Tài khoản</a>
+                  <span
+                    class="dropdown-item cursor-pointer"
+                    data-bs-toggle="modal"
+                    data-bs-target="#modal-user"
+                    >Tài khoản</span
+                  >
                 </li>
                 <li>
                   <a class="dropdown-item" href="#">Cài đặt</a>
@@ -79,11 +115,165 @@
                   <hr class="dropdown-divider" />
                 </li>
                 <li>
-                  <a class="dropdown-item" href="../../login.html">Đăng xuất</a>
+                  <a class="dropdown-item" href="./login.html">Đăng xuất</a>
                 </li>
               </ul>
             </div>
-            <div class="text-primary">&nbsp;Ngô Mạnh Anh</div>
+          </div>
+          <button
+            class="navbar-toggler collapsed ms-2"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navMobile"
+            aria-controls="navMobile"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="navbar-collapse collapse" id="navMobile">
+            <div
+              id="list-tab-mobile"
+              role="tablist"
+              class="list-group navbar-nav me-auto mb-2 mb-lg-0"
+            >
+              <div class="nav-item">
+                <a
+                  class="list-js list-group-item list-group-item-action nav-link active border-0 rounded"
+                  id="list-home-list"
+                  data-bs-toggle="list"
+                  href="#list-home"
+                  role="tab"
+                  aria-controls=""
+                >
+                  <i class="fi fi-rr-chart-histogram"></i>
+                  Tổng quan
+                </a>
+                <!-- <a class="nav-link active" aria-current="page" href="/">Home</a> -->
+              </div>
+              <div class="nav-item">
+                <span
+                  class="nav-link list-js list-discuss-list list-group-item list-group-item-action border-0 rounded"
+                  id="list-discuss-list"
+                  data-bs-toggle="list"
+                >
+                  <i class="fi fi-rr-bullhorn icon"></i>
+                  Thảo luận
+                </span>
+              </div>
+              <div class="nav-item">
+                <button
+                  class="btn btn-toggle d-inline-flex align-items-center rounded collapsed border-0"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#text-come-collapse"
+                  aria-expanded="false"
+                >
+                  &nbsp;
+                  <i class="fi fi-rr-envelope-open-text icon"></i>
+                  &nbsp; Văn bản đến &nbsp;
+                  <sup><span class="badge text-bg-primary">4</span></sup>
+                </button>
+                <div class="collapse" id="text-come-collapse">
+                  <ul
+                    class="btn-toggle-nav list-unstyled fw-normal small mb-0 pb-0"
+                  >
+                    <li>
+                      <a
+                        class="nav-link list-js border-0 list-group-item list-group-item-action border-0 ps-4 rounded"
+                        id="list-text-come-1-list"
+                        data-bs-toggle="list"
+                        href="#list-text-come-1"
+                        aria-controls=""
+                      >
+                        <i class="fi fi-rr-duration-alt icon"></i>
+                        Chờ xử lý
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        class="nav-link list-js border-0 list-group-item list-group-item-action border-0 ps-4 rounded"
+                        id="list-text-come-2-list"
+                        data-bs-toggle="list"
+                        href="#list-text-come-2"
+                        aria-controls=""
+                      >
+                        <i class="fi fi-rr-check-circle icon"></i>
+                        Đã xử lý
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="nav-item">
+                <button
+                  class="btn btn-toggle d-inline-flex align-items-center rounded collapsed border-0"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#text-out-collapse"
+                  aria-expanded="false"
+                >
+                  &nbsp;
+                  <i class="fi fi-rr-pen-field icon"></i>
+                  &nbsp; Văn bản đi &nbsp;
+                  <sup><span class="badge text-bg-primary">2</span></sup>
+                </button>
+                <div class="collapse" id="text-out-collapse">
+                  <ul
+                    class="btn-toggle-nav list-unstyled fw-normal small mb-0 pb-0"
+                  >
+                    <li>
+                      <a
+                        class="list-js border-0 list-group-item list-group-item-action ps-4 rounded"
+                        id="list-text-out-1-list"
+                        data-bs-toggle="list"
+                        href="#list-text-out-1"
+                        aria-controls=""
+                      >
+                        <i class="fi fi-rr-blueprint"></i>
+                        Văn bản dự thảo
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        class="list-js border-0 list-group-item list-group-item-action ps-4 rounded"
+                        id="list-text-out-2-list"
+                        data-bs-toggle="list"
+                        href="#list-text-out-2"
+                        aria-controls=""
+                      >
+                        <i class="fi fi-rr-paper-plane-top"></i>
+                        Văn bản đã ban hành
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="nav-item">
+                <a
+                  class="list-js list-group-item list-group-item-action rounded border-0"
+                  id="list-notify-list"
+                  data-bs-toggle="list"
+                  href="#list-notify"
+                  role="tab"
+                  aria-controls=""
+                >
+                  <i class="fi fi-rr-megaphone icon"></i>
+                  Thông báo chung
+                </a>
+              </div>
+              <div class="nav-item"></div>
+              <div class="nav-item"></div>
+              <div class="nav-item"></div>
+              <div class="nav-item"></div>
+            </div>
+            <form role="search" class="mb-2 shadow rounded">
+              <input
+                class="form-control"
+                type="search"
+                placeholder="Tìm kiếm"
+                aria-label="search"
+              />
+            </form>
           </div>
         </div>
       </div>
@@ -137,7 +327,7 @@
               role="tab"
               aria-controls="list-general"
             >
-              <span class="rounded-circle bg-primary py-1 px-2 text-light"
+              <span class="rounded-circle bg-primary text-light " style="padding: 2px 8px"
                 >#</span
               >
               Chung
@@ -150,7 +340,7 @@
               role="tab"
               aria-controls="list-friend"
             >
-              <span class="rounded-circle bg-primary py-1 px-2 text-light"
+              <span class="rounded-circle bg-primary text-light " style="padding: 2px 8px"
                 >#</span
               >
               Bạn bè
@@ -176,7 +366,7 @@
               role="tab"
               aria-controls="list-ma"
             >
-              <span class="rounded-circle bg-warning py-1 px-2 text-light"
+              <span class="rounded-circle bg-warning text-light " style="padding: 2px 8px"
                 >A</span
               >
               Ngô Mạnh Anh
@@ -189,7 +379,7 @@
               role="tab"
               aria-controls="list-d"
             >
-              <span class="rounded-circle bg-success py-1 px-2 text-light"
+              <span class="rounded-circle bg-success text-light " style="padding: 2px 8px"
                 >D</span
               >
               Nguyễn Đăng Đức
@@ -698,7 +888,218 @@
           role="tabpanel"
           aria-labelledby="list-friend-list"
         >
-          d
+        <div class="container-fluid">
+          <div class="bg-f9 d-flex mb-1 p-2 border-2 border-bottom rounded">
+            <h5># Bạn bè</h5>
+            <div class="ms-auto me-4 d-flex gap-3 align-items-center">
+              <div data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Cài đặt thông báo">
+                <i class="fa-solid fa-bell fa-xl icon cursor-pointer" aria-hidden="true"></i>
+              </div>
+              <div data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Danh sách thành viên">
+                <i class="fa-solid fa-users fa-xl icon cursor-pointer" aria-hidden="true"></i>
+              </div>
+              <div data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Tin nhắn đã ghim">
+                <i class="fa-solid fa-comment-dots fa-xl icon" aria-hidden="true"></i>
+              </div>
+              <div>
+                <input class="bg-f9 border border-0 border-bottom border-2 outline-none search-input-js fs-5 text" type="text" placeholder="Tìm kiếm">
+              </div>
+              <div data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Trợ giúp">
+                <i class="fa-regular fa-circle-question fa-xl icon" aria-hidden="true"></i>
+              </div>
+            </div>
+          </div>
+          <div class="bg-f9 rounded position-relative box-chat">
+            <div id="box-chat-js" class="wrapper-items-chat overflow-y-scroll d-flex flex-column flex-column-reverse">
+              <div class="items-chat">
+                <div class="divider d-flex align-items-center gap-2">
+                  <div class="line bg-dark opacity-25 mt-3 mb-2"></div>
+                  <div class="mt-1" style="white-space: nowrap;">
+                    Ngày 29/05/2024
+                  </div>
+                  <div class="line bg-dark opacity-25 mt-3 mb-2"></div>
+                </div>
+                <div class="d-flex align-items-start p-2 item-chat">
+                  <div class="circle bg-warning-subtle text-warning rounded-circle me-2">
+                    A
+                  </div>
+                  <div>
+                    <div>
+                      <span class="fw-bold">Ngô Mạnh Anh</span>
+                      <span class="text-body-tertiary fs-12"> 20:56</span>
+                    </div>
+                    <div class="border-start border-2 border-info ps-1">
+                      Bài tập lớn làm đến đâu rồi ? <br>
+                      Báo cáo trình bày như thế nào ?
+                    </div>
+                  </div>
+                </div>
+                <div class="d-flex align-items-start p-2 item-chat">
+                  <div class="circle bg-warning-subtle text-warning rounded-circle me-2">
+                    A
+                  </div>
+                  <div>
+                    <div>
+                      <span class="fw-bold">Ngô Mạnh Anh</span>
+                      <span class="text-body-tertiary fs-12"> 20:56</span>
+                    </div>
+                    <div class="border-start border-2 border-info ps-1">
+                      Bài tập lớn làm đến đâu rồi ? <br>
+                      Báo cáo trình bày như thế nào ?
+                    </div>
+                  </div>
+                </div>
+                <div class="d-flex align-items-start p-2 item-chat">
+                  <div class="circle bg-warning-subtle text-warning rounded-circle me-2">
+                    A
+                  </div>
+                  <div>
+                    <div>
+                      <span class="fw-bold">Ngô Mạnh Anh</span>
+                      <span class="text-body-tertiary fs-12"> 20:56</span>
+                    </div>
+                    <div class="border-start border-2 border-info ps-1">
+                      Bài tập lớn làm đến đâu rồi ? <br>
+                      Báo cáo trình bày như thế nào ?
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="items-chat">
+                <div class="divider d-flex align-items-center gap-2">
+                  <div class="line bg-dark opacity-25 mt-3 mb-2"></div>
+                  <div class="mt-1" style="white-space: nowrap;">
+                    Ngày 21/05/2024
+                  </div>
+                  <div class="line bg-dark opacity-25 mt-3 mb-2"></div>
+                </div>
+                <div class="d-flex align-items-start p-2 item-chat">
+                  <div class="circle bg-warning-subtle text-warning rounded-circle me-2">
+                    A
+                  </div>
+                  <div>
+                    <div>
+                      <span class="fw-bold">Ngô Mạnh Anh</span>
+                      <span class="text-body-tertiary fs-12"> 20:56</span>
+                    </div>
+                    <div class="border-start border-2 border-info ps-1">
+                      Bài tập lớn làm đến đâu rồi ? <br>
+                      Báo cáo trình bày như thế nào ?
+                    </div>
+                  </div>
+                </div>
+                <div class="d-flex align-items-start p-2 item-chat">
+                  <div class="circle bg-warning-subtle text-warning rounded-circle me-2">
+                    A
+                  </div>
+                  <div>
+                    <div>
+                      <span class="fw-bold">Ngô Mạnh Anh</span>
+                      <span class="text-body-tertiary fs-12"> 20:56</span>
+                    </div>
+                    <div class="border-start border-2 border-info ps-1">
+                      Bài tập lớn làm đến đâu rồi ? <br>
+                      Báo cáo trình bày như thế nào ?
+                    </div>
+                  </div>
+                </div>
+                <div class="d-flex align-items-start p-2 item-chat">
+                  <div class="circle bg-warning-subtle text-warning rounded-circle me-2">
+                    A
+                  </div>
+                  <div>
+                    <div>
+                      <span class="fw-bold">Ngô Mạnh Anh</span>
+                      <span class="text-body-tertiary fs-12"> 20:56</span>
+                    </div>
+                    <div class="border-start border-2 border-info ps-1">
+                      Bài tập lớn làm đến đâu rồi ? <br>
+                      Báo cáo trình bày như thế nào ?
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="items-chat">
+                <div class="divider d-flex align-items-center gap-2">
+                  <div class="line bg-dark opacity-25 mt-3 mb-2"></div>
+                  <div class="mt-1" style="white-space: nowrap;">
+                    Ngày 20/05/2024
+                  </div>
+                  <div class="line bg-dark opacity-25 mt-3 mb-2"></div>
+                </div>
+                <div class="d-flex align-items-start p-2 item-chat">
+                  <div class="circle bg-warning-subtle text-warning rounded-circle me-2">
+                    A
+                  </div>
+                  <div>
+                    <div>
+                      <span class="fw-bold">Ngô Mạnh Anh</span>
+                      <span class="text-body-tertiary fs-12"> 20:56</span>
+                    </div>
+                    <div class="border-start border-2 border-info ps-1">
+                      Bài tập lớn làm đến đâu rồi ? <br>
+                      Báo cáo trình bày như thế nào ?
+                    </div>
+                  </div>
+                </div>
+                <div class="d-flex align-items-start p-2 item-chat">
+                  <div class="circle bg-warning-subtle text-warning rounded-circle me-2">
+                    A
+                  </div>
+                  <div>
+                    <div>
+                      <span class="fw-bold">Ngô Mạnh Anh</span>
+                      <span class="text-body-tertiary fs-12"> 20:56</span>
+                    </div>
+                    <div class="border-start border-2 border-info ps-1">
+                      Bài tập lớn làm đến đâu rồi ? <br>
+                      Báo cáo trình bày như thế nào ?
+                    </div>
+                  </div>
+                </div>
+                <div class="d-flex align-items-start p-2 item-chat">
+                  <div class="circle bg-warning-subtle text-warning rounded-circle me-2">
+                    A
+                  </div>
+                  <div>
+                    <div>
+                      <span class="fw-bold">Ngô Mạnh Anh</span>
+                      <span class="text-body-tertiary fs-12"> 20:56</span>
+                    </div>
+                    <div class="border-start border-2 border-info ps-1">
+                      Bài tập lớn làm đến đâu rồi ? <br>
+                      Báo cáo trình bày như thế nào ?
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="d-flex align-items-center gap-2 position-absolute bottom-0 start-0 end-0 p-2 border-1 border-top">
+              <div class="circle bg-warning-subtle text-warning rounded-circle me-2">
+                A
+              </div>
+              <div data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Chèn ảnh">
+                <i class="fa-regular fa-image fa-xl icon" aria-hidden="true"></i>
+              </div>
+              <div data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Chèn file">
+                <i class="fa-solid fa-file fa-xl icon" aria-hidden="true"></i>
+              </div>
+              <div data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Gửi Gift">
+                <i class="fa-solid fa-gift fa-xl icon" aria-hidden="true"></i>
+              </div>
+              <div class="flex-grow-1 position-relative">
+                <input id="message-js" class="w-100 outline-none rounded-pill border border-1 px-2 py-2" type="text" placeholder="Aa">
+                <i id="send-js" class="fi fi-rr-paper-plane-top position-absolute top-50 end-0 translate-middle cursor-pointer text-primary"></i>
+              </div>
+              <div>
+                <i class="fa-solid fa-thumbs-up fa-xl icon" aria-hidden="true"></i>
+              </div>
+              <div>
+                <i class="fa-solid fa-heart fa-xl icon" aria-hidden="true"></i>
+              </div>
+            </div>
+          </div>
+        </div>
         </div>
         <div
           class="tab-pane fade"
@@ -706,7 +1107,218 @@
           role="tabpanel"
           aria-labelledby="list-ma-list"
         >
-          e
+        <div class="container-fluid">
+          <div class="bg-f9 d-flex mb-1 p-2 border-2 border-bottom rounded">
+            <h5># Mạnh Anh</h5>
+            <div class="ms-auto me-4 d-flex gap-3 align-items-center">
+              <div data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Cài đặt thông báo">
+                <i class="fa-solid fa-bell fa-xl icon cursor-pointer" aria-hidden="true"></i>
+              </div>
+              <div data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Danh sách thành viên">
+                <i class="fa-solid fa-users fa-xl icon cursor-pointer" aria-hidden="true"></i>
+              </div>
+              <div data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Tin nhắn đã ghim">
+                <i class="fa-solid fa-comment-dots fa-xl icon" aria-hidden="true"></i>
+              </div>
+              <div>
+                <input class="bg-f9 border border-0 border-bottom border-2 outline-none search-input-js fs-5 text" type="text" placeholder="Tìm kiếm">
+              </div>
+              <div data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Trợ giúp">
+                <i class="fa-regular fa-circle-question fa-xl icon" aria-hidden="true"></i>
+              </div>
+            </div>
+          </div>
+          <div class="bg-f9 rounded position-relative box-chat">
+            <div id="box-chat-js" class="wrapper-items-chat overflow-y-scroll d-flex flex-column flex-column-reverse">
+              <div class="items-chat">
+                <div class="divider d-flex align-items-center gap-2">
+                  <div class="line bg-dark opacity-25 mt-3 mb-2"></div>
+                  <div class="mt-1" style="white-space: nowrap;">
+                    Ngày 29/05/2024
+                  </div>
+                  <div class="line bg-dark opacity-25 mt-3 mb-2"></div>
+                </div>
+                <div class="d-flex align-items-start p-2 item-chat">
+                  <div class="circle bg-warning-subtle text-warning rounded-circle me-2">
+                    A
+                  </div>
+                  <div>
+                    <div>
+                      <span class="fw-bold">Ngô Mạnh Anh</span>
+                      <span class="text-body-tertiary fs-12"> 20:56</span>
+                    </div>
+                    <div class="border-start border-2 border-info ps-1">
+                      Bài tập lớn làm đến đâu rồi ? <br>
+                      Báo cáo trình bày như thế nào ?
+                    </div>
+                  </div>
+                </div>
+                <div class="d-flex align-items-start p-2 item-chat">
+                  <div class="circle bg-warning-subtle text-warning rounded-circle me-2">
+                    A
+                  </div>
+                  <div>
+                    <div>
+                      <span class="fw-bold">Ngô Mạnh Anh</span>
+                      <span class="text-body-tertiary fs-12"> 20:56</span>
+                    </div>
+                    <div class="border-start border-2 border-info ps-1">
+                      Bài tập lớn làm đến đâu rồi ? <br>
+                      Báo cáo trình bày như thế nào ?
+                    </div>
+                  </div>
+                </div>
+                <div class="d-flex align-items-start p-2 item-chat">
+                  <div class="circle bg-warning-subtle text-warning rounded-circle me-2">
+                    A
+                  </div>
+                  <div>
+                    <div>
+                      <span class="fw-bold">Ngô Mạnh Anh</span>
+                      <span class="text-body-tertiary fs-12"> 20:56</span>
+                    </div>
+                    <div class="border-start border-2 border-info ps-1">
+                      Bài tập lớn làm đến đâu rồi ? <br>
+                      Báo cáo trình bày như thế nào ?
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="items-chat">
+                <div class="divider d-flex align-items-center gap-2">
+                  <div class="line bg-dark opacity-25 mt-3 mb-2"></div>
+                  <div class="mt-1" style="white-space: nowrap;">
+                    Ngày 21/05/2024
+                  </div>
+                  <div class="line bg-dark opacity-25 mt-3 mb-2"></div>
+                </div>
+                <div class="d-flex align-items-start p-2 item-chat">
+                  <div class="circle bg-warning-subtle text-warning rounded-circle me-2">
+                    A
+                  </div>
+                  <div>
+                    <div>
+                      <span class="fw-bold">Ngô Mạnh Anh</span>
+                      <span class="text-body-tertiary fs-12"> 20:56</span>
+                    </div>
+                    <div class="border-start border-2 border-info ps-1">
+                      Bài tập lớn làm đến đâu rồi ? <br>
+                      Báo cáo trình bày như thế nào ?
+                    </div>
+                  </div>
+                </div>
+                <div class="d-flex align-items-start p-2 item-chat">
+                  <div class="circle bg-warning-subtle text-warning rounded-circle me-2">
+                    A
+                  </div>
+                  <div>
+                    <div>
+                      <span class="fw-bold">Ngô Mạnh Anh</span>
+                      <span class="text-body-tertiary fs-12"> 20:56</span>
+                    </div>
+                    <div class="border-start border-2 border-info ps-1">
+                      Bài tập lớn làm đến đâu rồi ? <br>
+                      Báo cáo trình bày như thế nào ?
+                    </div>
+                  </div>
+                </div>
+                <div class="d-flex align-items-start p-2 item-chat">
+                  <div class="circle bg-warning-subtle text-warning rounded-circle me-2">
+                    A
+                  </div>
+                  <div>
+                    <div>
+                      <span class="fw-bold">Ngô Mạnh Anh</span>
+                      <span class="text-body-tertiary fs-12"> 20:56</span>
+                    </div>
+                    <div class="border-start border-2 border-info ps-1">
+                      Bài tập lớn làm đến đâu rồi ? <br>
+                      Báo cáo trình bày như thế nào ?
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="items-chat">
+                <div class="divider d-flex align-items-center gap-2">
+                  <div class="line bg-dark opacity-25 mt-3 mb-2"></div>
+                  <div class="mt-1" style="white-space: nowrap;">
+                    Ngày 20/05/2024
+                  </div>
+                  <div class="line bg-dark opacity-25 mt-3 mb-2"></div>
+                </div>
+                <div class="d-flex align-items-start p-2 item-chat">
+                  <div class="circle bg-warning-subtle text-warning rounded-circle me-2">
+                    A
+                  </div>
+                  <div>
+                    <div>
+                      <span class="fw-bold">Ngô Mạnh Anh</span>
+                      <span class="text-body-tertiary fs-12"> 20:56</span>
+                    </div>
+                    <div class="border-start border-2 border-info ps-1">
+                      Bài tập lớn làm đến đâu rồi ? <br>
+                      Báo cáo trình bày như thế nào ?
+                    </div>
+                  </div>
+                </div>
+                <div class="d-flex align-items-start p-2 item-chat">
+                  <div class="circle bg-warning-subtle text-warning rounded-circle me-2">
+                    A
+                  </div>
+                  <div>
+                    <div>
+                      <span class="fw-bold">Ngô Mạnh Anh</span>
+                      <span class="text-body-tertiary fs-12"> 20:56</span>
+                    </div>
+                    <div class="border-start border-2 border-info ps-1">
+                      Bài tập lớn làm đến đâu rồi ? <br>
+                      Báo cáo trình bày như thế nào ?
+                    </div>
+                  </div>
+                </div>
+                <div class="d-flex align-items-start p-2 item-chat">
+                  <div class="circle bg-warning-subtle text-warning rounded-circle me-2">
+                    A
+                  </div>
+                  <div>
+                    <div>
+                      <span class="fw-bold">Ngô Mạnh Anh</span>
+                      <span class="text-body-tertiary fs-12"> 20:56</span>
+                    </div>
+                    <div class="border-start border-2 border-info ps-1">
+                      Bài tập lớn làm đến đâu rồi ? <br>
+                      Báo cáo trình bày như thế nào ?
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="d-flex align-items-center gap-2 position-absolute bottom-0 start-0 end-0 p-2 border-1 border-top">
+              <div class="circle bg-warning-subtle text-warning rounded-circle me-2">
+                A
+              </div>
+              <div data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Chèn ảnh">
+                <i class="fa-regular fa-image fa-xl icon" aria-hidden="true"></i>
+              </div>
+              <div data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Chèn file">
+                <i class="fa-solid fa-file fa-xl icon" aria-hidden="true"></i>
+              </div>
+              <div data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Gửi Gift">
+                <i class="fa-solid fa-gift fa-xl icon" aria-hidden="true"></i>
+              </div>
+              <div class="flex-grow-1 position-relative">
+                <input id="message-js" class="w-100 outline-none rounded-pill border border-1 px-2 py-2" type="text" placeholder="Aa">
+                <i id="send-js" class="fi fi-rr-paper-plane-top position-absolute top-50 end-0 translate-middle cursor-pointer text-primary"></i>
+              </div>
+              <div>
+                <i class="fa-solid fa-thumbs-up fa-xl icon" aria-hidden="true"></i>
+              </div>
+              <div>
+                <i class="fa-solid fa-heart fa-xl icon" aria-hidden="true"></i>
+              </div>
+            </div>
+          </div>
+        </div>
         </div>
         <div
           class="tab-pane fade"
@@ -714,10 +1326,353 @@
           role="tabpanel"
           aria-labelledby="list-d-list"
         >
-          f
+        <div class="container-fluid">
+          <div class="bg-f9 d-flex mb-1 p-2 border-2 border-bottom rounded">
+            <h5># Đức</h5>
+            <div class="ms-auto me-4 d-flex gap-3 align-items-center">
+              <div data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Cài đặt thông báo">
+                <i class="fa-solid fa-bell fa-xl icon cursor-pointer" aria-hidden="true"></i>
+              </div>
+              <div data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Danh sách thành viên">
+                <i class="fa-solid fa-users fa-xl icon cursor-pointer" aria-hidden="true"></i>
+              </div>
+              <div data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Tin nhắn đã ghim">
+                <i class="fa-solid fa-comment-dots fa-xl icon" aria-hidden="true"></i>
+              </div>
+              <div>
+                <input class="bg-f9 border border-0 border-bottom border-2 outline-none search-input-js fs-5 text" type="text" placeholder="Tìm kiếm">
+              </div>
+              <div data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Trợ giúp">
+                <i class="fa-regular fa-circle-question fa-xl icon" aria-hidden="true"></i>
+              </div>
+            </div>
+          </div>
+          <div class="bg-f9 rounded position-relative box-chat">
+            <div id="box-chat-js" class="wrapper-items-chat overflow-y-scroll d-flex flex-column flex-column-reverse">
+              <div class="items-chat">
+                <div class="divider d-flex align-items-center gap-2">
+                  <div class="line bg-dark opacity-25 mt-3 mb-2"></div>
+                  <div class="mt-1" style="white-space: nowrap;">
+                    Ngày 29/05/2024
+                  </div>
+                  <div class="line bg-dark opacity-25 mt-3 mb-2"></div>
+                </div>
+                <div class="d-flex align-items-start p-2 item-chat">
+                  <div class="circle bg-warning-subtle text-warning rounded-circle me-2">
+                    A
+                  </div>
+                  <div>
+                    <div>
+                      <span class="fw-bold">Ngô Mạnh Anh</span>
+                      <span class="text-body-tertiary fs-12"> 20:56</span>
+                    </div>
+                    <div class="border-start border-2 border-info ps-1">
+                      Bài tập lớn làm đến đâu rồi ? <br>
+                      Báo cáo trình bày như thế nào ?
+                    </div>
+                  </div>
+                </div>
+                <div class="d-flex align-items-start p-2 item-chat">
+                  <div class="circle bg-warning-subtle text-warning rounded-circle me-2">
+                    A
+                  </div>
+                  <div>
+                    <div>
+                      <span class="fw-bold">Ngô Mạnh Anh</span>
+                      <span class="text-body-tertiary fs-12"> 20:56</span>
+                    </div>
+                    <div class="border-start border-2 border-info ps-1">
+                      Bài tập lớn làm đến đâu rồi ? <br>
+                      Báo cáo trình bày như thế nào ?
+                    </div>
+                  </div>
+                </div>
+                <div class="d-flex align-items-start p-2 item-chat">
+                  <div class="circle bg-warning-subtle text-warning rounded-circle me-2">
+                    A
+                  </div>
+                  <div>
+                    <div>
+                      <span class="fw-bold">Ngô Mạnh Anh</span>
+                      <span class="text-body-tertiary fs-12"> 20:56</span>
+                    </div>
+                    <div class="border-start border-2 border-info ps-1">
+                      Bài tập lớn làm đến đâu rồi ? <br>
+                      Báo cáo trình bày như thế nào ?
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="items-chat">
+                <div class="divider d-flex align-items-center gap-2">
+                  <div class="line bg-dark opacity-25 mt-3 mb-2"></div>
+                  <div class="mt-1" style="white-space: nowrap;">
+                    Ngày 21/05/2024
+                  </div>
+                  <div class="line bg-dark opacity-25 mt-3 mb-2"></div>
+                </div>
+                <div class="d-flex align-items-start p-2 item-chat">
+                  <div class="circle bg-warning-subtle text-warning rounded-circle me-2">
+                    A
+                  </div>
+                  <div>
+                    <div>
+                      <span class="fw-bold">Ngô Mạnh Anh</span>
+                      <span class="text-body-tertiary fs-12"> 20:56</span>
+                    </div>
+                    <div class="border-start border-2 border-info ps-1">
+                      Bài tập lớn làm đến đâu rồi ? <br>
+                      Báo cáo trình bày như thế nào ?
+                    </div>
+                  </div>
+                </div>
+                <div class="d-flex align-items-start p-2 item-chat">
+                  <div class="circle bg-warning-subtle text-warning rounded-circle me-2">
+                    A
+                  </div>
+                  <div>
+                    <div>
+                      <span class="fw-bold">Ngô Mạnh Anh</span>
+                      <span class="text-body-tertiary fs-12"> 20:56</span>
+                    </div>
+                    <div class="border-start border-2 border-info ps-1">
+                      Bài tập lớn làm đến đâu rồi ? <br>
+                      Báo cáo trình bày như thế nào ?
+                    </div>
+                  </div>
+                </div>
+                <div class="d-flex align-items-start p-2 item-chat">
+                  <div class="circle bg-warning-subtle text-warning rounded-circle me-2">
+                    A
+                  </div>
+                  <div>
+                    <div>
+                      <span class="fw-bold">Ngô Mạnh Anh</span>
+                      <span class="text-body-tertiary fs-12"> 20:56</span>
+                    </div>
+                    <div class="border-start border-2 border-info ps-1">
+                      Bài tập lớn làm đến đâu rồi ? <br>
+                      Báo cáo trình bày như thế nào ?
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="items-chat">
+                <div class="divider d-flex align-items-center gap-2">
+                  <div class="line bg-dark opacity-25 mt-3 mb-2"></div>
+                  <div class="mt-1" style="white-space: nowrap;">
+                    Ngày 20/05/2024
+                  </div>
+                  <div class="line bg-dark opacity-25 mt-3 mb-2"></div>
+                </div>
+                <div class="d-flex align-items-start p-2 item-chat">
+                  <div class="circle bg-warning-subtle text-warning rounded-circle me-2">
+                    A
+                  </div>
+                  <div>
+                    <div>
+                      <span class="fw-bold">Ngô Mạnh Anh</span>
+                      <span class="text-body-tertiary fs-12"> 20:56</span>
+                    </div>
+                    <div class="border-start border-2 border-info ps-1">
+                      Bài tập lớn làm đến đâu rồi ? <br>
+                      Báo cáo trình bày như thế nào ?
+                    </div>
+                  </div>
+                </div>
+                <div class="d-flex align-items-start p-2 item-chat">
+                  <div class="circle bg-warning-subtle text-warning rounded-circle me-2">
+                    A
+                  </div>
+                  <div>
+                    <div>
+                      <span class="fw-bold">Ngô Mạnh Anh</span>
+                      <span class="text-body-tertiary fs-12"> 20:56</span>
+                    </div>
+                    <div class="border-start border-2 border-info ps-1">
+                      Bài tập lớn làm đến đâu rồi ? <br>
+                      Báo cáo trình bày như thế nào ?
+                    </div>
+                  </div>
+                </div>
+                <div class="d-flex align-items-start p-2 item-chat">
+                  <div class="circle bg-warning-subtle text-warning rounded-circle me-2">
+                    A
+                  </div>
+                  <div>
+                    <div>
+                      <span class="fw-bold">Ngô Mạnh Anh</span>
+                      <span class="text-body-tertiary fs-12"> 20:56</span>
+                    </div>
+                    <div class="border-start border-2 border-info ps-1">
+                      Bài tập lớn làm đến đâu rồi ? <br>
+                      Báo cáo trình bày như thế nào ?
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="d-flex align-items-center gap-2 position-absolute bottom-0 start-0 end-0 p-2 border-1 border-top">
+              <div class="circle bg-warning-subtle text-warning rounded-circle me-2">
+                A
+              </div>
+              <div data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Chèn ảnh">
+                <i class="fa-regular fa-image fa-xl icon" aria-hidden="true"></i>
+              </div>
+              <div data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Chèn file">
+                <i class="fa-solid fa-file fa-xl icon" aria-hidden="true"></i>
+              </div>
+              <div data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Gửi Gift">
+                <i class="fa-solid fa-gift fa-xl icon" aria-hidden="true"></i>
+              </div>
+              <div class="flex-grow-1 position-relative">
+                <input id="message-js" class="w-100 outline-none rounded-pill border border-1 px-2 py-2" type="text" placeholder="Aa">
+                <i id="send-js" class="fi fi-rr-paper-plane-top position-absolute top-50 end-0 translate-middle cursor-pointer text-primary"></i>
+              </div>
+              <div>
+                <i class="fa-solid fa-thumbs-up fa-xl icon" aria-hidden="true"></i>
+              </div>
+              <div>
+                <i class="fa-solid fa-heart fa-xl icon" aria-hidden="true"></i>
+              </div>
+            </div>
+          </div>
+        </div>
         </div>
       </div>
     </main>
+
+        <!-- Modal -->
+        <div class="modal fade" id="modal-user" tabindex="-1">
+          <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5">Tài khoản của tôi</h1>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <div class="container-fluid">
+                  <div class="row">
+                    <form action="" class="col-12 col-lg-6">
+                      <div class="mt-4 mb-3">
+                        <label
+                          style="width: 90px;"
+                          for="name"
+                          class="mb-2 mb-lg-0 me-lg-4 text-lg-end"
+                          >Họ và tên
+                        </label>
+                        <input
+                          class="outline-none border-1 border border-secondary-subtle rounded px-2"
+                          type="text"
+                          name="name"
+                          id="nam"
+                          value="Ngô Mạnh Anh"
+                        />
+                      </div>
+                      <div class="mb-4 d-lg-flex align-items-lg-center">
+                        <div
+                          style="width: 90px;"
+                          class="mb-2 mb-lg-0 me-lg-4 text-lg-end"
+                        >
+                          Email
+                        </div>
+                        <div
+                          class="d-flex flex-wrap gap-2 justify-content-between"
+                          style="width: 240px;"
+                        >
+                          <div>
+                            linh***@gmail.com
+                          </div>
+                          <a href="#" class="ms-5">Thay đổi</a>
+                        </div>
+                      </div>
+                      <div class="my-4 d-lg-flex align-items-lg-center">
+                        <div
+                          style="width: 90px;"
+                          class="mb-2 mb-lg-0 me-lg-4 text-lg-end"
+                        >
+                          Số điện thoại
+                        </div>
+                        <div
+                          class="d-flex flex-wrap gap-2 justify-content-between"
+                          style="width: 240px;"
+                        >
+                          <div>
+                            098*******
+                          </div>
+                          <a href="#" class="ms-5">Thay đổi</a>
+                        </div>
+                      </div>
+                      <div class="my-4 d-flex align-items-center">
+                        <div style="width: 90px;" class="text-end me-3">
+                          Giới tính
+                        </div>
+                        <input
+                          type="radio"
+                          class="me-1"
+                          name="sex"
+                          id="male"
+                          checked
+                        />
+                        <label for="male" class="me-2">Nam</label>
+    
+                        <input type="radio" class="me-1" name="sex" id="female" />
+                        <label for="female" class="me-2">Nữ</label>
+    
+                        <input type="radio" class="me-1" name="sex" id="other" />
+                        <label for="other" class="me-2">Khác</label>
+                      </div>
+    
+                      <div class="my-4">
+                        <label class="text-end me-3" style="width: 90px;" for="date"
+                          >Ngày sinh</label
+                        >
+                        <input
+                          type="date"
+                          class="outline-none border-0"
+                          name="data"
+                          id="date"
+                          value="2003-09-12"
+                        />
+                      </div>
+                    </form>
+                    <div class="col-12 col-lg-6 mt-4 pt-2 pt-lg-0 text-center">
+                      <div class="mb-4">
+                        <img
+                          width="160"
+                          height="160"
+                          id="image-preview"
+                          src="https://down-vn.img.susercontent.com/file/9c56f697b694cbc2531371b60ea65166"
+                          alt=""
+                        />
+                      </div>
+                      <input
+                        type="file"
+                        onchange="chooseFile(this)"
+                        value="Chọn ảnh"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Đóng
+                </button>
+                <button type="button" class="btn btn-primary">Lưu thay đổi</button>
+              </div>
+            </div>
+          </div>
+        </div>
     <script src="../bootstraps/js/bootstrap.bundle.min.js"></script>
     <script src="../jquery/jquery-3.7.1.min.js"></script>
     <script src="../../index.js"></script>

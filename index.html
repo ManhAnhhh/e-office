@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -37,7 +36,7 @@
   <body>
     <aside class="position-fixed top-0 bottom-0 left-0">
       <div class="logo px-2">
-        <a href="#" title="Logo-top">
+        <a href="index.html" title="Logo-top">
           <img class="logo-top" src="./assets/img/logo-top.png" alt="" />
         </a>
       </div>
@@ -261,12 +260,43 @@
             Tổng quan
           </div>
           <div class="d-flex align-items-center">
-            <div class="notice-icon mx-3 position-relative rounded-circle">
+            <div
+              class="notice-icon mx-3 position-relative rounded-circle border border-secondary-subtle"
+            >
               <i class="fa-regular fa-bell icon"></i>
               <span
                 class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle"
               >
               </span>
+              <div
+                class="notice-bubble position-absolute end-50"
+                style="width: 350px; z-index: 9999; top: 20px;"
+              >
+                <div class="bg-white py-2 px-2 rounded my-2 mx-3 shadow">
+                  <div class="notice-item p-2 rounded d-flex mb-2">
+                    <span class="img-infor mt-2 me-3">D</span>
+                    <div class="position-relative">
+                      <b>Nguyễn Đăng Đức</b>
+                      đã nhắc đến bạn trong một bình luận
+                      <div
+                        class="position-absolute start-100 top-50 translate-middle bg-primary rounded-circle"
+                        style="width: 10px; height: 10px;"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="notice-item p-2 rounded d-flex -2">
+                    <span class="img-infor mt-2 me-3">A</span>
+                    <div class="position-relative">
+                      <b>Ngô Mạnh Anh</b>
+                      đã nhắc đến bạn trong một bình luận
+                      <div
+                        class="position-absolute start-100 top-50 translate-middle bg-primary rounded-circle"
+                        style="width: 10px; height: 10px;"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="dropdown text-end position-relative">
               <a
@@ -275,14 +305,21 @@
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                <span class="img-infor">A</span>
+                <div class="text-primary">
+                  <span class="img-infor">A</span> &nbsp;Ngô Mạnh Anh
+                </div>
                 <!-- <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle"> -->
               </a>
               <ul
                 class="infor-dropdown dropdown-menu text-small position-absolute"
               >
                 <li>
-                  <a class="dropdown-item" href="#">Tài khoản</a>
+                  <span
+                    class="dropdown-item cursor-pointer"
+                    data-bs-toggle="modal"
+                    data-bs-target="#modal-user"
+                    >Tài khoản</span
+                  >
                 </li>
                 <li>
                   <a class="dropdown-item" href="#">Cài đặt</a>
@@ -295,7 +332,6 @@
                 </li>
               </ul>
             </div>
-            <div class="text-primary">&nbsp;Ngô Mạnh Anh</div>
           </div>
           <button
             class="navbar-toggler collapsed ms-2"
@@ -309,11 +345,11 @@
             <span class="navbar-toggler-icon"></span>
           </button>
 
-          <div class="navbar-collapse collapse" id="navMobile">
+          <div class="navbar-collapse collapse navMobile-index" id="navMobile">
             <div
               id="list-tab-mobile"
               role="tablist"
-              class="list-group navbar-nav me-auto mb-2 mb-lg-0"
+              class="list-group navbar-nav me-auto mb-2 mb-lg-0 fs-6"
             >
               <div class="nav-item">
                 <a
@@ -339,7 +375,7 @@
                   Thảo luận
                 </span>
               </div>
-              <div class="nav-item">
+              <div class="nav-item" style="background: #f9fafc;">
                 <button
                   class="btn btn-toggle d-inline-flex align-items-center rounded collapsed border-0"
                   data-bs-toggle="collapse"
@@ -382,7 +418,7 @@
                   </ul>
                 </div>
               </div>
-              <div class="nav-item">
+              <div class="nav-item" style="background: #f9fafc;">
                 <button
                   class="btn btn-toggle d-inline-flex align-items-center rounded collapsed border-0"
                   data-bs-toggle="collapse"
@@ -438,12 +474,77 @@
                   Thông báo chung
                 </a>
               </div>
-              <div class="nav-item"></div>
-              <div class="nav-item"></div>
-              <div class="nav-item"></div>
-              <div class="nav-item"></div>
+              <div class="nav-item">
+                <button
+                  style="width: 100%; background-color: #f9fafc !important;"
+                  class="btn btn-toggle d-inline-flex align-items-center collapsed rounded-end bg-body"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#work-collapse"
+                  aria-expanded="false"
+                >
+                  &nbsp;
+                  <i class="fi fi-rr-briefcase icon"></i>
+                  &nbsp; Công việc
+                </button>
+                <div class="collapse" id="work-collapse">
+                  <ul
+                    class="btn-toggle-nav list-unstyled fw-normal small mb-0 pb-0"
+                  >
+                    <li>
+                      <a
+                        class="list-js border-0 list-group-item list-group-item-action ps-4 rounded-end"
+                        id="list-work-1-list"
+                        data-bs-toggle="list"
+                        href="#list-work-1"
+                        aria-controls=""
+                      >
+                        <i class="fi fi-rr-document icon"></i>
+                        Công việc tôi giao
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        class="list-js border-0 list-group-item list-group-item-action ps-4 rounded-end"
+                        id="list-work-2-list"
+                        data-bs-toggle="list"
+                        href="#list-work-2"
+                        aria-controls=""
+                      >
+                        <i class="fi fi-rr-document icon"></i>
+                        Công việc được giao
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="nav-item">
+                <a
+                  class="list-js list-group-item list-group-item-action rounded-end border-0"
+                  id="list-calendar-list"
+                  data-bs-toggle="list"
+                  href="#list-calendar"
+                  role="tab"
+                  aria-controls=""
+                >
+                  <i class="fa-regular fa-calendar icon"></i>
+                  Lịch tuần
+                </a>
+              </div>
+              <div class="nav-item">
+                <a
+                  class="list-js list-group-item list-group-item-action rounded-end border-0"
+                  id="list-docs-list"
+                  data-bs-toggle="list"
+                  href="#list-docs"
+                  role="tab"
+                  aria-controls=""
+                >
+                  <i class="fi fi-rr-document icon"></i>
+                  Tài liệu
+                </a>
+              </div>
             </div>
-            <form role="search" class="mb-2 shadow rounded ">
+            <form role="search" class="mb-2 shadow rounded">
               <input
                 class="form-control"
                 type="search"
@@ -521,7 +622,7 @@
                 >
                   <div class="row px-2">
                     <div
-                      class="col-lg-4 col-md-6 item border border-1 mb-2 px-3 pt-2 pb-2"
+                      class="col-lg-4 col-md-6 item border border-1 mb-2 px-3 pt-2 pb-2 position-relative"
                     >
                       <div class="item-top mt-2 d-flex gap-2">
                         <div class="pt-1">
@@ -539,28 +640,36 @@
                           </div>
                         </div>
                       </div>
-                      <div class="desc">
+                      <div class="desc" style="height: 250px;">
                         <div class="fz-12 mp-2 mt-2">
                           <i class="fi fi-rr-memo-circle-check"></i>
-                          <span>Công văn đối thoại giữa các phòng ban</span>
+                          <span
+                            >Hướng dẫn chiến lược và lập kế hoạch
+                            marketing</span
+                          >
                         </div>
                         <div class="fz-12 mp-2 mt-2">
                           <i class="fi fi-rr-memo-circle-check"></i>
-                          <span>Thông báo tuyên truyền văn hóa công ty</span>
+                          <span
+                            >Văn bản thông báo bổ nhiệm vị trí giám đốc mới của
+                            doanh nghiệp</span
+                          >
                         </div>
                         <div class="fz-12 mp-2 mt-2">
                           <i class="fi fi-rr-memo-circle-check"></i>
-                          <span>Báo cáo doanh thu quý II</span>
+                          <span>Kế hoạch tăng doanh thu tháng tới</span>
                         </div>
                       </div>
-                      <div class="text-center mt-4 border-2 border-top">
+                      <div
+                        class="text-center py-2 border-2 border-top position-absolute bottom-0 start-0 end-0"
+                      >
                         <a class="text-decoration-none" href="#">
                           &#8810; Xem thêm &#8811;
                         </a>
                       </div>
                     </div>
                     <div
-                      class="col-lg-4 col-md-6 item border border-1 mb-2 px-3 pt-2 pb-2"
+                      class="col-lg-4 col-md-6 item border border-1 mb-2 px-3 pt-2 pb-2 position-relative"
                     >
                       <div class="item-top mt-2 d-flex gap-2">
                         <div class="pt-1">
@@ -578,28 +687,36 @@
                           </div>
                         </div>
                       </div>
-                      <div class="desc">
+                      <div class="desc" style="height: 250px;">
                         <div class="fz-12 mp-2 mt-2">
                           <i class="fi fi-rr-memo-circle-check"></i>
-                          <span>Công văn đối thoại giữa các phòng ban</span>
+                          <span>Văn bản đối thoại giữa các phòng ban</span>
                         </div>
                         <div class="fz-12 mp-2 mt-2">
                           <i class="fi fi-rr-memo-circle-check"></i>
-                          <span>Thông báo tuyên truyền văn hóa công ty</span>
+                          <span>Tài liệu kỹ thuật cho phần mềm mới</span>
                         </div>
                         <div class="fz-12 mp-2 mt-2">
                           <i class="fi fi-rr-memo-circle-check"></i>
-                          <span>Báo cáo doanh thu quý II</span>
+                          <span
+                            >Dự thảo kế hoạch xây dựng tòa nhà cho cơ sở 2</span
+                          >
+                        </div>
+                        <div class="fz-12 mp-2 mt-2">
+                          <i class="fi fi-rr-memo-circle-check"></i>
+                          <span>Dự thảo tăng doanh thu quý tới</span>
                         </div>
                       </div>
-                      <div class="text-center mt-4 border-2 border-top">
+                      <div
+                        class="text-center py-2 border-2 border-top position-absolute bottom-0 start-0 end-0"
+                      >
                         <a class="text-decoration-none" href="#">
                           &#8810; Xem thêm &#8811;
                         </a>
                       </div>
                     </div>
                     <div
-                      class="col-lg-4 col-md-6 item border border-1 mb-2 px-3 pt-2 pb-2"
+                      class="col-lg-4 col-md-6 item border border-1 mb-2 px-3 pt-2 pb-2 position-relative"
                     >
                       <div class="item-top mt-2 d-flex gap-2">
                         <div class="pt-1">
@@ -617,7 +734,7 @@
                           </div>
                         </div>
                       </div>
-                      <div class="desc">
+                      <div class="desc" style="height: 250px;">
                         <div class="fz-12 mp-2 mt-2">
                           <i class="fi fi-rr-memo-circle-check"></i>
                           <span>Công văn đối thoại giữa các phòng ban</span>
@@ -631,7 +748,9 @@
                           <span>Báo cáo doanh thu quý II</span>
                         </div>
                       </div>
-                      <div class="text-center mt-4 border-2 border-top">
+                      <div
+                        class="text-center py-2 border-2 border-top position-absolute bottom-0 start-0 end-0"
+                      >
                         <a class="text-decoration-none" href="#">
                           &#8810; Xem thêm &#8811;
                         </a>
@@ -640,7 +759,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-lg-3 col-md-4">
+              <div class="d-none d-md-block col-lg-3 col-md-4">
                 <div class="row pt-2 me-0 border-1 border main-right">
                   <div class="col-12 d-flex gap-2">
                     <div class="content-top">
@@ -654,7 +773,9 @@
                       </div>
                       <div class="fz-12">
                         21 thông báo mới
-                        <span class="d-none d-xl-inline-block news-span">10 mới</span>
+                        <span class="d-none d-xl-inline-block news-span"
+                          >10 mới</span
+                        >
                       </div>
                     </div>
                   </div>
@@ -678,10 +799,10 @@
                         >LTT</span
                       >
                       Ông/bà
-                      <strong>Ngô Mạnh Anh</strong>
+                      <strong>Nguyễn Đăng Đức</strong>
                       đã
                       <span class="text-info">chuyển xử lý</span>
-                      văn bản qua phòng đối ngoại.
+                      văn bản qua phòng marketing.
                     </div>
                     <div class="item border-bottom border-1 mb-1 pb-1">
                       <span
@@ -692,7 +813,7 @@
                       <strong>Ngô Mạnh Anh</strong>
                       đã
                       <span class="text-info">chuyển xử lý </span>
-                      văn bản qua phòng đối ngoại.
+                      văn bản qua phòng nhân sự.
                     </div>
                     <div class="item border-bottom border-1 mb-1 pb-1">
                       <span
@@ -700,7 +821,7 @@
                         >LTT</span
                       >
                       Ông/bà
-                      <strong>Ngô Mạnh Anh</strong>
+                      <strong>Ngô Linh Anh</strong>
                       đã
                       <span class="text-info">chuyển xử lý</span>
                       văn bản qua phòng đối ngoại.
@@ -711,10 +832,10 @@
                         >LTT</span
                       >
                       Ông/bà
-                      <strong>Ngô Mạnh Anh</strong>
+                      <strong>Nguyễn Anh Đức</strong>
                       đã
                       <span class="text-info">chuyển xử lý</span>
-                      văn bản qua phòng đối ngoại.
+                      văn bản qua phòng marketing.
                     </div>
                     <div class="item border-bottom border-1 pb-1">
                       <span
@@ -722,10 +843,10 @@
                         >LTT</span
                       >
                       Ông/bà
-                      <strong>Ngô Mạnh Anh</strong>
+                      <strong>Nguyễn Đăng Đức</strong>
                       đã
                       <span class="text-info">chuyển xử lý</span>
-                      văn bản qua phòng đối ngoại.
+                      văn bản qua phòng nhân sự.
                     </div>
                   </div>
                 </div>
@@ -833,12 +954,8 @@
                         <th class="pt-3 pb-3 text-light-emphasis">
                           <input type="checkbox" />
                         </th>
-                        <th class="pt-3 pb-3 text-light-emphasis">
-                          STT
-                        </th>
-                        <th class="pt-3 pb-3 text-light-emphasis">
-                          Trích yếu
-                        </th>
+                        <th class="pt-3 pb-3 text-light-emphasis">STT</th>
+                        <th class="pt-3 pb-3 text-light-emphasis">Trích yếu</th>
                         <th class="pt-3 pb-3 text-light-emphasis">
                           Ngày văn bản
                         </th>
@@ -848,9 +965,7 @@
                         <th class="pt-3 pb-3 text-light-emphasis">
                           Thời gian chuyển
                         </th>
-                        <th class="pt-3 pb-3 text-light-emphasis">
-                          Hạn xử lý
-                        </th>
+                        <th class="pt-3 pb-3 text-light-emphasis">Hạn xử lý</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -860,9 +975,7 @@
                         </td>
                         <td>1</td>
                         <td>
-                          <div>
-                            Thông báo về việc thi đua tháng 4
-                          </div>
+                          <div>Thông báo về việc thi đua tháng 4</div>
                           <div class="d-flex justify-content-center gap-3 mt-1">
                             <div
                               class="border border-primary-subtle border-1 p-1 bg-primary-subtle text-primary fs-10"
@@ -882,12 +995,17 @@
                             type="date"
                             class="border border-0"
                             value="2024-04-10"
+                            max="2024-06-10"
+                            min="1940-01-01"
                           />
                         </td>
                         <td>
                           <div>
-                            <i class="fa-solid fa-circle-user"></i> &nbsp; Ngô
-                            Mạnh Anh
+                            <i
+                              class="fa-solid fa-circle-user"
+                              aria-hidden="true"
+                            ></i>
+                            &nbsp; Ngô Mạnh Anh
                           </div>
                         </td>
                         <td>
@@ -895,6 +1013,8 @@
                             type="date"
                             class="border border-0"
                             value="2024-04-20"
+                            max="2024-06-10"
+                            min="1940-01-01"
                           />
                         </td>
                         <td>
@@ -902,6 +1022,8 @@
                             type="date"
                             class="border border-0"
                             value="2024-04-21"
+                            max="2024-06-10"
+                            min="1940-01-01"
                           />
                         </td>
                       </tr>
@@ -911,9 +1033,7 @@
                         </td>
                         <td>2</td>
                         <td>
-                          <div>
-                            Thông báo về việc thi đua tháng 4
-                          </div>
+                          <div>Kế hoạch marketing cho sản phẩm mới</div>
                           <div class="d-flex justify-content-center gap-3 mt-1">
                             <div
                               class="border border-primary-subtle border-1 p-1 bg-primary-subtle text-primary fs-10"
@@ -933,12 +1053,17 @@
                             type="date"
                             class="border border-0"
                             value="2024-04-10"
+                            max="2024-06-10"
+                            min="1940-01-01"
                           />
                         </td>
                         <td>
                           <div>
-                            <i class="fa-solid fa-circle-user"></i> &nbsp; Ngô
-                            Mạnh Anh
+                            <i
+                              class="fa-solid fa-circle-user"
+                              aria-hidden="true"
+                            ></i>
+                            &nbsp; Nguyễn Đăng Đức
                           </div>
                         </td>
                         <td>
@@ -946,6 +1071,8 @@
                             type="date"
                             class="border border-0"
                             value="2024-04-20"
+                            max="2024-06-10"
+                            min="1940-01-01"
                           />
                         </td>
                         <td>
@@ -953,6 +1080,8 @@
                             type="date"
                             class="border border-0"
                             value="2024-04-21"
+                            max="2024-06-10"
+                            min="1940-01-01"
                           />
                         </td>
                       </tr>
@@ -963,7 +1092,7 @@
                         <td>3</td>
                         <td>
                           <div>
-                            Thông báo về việc thi đua tháng 4
+                            Thông báo tổ chức du lịch toàn doanh nghiệp tháng 6
                           </div>
                           <div class="d-flex justify-content-center gap-3 mt-1">
                             <div
@@ -983,27 +1112,36 @@
                           <input
                             type="date"
                             class="border border-0"
-                            value="2024-04-10"
+                            value="2024-05-12"
+                            max="2024-06-10"
+                            min="1940-01-01"
                           />
                         </td>
                         <td>
                           <div>
-                            <i class="fa-solid fa-circle-user"></i> &nbsp; Ngô
-                            Mạnh Anh
+                            <i
+                              class="fa-solid fa-circle-user"
+                              aria-hidden="true"
+                            ></i>
+                            &nbsp; Ngô Linh Anh
                           </div>
                         </td>
                         <td>
                           <input
                             type="date"
                             class="border border-0"
-                            value="2024-04-20"
+                            value="2024-05-20"
+                            max="2024-06-10"
+                            min="1940-01-01"
                           />
                         </td>
                         <td>
                           <input
                             type="date"
                             class="border border-0"
-                            value="2024-04-21"
+                            value="2024-05-22"
+                            max="2024-06-10"
+                            min="1940-01-01"
                           />
                         </td>
                       </tr>
@@ -1014,7 +1152,8 @@
                         <td>4</td>
                         <td>
                           <div>
-                            Thông báo về việc thi đua tháng 4
+                            Thông báo về việc thay đổi giám đốc mới của doanh
+                            nghiệp
                           </div>
                           <div class="d-flex justify-content-center gap-3 mt-1">
                             <div
@@ -1034,27 +1173,36 @@
                           <input
                             type="date"
                             class="border border-0"
-                            value="2024-04-10"
+                            value="2024-05-10"
+                            max="2024-06-10"
+                            min="1940-01-01"
                           />
                         </td>
                         <td>
                           <div>
-                            <i class="fa-solid fa-circle-user"></i> &nbsp; Ngô
-                            Mạnh Anh
+                            <i
+                              class="fa-solid fa-circle-user"
+                              aria-hidden="true"
+                            ></i>
+                            &nbsp; Nguyễn Anh Đức
                           </div>
                         </td>
                         <td>
                           <input
                             type="date"
                             class="border border-0"
-                            value="2024-04-20"
+                            value="2024-05-20"
+                            max="2024-06-10"
+                            min="1940-01-01"
                           />
                         </td>
                         <td>
                           <input
                             type="date"
                             class="border border-0"
-                            value="2024-04-21"
+                            value="2024-05-21"
+                            max="2024-06-10"
+                            min="1940-01-01"
                           />
                         </td>
                       </tr>
@@ -1111,12 +1259,8 @@
                   >
                     <thead class="table-light border-end-0">
                       <tr>
-                        <th class="pt-3 pb-3 text-light-emphasis">
-                          STT
-                        </th>
-                        <th class="pt-3 pb-3 text-light-emphasis">
-                          Trích yếu
-                        </th>
+                        <th class="pt-3 pb-3 text-light-emphasis">STT</th>
+                        <th class="pt-3 pb-3 text-light-emphasis">Trích yếu</th>
                         <th class="pt-3 pb-3 text-light-emphasis">
                           Ngày văn bản
                         </th>
@@ -1126,18 +1270,14 @@
                         <th class="pt-3 pb-3 text-light-emphasis">
                           Thời gian chuyển
                         </th>
-                        <th class="pt-3 pb-3 text-light-emphasis">
-                          Hạn xử lý
-                        </th>
+                        <th class="pt-3 pb-3 text-light-emphasis">Hạn xử lý</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
                         <td>1</td>
                         <td>
-                          <div>
-                            Thông báo về việc thi đua tháng 4
-                          </div>
+                          <div>Thông báo về việc thi đua tháng 4</div>
                           <div class="d-flex justify-content-center gap-3 mt-1">
                             <div
                               class="border border-primary-subtle border-1 p-1 bg-primary-subtle text-primary fs-10"
@@ -1157,12 +1297,17 @@
                             type="date"
                             class="border border-0"
                             value="2024-04-10"
+                            max="2024-06-10"
+                            min="1940-01-01"
                           />
                         </td>
                         <td>
                           <div>
-                            <i class="fa-solid fa-circle-user"></i> &nbsp;Ngô
-                            Mạnh Anh
+                            <i
+                              class="fa-solid fa-circle-user"
+                              aria-hidden="true"
+                            ></i>
+                            &nbsp;Ngô Mạnh Anh
                           </div>
                         </td>
                         <td>
@@ -1170,6 +1315,8 @@
                             type="date"
                             class="border border-0"
                             value="2024-04-20"
+                            max="2024-06-10"
+                            min="1940-01-01"
                           />
                         </td>
                         <td>
@@ -1177,15 +1324,15 @@
                             type="date"
                             class="border border-0"
                             value="2024-04-21"
+                            max="2024-06-10"
+                            min="1940-01-01"
                           />
                         </td>
                       </tr>
                       <tr>
                         <td>2</td>
                         <td>
-                          <div>
-                            Thông báo về việc thi đua tháng 4
-                          </div>
+                          <div>Kế hoạch marketing cho sản phẩm mới</div>
                           <div class="d-flex justify-content-center gap-3 mt-1">
                             <div
                               class="border border-primary-subtle border-1 p-1 bg-primary-subtle text-primary fs-10"
@@ -1205,12 +1352,17 @@
                             type="date"
                             class="border border-0"
                             value="2024-04-10"
+                            max="2024-06-10"
+                            min="1940-01-01"
                           />
                         </td>
                         <td>
                           <div>
-                            <i class="fa-solid fa-circle-user"></i> &nbsp;Ngô
-                            Mạnh Anh
+                            <i
+                              class="fa-solid fa-circle-user"
+                              aria-hidden="true"
+                            ></i>
+                            &nbsp;Nguyễn Đăng Đức
                           </div>
                         </td>
                         <td>
@@ -1218,6 +1370,8 @@
                             type="date"
                             class="border border-0"
                             value="2024-04-20"
+                            max="2024-06-10"
+                            min="1940-01-01"
                           />
                         </td>
                         <td>
@@ -1225,6 +1379,8 @@
                             type="date"
                             class="border border-0"
                             value="2024-04-21"
+                            max="2024-06-10"
+                            min="1940-01-01"
                           />
                         </td>
                       </tr>
@@ -1232,7 +1388,7 @@
                         <td>3</td>
                         <td>
                           <div>
-                            Thông báo về việc thi đua tháng 4
+                            Thông báo tổ chức du lịch toàn doanh nghiệp tháng 6
                           </div>
 
                           <div class="d-flex justify-content-center gap-3 mt-1">
@@ -1253,27 +1409,36 @@
                           <input
                             type="date"
                             class="border border-0"
-                            value="2024-04-10"
+                            value="2024-05-10"
+                            max="2024-06-10"
+                            min="1940-01-01"
                           />
                         </td>
                         <td>
                           <div>
-                            <i class="fa-solid fa-circle-user"></i> &nbsp;Ngô
-                            Mạnh Anh
+                            <i
+                              class="fa-solid fa-circle-user"
+                              aria-hidden="true"
+                            ></i>
+                            &nbsp;Nguyễn Anh Đức
                           </div>
                         </td>
                         <td>
                           <input
                             type="date"
                             class="border border-0"
-                            value="2024-04-20"
+                            value="2024-05-20"
+                            max="2024-06-10"
+                            min="1940-01-01"
                           />
                         </td>
                         <td>
                           <input
                             type="date"
                             class="border border-0"
-                            value="2024-04-21"
+                            value="2024-05-21"
+                            max="2024-06-10"
+                            min="1940-01-01"
                           />
                         </td>
                       </tr>
@@ -1799,9 +1964,7 @@
                               <div class="text-start">
                                 Công văn thông báo thay đổi chính sách công ty
                               </div>
-                              <div
-                                class="fs-10 fw-bold text-start text-info"
-                              >
+                              <div class="fs-10 fw-bold text-start text-info">
                                 Công văn
                               </div>
                             </td>
@@ -1838,9 +2001,7 @@
                               <div class="text-start">
                                 Biên bản họp Ban Giám đốc thường niên quí II
                               </div>
-                              <div
-                                class="fs-10 fw-bold text-start text-danger"
-                              >
+                              <div class="fs-10 fw-bold text-start text-danger">
                                 Biên bản
                               </div>
                             </td>
@@ -2010,9 +2171,7 @@
                               <div class="text-start">
                                 Công văn họp nội bộ
                               </div>
-                              <div
-                                class="fs-10 fw-bold text-start text-info"
-                              >
+                              <div class="fs-10 fw-bold text-start text-info">
                                 Công văn
                               </div>
                             </td>
@@ -2043,9 +2202,7 @@
                               <div class="text-start">
                                 Biên bản họp Ban Giám đốc thường niên quí II
                               </div>
-                              <div
-                                class="fs-10 fw-bold text-start text-danger"
-                              >
+                              <div class="fs-10 fw-bold text-start text-danger">
                                 Biên bản
                               </div>
                             </td>
@@ -2232,9 +2389,7 @@
                               <div class="text-start">
                                 Công văn thông báo thay đổi chính sách công ty
                               </div>
-                              <div
-                                class="fs-10 fw-bold text-start text-info"
-                              >
+                              <div class="fs-10 fw-bold text-start text-info">
                                 Công văn
                               </div>
                             </td>
@@ -2274,9 +2429,7 @@
                               <div class="text-start">
                                 Biên bản họp Ban Giám đốc thường niên quí II
                               </div>
-                              <div
-                                class="fs-10 fw-bold text-start text-danger"
-                              >
+                              <div class="fs-10 fw-bold text-start text-danger">
                                 Biên bản
                               </div>
                             </td>
@@ -2472,9 +2625,7 @@
                               <div class="text-start">
                                 Công văn thông báo thay đổi chính sách công ty
                               </div>
-                              <div
-                                class="fs-10 fw-bold text-start text-info"
-                              >
+                              <div class="fs-10 fw-bold text-start text-info">
                                 Công văn
                               </div>
                             </td>
@@ -2514,9 +2665,7 @@
                               <div class="text-start">
                                 Biên bản họp Ban Giám đốc thường niên quí II
                               </div>
-                              <div
-                                class="fs-10 fw-bold text-start text-danger"
-                              >
+                              <div class="fs-10 fw-bold text-start text-danger">
                                 Biên bản
                               </div>
                             </td>
@@ -2685,7 +2834,7 @@
                             <td>1</td>
                             <td>
                               <div>
-                                Thông báo về việc thi đua tháng 4
+                                Thông báo về việc thi ban thưởng nhân viên quý 3
                               </div>
                               <div
                                 class="d-flex justify-content-center gap-3 mt-1"
@@ -2711,7 +2860,7 @@
                               />
                             </td>
                             <td>
-                              <div>
+                              <div class="text-nowrap">
                                 <i class="fa-solid fa-circle-user"></i> &nbsp;
                                 Ngô Mạnh Anh
                               </div>
@@ -2946,13 +3095,13 @@
                               </div>
                             </td>
                             <td>
-                              <div>
+                              <div class="text-start">
                                 <i class="fa-solid fa-circle-user"></i> &nbsp;
                                 Nguyễn Đăng Đức
                               </div>
                             </td>
                             <td>
-                              <div>
+                              <div class="text-start text-nowrap">
                                 <i class="fa-solid fa-circle-user"></i> &nbsp;
                                 Nguyễn Đăng Đức
                               </div>
@@ -2983,13 +3132,13 @@
                             </td>
 
                             <td>
-                              <div>
+                              <div class="text-start">
                                 <i class="fa-solid fa-circle-user"></i>
                                 &nbsp;Ngô Mạnh Anh
                               </div>
                             </td>
                             <td>
-                              <div>
+                              <div class="text-start text-nowrap">
                                 <i class="fa-solid fa-circle-user"></i>
                                 &nbsp;Ngô Linh Anh
                               </div>
@@ -3011,21 +3160,19 @@
                               <div class="text-start">
                                 Công văn thông báo thay đổi chính sách công ty
                               </div>
-                              <div
-                                class="fs-10 fw-bold text-start text-info"
-                              >
+                              <div class="fs-10 fw-bold text-start text-info">
                                 Công văn
                               </div>
                             </td>
 
                             <td>
-                              <div>
+                              <div class="text-start">
                                 <i class="fa-solid fa-circle-user"></i> &nbsp;
                                 Nguyễn Đăng Đức
                               </div>
                             </td>
                             <td>
-                              <div>
+                              <div class="text-start text-nowrap">
                                 <i class="fa-solid fa-circle-user"></i> &nbsp;
                                 Nguyễn Anh Đức
                               </div>
@@ -3047,20 +3194,18 @@
                               <div class="text-start">
                                 Biên bản họp Ban Giám đốc thường niên quí II
                               </div>
-                              <div
-                                class="fs-10 fw-bold text-start text-danger"
-                              >
+                              <div class="fs-10 fw-bold text-start text-danger">
                                 Biên bản
                               </div>
                             </td>
                             <td>
-                              <div>
+                              <div class="text-start">
                                 <i class="fa-solid fa-circle-user"></i> &nbsp;
                                 Ngô Đức Anh
                               </div>
                             </td>
                             <td>
-                              <div>
+                              <div class="text-start text-nowrap">
                                 <i class="fa-solid fa-circle-user"></i> &nbsp;
                                 Ngô Đức Linh
                               </div>
@@ -3215,9 +3360,7 @@
                               <div class="text-start">
                                 Công văn họp nội bộ
                               </div>
-                              <div
-                                class="fs-10 fw-bold text-start text-info"
-                              >
+                              <div class="fs-10 fw-bold text-start text-info">
                                 Công văn
                               </div>
                             </td>
@@ -3248,9 +3391,7 @@
                               <div class="text-start">
                                 Biên bản họp Ban Giám đốc thường niên quí II
                               </div>
-                              <div
-                                class="fs-10 fw-bold text-start text-danger"
-                              >
+                              <div class="fs-10 fw-bold text-start text-danger">
                                 Biên bản
                               </div>
                             </td>
@@ -3536,7 +3677,7 @@
                             <td>
                               <div>
                                 <i class="fa-solid fa-circle-user"></i>
-                                &nbsp;Ngô Mạnh Anh
+                                &nbsp;Nguyễn Đăng Đức
                               </div>
                             </td>
                             <td>
@@ -4248,7 +4389,7 @@
                             <td>
                               <div>
                                 <i class="fa-solid fa-circle-user"></i>
-                                &nbsp;Ngô Mạnh Anh
+                                &nbsp;Ngô Đức Anh
                               </div>
                             </td>
                             <td>
@@ -4730,12 +4871,8 @@
                 >
                   <thead class="table-light">
                     <tr>
-                      <th class="pt-3 pb-3 text-light-emphasis">
-                        STT
-                      </th>
-                      <th class="pt-3 pb-3 text-light-emphasis">
-                        Tiêu đề
-                      </th>
+                      <th class="pt-3 pb-3 text-light-emphasis">STT</th>
+                      <th class="pt-3 pb-3 text-light-emphasis">Tiêu đề</th>
                       <th class="pt-3 pb-3 text-light-emphasis">
                         Người thực hiện
                       </th>
@@ -4747,9 +4884,9 @@
                   <tbody>
                     <tr>
                       <td>1</td>
-                      <td>
+                      <td class="py-3">
                         <div
-                          class="d-flex justify-content-around align-items-center"
+                          class="d-flex flex-column justify-content-center align-items-center"
                         >
                           <h6>
                             Thông báo kế hoạch tăng lương phòng hành chính năm
@@ -4757,14 +4894,18 @@
                           </h6>
                           <div>
                             <a href="#" class="text-decoration-none"
-                              >&#8810; Xem thêm &#8811;</a
+                              >≪ Xem thêm ≫</a
                             >
                           </div>
                         </div>
                       </td>
                       <td>
-                        <div>
-                          <i class="fa-solid fa-circle-user"></i> Ngô Mạnh Anh
+                        <div class="text-nowrap">
+                          <i
+                            class="fa-solid fa-circle-user"
+                            aria-hidden="true"
+                          ></i>
+                          Ngô Mạnh Anh
                         </div>
                       </td>
                       <td>
@@ -4772,96 +4913,116 @@
                           type="date"
                           value="2024-04-30"
                           class="border-0"
+                          max="2024-06-10"
+                          min="1940-01-01"
                         />
                       </td>
                     </tr>
                     <tr>
                       <td>2</td>
-                      <td>
+                      <td class="py-3">
                         <div
-                          class="d-flex justify-content-around align-items-center"
+                          class="d-flex flex-column justify-content-center align-items-center"
                         >
                           <h6>
-                            Thông báo kế hoạch tăng lương phòng hành chính năm
-                            2024
+                            Thông báo kế hoạch đào tạo nâng cao kỹ năng ngoại
+                            ngữ cho phòng marketing
                           </h6>
                           <div>
                             <a href="#" class="text-decoration-none"
-                              >&#8810; Xem thêm &#8811;</a
+                              >≪ Xem thêm ≫</a
                             >
                           </div>
                         </div>
                       </td>
                       <td>
                         <div>
-                          <i class="fa-solid fa-circle-user"></i> Ngô Mạnh Anh
+                          <i
+                            class="fa-solid fa-circle-user"
+                            aria-hidden="true"
+                          ></i>
+                          Nguyễn Đăng Đức
                         </div>
                       </td>
                       <td>
                         <input
                           type="date"
-                          value="2024-04-30"
+                          value="2024-05-03"
                           class="border-0"
+                          max="2024-06-10"
+                          min="1940-01-01"
                         />
                       </td>
                     </tr>
                     <tr>
                       <td>3</td>
-                      <td>
+                      <td class="py-3">
                         <div
-                          class="d-flex justify-content-around align-items-center"
+                          class="d-flex flex-column justify-content-center align-items-center"
                         >
                           <h6>
-                            Thông báo kế hoạch tăng lương phòng hành chính năm
-                            2024
+                            Thông báo kế hoạch tăng nhân sự toàn doanh nghiệp
+                            2025
                           </h6>
                           <div>
                             <a href="#" class="text-decoration-none"
-                              >&#8810; Xem thêm &#8811;</a
+                              >≪ Xem thêm ≫</a
                             >
                           </div>
                         </div>
                       </td>
                       <td>
                         <div>
-                          <i class="fa-solid fa-circle-user"></i> Ngô Mạnh Anh
+                          <i
+                            class="fa-solid fa-circle-user"
+                            aria-hidden="true"
+                          ></i>
+                          Ngô Linh Anh
                         </div>
                       </td>
                       <td>
                         <input
                           type="date"
-                          value="2024-04-30"
+                          value="2024-05-16"
                           class="border-0"
+                          max="2024-06-10"
+                          min="1940-01-01"
                         />
                       </td>
                     </tr>
                     <tr>
                       <td>4</td>
-                      <td>
+                      <td class="py-3">
                         <div
-                          class="d-flex justify-content-around align-items-center"
+                          class="d-flex flex-column justify-content-center align-items-center"
                         >
                           <h6>
-                            Thông báo kế hoạch tăng lương phòng hành chính năm
-                            2024
+                            Thông báo kế hoạch sản xuất sản phẩm mới ở tỉnh Hà
+                            Nam
                           </h6>
-                          <div>
+                          <div class="text-end">
                             <a href="#" class="text-decoration-none"
-                              >&#8810; Xem thêm &#8811;</a
+                              >≪ Xem thêm ≫</a
                             >
                           </div>
                         </div>
                       </td>
                       <td>
                         <div>
-                          <i class="fa-solid fa-circle-user"></i> Ngô Mạnh Anh
+                          <i
+                            class="fa-solid fa-circle-user"
+                            aria-hidden="true"
+                          ></i>
+                          Nguyễn Anh Đức
                         </div>
                       </td>
                       <td>
                         <input
                           type="date"
-                          value="2024-04-30"
+                          value="2024-06-06"
                           class="border-0"
+                          max="2024-06-10"
+                          min="1940-01-01"
                         />
                       </td>
                     </tr>
@@ -4873,7 +5034,7 @@
               <ul class="pagination justify-content-center align-items-center">
                 <li class="page-item">
                   <a class="page-link" href="#" aria-label="Previous">
-                    <span aria-hidden="true">&laquo;</span>
+                    <span aria-hidden="true">«</span>
                   </a>
                 </li>
                 <li class="page-item"><a class="page-link" href="#">1</a></li>
@@ -4881,7 +5042,7 @@
                 <li class="page-item"><a class="page-link" href="#">3</a></li>
                 <li class="page-item">
                   <a class="page-link" href="#" aria-label="Next">
-                    <span aria-hidden="true">&raquo;</span>
+                    <span aria-hidden="true">»</span>
                   </a>
                 </li>
               </ul>
@@ -4924,132 +5085,136 @@
                   <div
                     class="d-flex p-2 justify-content-between text-bg-primary mt-2 rounded-top"
                   >
-                    <div class="text-light fw-bold">Thứ Hai</div>
+                    <div class="text-light fw-bold text-capitalize">
+                      thứ hai
+                    </div>
                     <div class="text-light fw-bold">13 tháng 5, 2024</div>
                   </div>
-                  <div class="border-4 border-start border-info">
-                    <div
-                      class="d-flex justify-content-between pt-2 pb-2 border-bottom ">
+                  <div
+                    class="container-fluid morning-item border-4 border-start border-info"
+                  >
+                    <div class="row pt-2 pb-2 border-bottom">
                       <div
-                        class="pe-4 ps-2 text-center align-self-center"
-                        style="width: 150px;"
+                        class="col-3 col-sm-2 d-flex flex-column flex-xl-row justify-content-center align-items-center ps-xl-2 gap-xl-5"
                       >
-                        9:00 - 11:00
+                        <div class="text-center text-info">Sáng</div>
+                        <div class="text-center text-nowrap mt-2 mt-xl-0 fs-12">
+                          9:00 - 11:00
+                        </div>
                       </div>
-                      <div
-                        class="pe-4 text-info text-center align-self-center"
-                      >
-                        Sáng
-                      </div>
-                      <div class="pe-4">
+                      <div class="col-9 col-sm-5">
                         <div>
                           <strong>Tiêu đề: </strong>
-                          <span class="text-primary"
+                          <span class="text-info"
                             >Đào tạo Office cho các đơn vị trong doanh
                             nghiệp</span
                           >
                         </div>
                         <div>
                           <strong>Địa điểm: </strong>
-                          <span class="text-primary"
-                            >Họp online trên E-office</span
+                          <span class="text-info"
+                            >Họp tại phòng họp 609-A9</span
                           >
                         </div>
                         <div>
                           <strong>Thành phần tham dự: </strong> <br />
                           <div>
                             - Lãnh đạo:
-                            <span class="text-primary">Ngô Mạnh Anh</span>
+                            <span class="text-info">Nguyễn Đăng Đức</span>
                           </div>
                         </div>
-                        <div>- Chủ trì: Tổng giám đốc doanh nghiệp Đức Anh</div>
+                        <div>- Chủ trì: Chủ tịch doanh nghiệp Đức Anh</div>
+                        <div class="d-block d-sm-none">
+                          <div>
+                            <strong>Nội dung công việc: </strong> Đào tạo nghiệp
+                            vụ trên hệ thống E-office cho nhân viên
+                          </div>
+                          <div>
+                            <strong>Link phòng họp: </strong>https//dangduc.vn
+                          </div>
+                        </div>
                       </div>
-                      <div>
+                      <div class="col-5 d-none d-sm-block">
                         <div>
-                          <strong>Nội dung công việc: </strong> đào tạo nghiệp
+                          <strong>Nội dung công việc: </strong> Đào tạo nghiệp
                           vụ trên hệ thống E-office cho nhân viên
                         </div>
                         <div>
-                          <strong>Link phòng họp: </strong
-                          >https//manhanhwithlove.vn
+                          <strong>Link phòng họp: </strong>https//dangduc.vn
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div class="border-4 border-start border-info">
-                    <div
-                      class="d-flex justify-content-between pt-2 pb-2 border-bottom ">
+                  <div
+                    class="container-fluid morning-item border-4 border-start border-info"
+                  >
+                    <div class="row pt-2 pb-2 border-bottom">
                       <div
-                        class="pe-4 ps-2 text-center align-self-center"
-                        style="width: 150px;"
+                        class="col-3 col-sm-2 d-flex flex-column flex-xl-row justify-content-center align-items-center ps-xl-2 gap-xl-5"
                       >
-                        11:00 - 12:00
+                        <div class="text-center text-info">Sáng</div>
+                        <div class="text-center text-nowrap mt-2 mt-xl-0 fs-12">
+                          11:00 - 12:00
+                        </div>
                       </div>
-                      <div
-                        class="pe-4 text-info text-center align-self-center"
-                      >
-                        Sáng
-                      </div>
-                      <div class="pe-4">
+                      <div class="col-9 col-sm-5">
                         <div>
                           <strong>Tiêu đề: </strong>
-                          <span class="text-primary"
-                            >Đào tạo Office cho các đơn vị trong doanh
-                            nghiệp</span
+                          <span class="text-info"
+                            >Triển khai kế hoạch Marketing cho sản phẩm
+                            mới</span
                           >
                         </div>
                         <div>
                           <strong>Địa điểm: </strong>
-                          <span class="text-primary"
-                            >Họp online trên E-office</span
+                          <span class="text-info"
+                            >Họp tại phòng họp 609-A9</span
                           >
                         </div>
                         <div>
                           <strong>Thành phần tham dự: </strong> <br />
                           <div>
                             - Lãnh đạo:
-                            <span class="text-primary">Ngô Mạnh Anh</span>
+                            <span class="text-info">Ngô Mạnh Anh</span>
                           </div>
                         </div>
-                        <div>- Chủ trì: Tổng giám đốc doanh nghiệp Đức Anh</div>
-                      </div>
-                      <div>
-                        <div>
-                          <strong>Nội dung công việc: </strong> đào tạo nghiệp
-                          vụ trên hệ thống E-office cho nhân viên
+                        <div>- Chủ trì: Chủ tịch doanh nghiệp Đức Anh</div>
+                        <div class="d-block d-sm-none">
+                          <strong>Nội dung công việc: </strong> Triển khai tính
+                          năng mới của sản phẩm
                         </div>
+                      </div>
+                      <div class="col-5 d-none d-sm-block">
                         <div>
-                          <strong>Link phòng họp: </strong
-                          >https//manhanhwithlove.vn
+                          <strong>Nội dung công việc: </strong> Triển khai tính
+                          năng mới của sản phẩm
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div class="border-4 border-start border-warning">
-                    <div
-                      class="d-flex justify-content-between pt-2 pb-2 border-bottom ">
+                  <div
+                    class="container-fluid affternoon-item border-4 border-start border-warning"
+                  >
+                    <div class="row pt-2 pb-2 border-bottom">
                       <div
-                        class="pe-4 ps-2 text-center align-self-center"
-                        style="width: 150px;"
+                        class="col-3 col-sm-2 d-flex flex-column flex-xl-row justify-content-center align-items-center ps-xl-2 gap-xl-5"
                       >
-                        14:00 - 15:00
+                        <div class="text-center text-warning">Chiều</div>
+                        <div class="text-center text-nowrap mt-2 mt-xl-0 fs-12">
+                          14:00 - 15:00
+                        </div>
                       </div>
-                      <div
-                        class="pe-4 text-warning text-center align-self-center"
-                      >
-                        Chiều
-                      </div>
-                      <div class="pe-4">
+                      <div class="col-9 col-sm-5">
                         <div>
                           <strong>Tiêu đề: </strong>
-                          <span class="text-primary"
-                            >Đào tạo Office cho các đơn vị trong doanh
-                            nghiệp</span
-                          >
+                          <span class="text-warning"
+                            >Đào tạo kỹ năng bán hàng cho nhân viên phòng
+                            marketing
+                          </span>
                         </div>
                         <div>
                           <strong>Địa điểm: </strong>
-                          <span class="text-primary"
+                          <span class="text-warning"
                             >Họp online trên E-office</span
                           >
                         </div>
@@ -5057,48 +5222,53 @@
                           <strong>Thành phần tham dự: </strong> <br />
                           <div>
                             - Lãnh đạo:
-                            <span class="text-primary">Ngô Mạnh Anh</span>
+                            <span class="text-warning">Nguyễn Đăng Đức</span>
                           </div>
                         </div>
-                        <div>- Chủ trì: Tổng giám đốc doanh nghiệp Đức Anh</div>
+                        <div>- Chủ trì: Chủ tịch doanh nghiệp Đức Anh</div>
+                        <div class="d-block d-sm-none">
+                          <div>
+                            <strong>Nội dung công việc: </strong> Các kỹ năng
+                            cần có để bán hàng hiệu quả
+                          </div>
+                          <div>
+                            <strong>Link phòng họp: </strong>https//dangduc.vn
+                          </div>
+                        </div>
                       </div>
-                      <div>
+                      <div class="col-5 d-none d-sm-block">
                         <div>
-                          <strong>Nội dung công việc: </strong> đào tạo nghiệp
-                          vụ trên hệ thống E-office cho nhân viên
+                          <strong>Nội dung công việc: </strong> Các kỹ năng cần
+                          có để bán hàng hiệu quả
                         </div>
                         <div>
-                          <strong>Link phòng họp: </strong
-                          >https//manhanhwithlove.vn
+                          <strong>Link phòng họp: </strong>https//dangduc.vn
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div class="border-4 border-start border-warning">
-                    <div
-                      class="d-flex justify-content-between pt-2 pb-2 border-bottom ">
+                  <div
+                    class="container-fluid affternoon-item border-4 border-start border-warning"
+                  >
+                    <div class="row pt-2 pb-2 border-bottom">
                       <div
-                        class="pe-4 ps-2 text-center align-self-center"
-                        style="width: 150px;"
+                        class="col-3 col-sm-2 d-flex flex-column flex-xl-row justify-content-center align-items-center ps-xl-2 gap-xl-5"
                       >
-                        15:00 - 17:00
+                        <div class="text-center text-warning">Chiều</div>
+                        <div class="text-center text-nowrap mt-2 mt-xl-0 fs-12">
+                          14:00 - 15:00
+                        </div>
                       </div>
-                      <div
-                        class="pe-4 text-warning text-center align-self-center"
-                      >
-                        Chiều
-                      </div>
-                      <div class="pe-4">
+                      <div class="col-9 col-sm-5">
                         <div>
                           <strong>Tiêu đề: </strong>
-                          <span class="text-primary"
-                            >Đào tạo Office cho các đơn vị trong doanh
-                            nghiệp</span
-                          >
+                          <span class="text-warning">
+                            Kế hoạch xây dựng cơ sở mới tại Miền Nam
+                          </span>
                         </div>
                         <div>
                           <strong>Địa điểm: </strong>
-                          <span class="text-primary"
+                          <span class="text-warning"
                             >Họp online trên E-office</span
                           >
                         </div>
@@ -5106,15 +5276,25 @@
                           <strong>Thành phần tham dự: </strong> <br />
                           <div>
                             - Lãnh đạo:
-                            <span class="text-primary">Ngô Mạnh Anh</span>
+                            <span class="text-warning">Ngô Mạnh Anh</span>
                           </div>
                         </div>
-                        <div>- Chủ trì: Tổng giám đốc doanh nghiệp Đức Anh</div>
+                        <div>- Chủ trì: Chủ tịch doanh nghiệp Đức Anh</div>
+                        <div class="d-block d-sm-none">
+                          <div>
+                            <strong>Nội dung công việc: </strong> Vị trí, kế
+                            hoạch xây dựng cơ sở mới
+                          </div>
+                          <div>
+                            <strong>Link phòng họp: </strong
+                            >https//manhanhwithlove.vn
+                          </div>
+                        </div>
                       </div>
-                      <div>
+                      <div class="col-5 d-none d-sm-block">
                         <div>
-                          <strong>Nội dung công việc: </strong> đào tạo nghiệp
-                          vụ trên hệ thống E-office cho nhân viên
+                          <strong>Nội dung công việc: </strong> Vị trí, kế hoạch
+                          xấy dựng cơ sở mới
                         </div>
                         <div>
                           <strong>Link phòng họp: </strong
@@ -5128,132 +5308,131 @@
                   <div
                     class="d-flex p-2 justify-content-between text-bg-primary mt-2 rounded-top"
                   >
-                    <div class="text-light fw-bold">Thứ Ba</div>
-                    <div class="text-light fw-bold">13 tháng 5, 2024</div>
+                    <div class="text-light fw-bold text-capitalize">
+                      thứ bai
+                    </div>
+                    <div class="text-light fw-bold">14 tháng 5, 2024</div>
                   </div>
-                  <div class="border-4 border-start border-info">
-                    <div
-                      class="d-flex justify-content-between pt-2 pb-2 border-bottom ">
+                  <div
+                    class="container-fluid morning-item border-4 border-start border-info"
+                  >
+                    <div class="row pt-2 pb-2 border-bottom">
                       <div
-                        class="pe-4 ps-2 text-center align-self-center"
-                        style="width: 150px;"
+                        class="col-3 col-sm-2 d-flex flex-column flex-xl-row justify-content-center align-items-center ps-xl-2 gap-xl-5"
                       >
-                        9:00 - 11:00
+                        <div class="text-center text-info">Sáng</div>
+                        <div class="text-center text-nowrap mt-2 mt-xl-0 fs-12">
+                          9:00 - 11:00
+                        </div>
                       </div>
-                      <div
-                        class="pe-4 text-info text-center align-self-center"
-                      >
-                        Sáng
-                      </div>
-                      <div class="pe-4">
+                      <div class="col-9 col-sm-5">
                         <div>
                           <strong>Tiêu đề: </strong>
-                          <span class="text-primary"
-                            >Đào tạo Office cho các đơn vị trong doanh
-                            nghiệp</span
-                          >
+                          <span class="text-info"
+                            >Triển khai kế hoạch tăng doanh thu tháng 5 của
+                            phòng Marketing
+                          </span>
                         </div>
                         <div>
                           <strong>Địa điểm: </strong>
-                          <span class="text-primary"
-                            >Họp online trên E-office</span
-                          >
+                          <span class="text-info">Họp tại phòng họp 302</span>
                         </div>
                         <div>
                           <strong>Thành phần tham dự: </strong> <br />
                           <div>
                             - Lãnh đạo:
-                            <span class="text-primary">Ngô Mạnh Anh</span>
+                            <span class="text-info">Nguyễn Đăng Đức</span>
                           </div>
                         </div>
-                        <div>- Chủ trì: Tổng giám đốc doanh nghiệp Đức Anh</div>
+                        <div>- Chủ trì: Chủ tịch doanh nghiệp Đức Anh</div>
+                        <div class="d-block d-sm-none">
+                          <div>
+                            <strong>Nội dung công việc: </strong> Các chiến lược
+                            triển khai trong thị trường để tăng doanh thu
+                          </div>
+                          <div>
+                            <strong>Link phòng họp: </strong>https//dangduc.vn
+                          </div>
+                        </div>
                       </div>
-                      <div>
+                      <div class="col-5 d-none d-sm-block">
                         <div>
-                          <strong>Nội dung công việc: </strong> đào tạo nghiệp
-                          vụ trên hệ thống E-office cho nhân viên
+                          <strong>Nội dung công việc: </strong> Các chiến lược
+                          triển khai trong thị trường để tăng doanh thu
                         </div>
                         <div>
-                          <strong>Link phòng họp: </strong
-                          >https//manhanhwithlove.vn
+                          <strong>Link phòng họp: </strong>https//dangduc.vn
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div class="border-4 border-start border-info">
-                    <div
-                      class="d-flex justify-content-between pt-2 pb-2 border-bottom ">
+                  <div
+                    class="container-fluid morning-item border-4 border-start border-info"
+                  >
+                    <div class="row pt-2 pb-2 border-bottom">
                       <div
-                        class="pe-4 ps-2 text-center align-self-center"
-                        style="width: 150px;"
+                        class="col-3 col-sm-2 d-flex flex-column flex-xl-row justify-content-center align-items-center ps-xl-2 gap-xl-5"
                       >
-                        11:00 - 12:00
+                        <div class="text-center text-info">Sáng</div>
+                        <div class="text-center text-nowrap mt-2 mt-xl-0 fs-12">
+                          11:00 - 12:00
+                        </div>
                       </div>
-                      <div
-                        class="pe-4 text-info text-center align-self-center"
-                      >
-                        Sáng
-                      </div>
-                      <div class="pe-4">
+                      <div class="col-9 col-sm-5">
                         <div>
                           <strong>Tiêu đề: </strong>
-                          <span class="text-primary"
-                            >Đào tạo Office cho các đơn vị trong doanh
-                            nghiệp</span
+                          <span class="text-info"
+                            >Kế hoạch tăng nhân sự quý 3/2024</span
                           >
                         </div>
                         <div>
                           <strong>Địa điểm: </strong>
-                          <span class="text-primary"
-                            >Họp online trên E-office</span
-                          >
+                          <span class="text-info">Họp tại phòng họp 406</span>
                         </div>
                         <div>
                           <strong>Thành phần tham dự: </strong> <br />
                           <div>
                             - Lãnh đạo:
-                            <span class="text-primary">Ngô Mạnh Anh</span>
+                            <span class="text-info">Ngô Mạnh Anh</span>
                           </div>
                         </div>
-                        <div>- Chủ trì: Tổng giám đốc doanh nghiệp Đức Anh</div>
-                      </div>
-                      <div>
-                        <div>
-                          <strong>Nội dung công việc: </strong> đào tạo nghiệp
-                          vụ trên hệ thống E-office cho nhân viên
+                        <div>- Chủ trì: Chủ tịch doanh nghiệp Đức Anh</div>
+                        <div class="d-block d-sm-none">
+                          <strong>Nội dung công việc: </strong> Phòng marketing
+                          cần tuyển dụng thêm nhân viên
                         </div>
+                      </div>
+                      <div class="col-5 d-none d-sm-block">
                         <div>
-                          <strong>Link phòng họp: </strong
-                          >https//manhanhwithlove.vn
+                          <strong>Nội dung công việc: </strong> Phòng marketing
+                          cần tuyển dụng thêm nhân viên
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div class="border-4 border-start border-warning">
-                    <div
-                      class="d-flex justify-content-between pt-2 pb-2 border-bottom ">
+                  <div
+                    class="container-fluid affternoon-item border-4 border-start border-warning"
+                  >
+                    <div class="row pt-2 pb-2 border-bottom">
                       <div
-                        class="pe-4 ps-2 text-center align-self-center"
-                        style="width: 150px;"
+                        class="col-3 col-sm-2 d-flex flex-column flex-xl-row justify-content-center align-items-center ps-xl-2 gap-xl-5"
                       >
-                        14:00 - 15:00
+                        <div class="text-center text-warning">Chiều</div>
+                        <div class="text-center text-nowrap mt-2 mt-xl-0 fs-12">
+                          14:00 - 15:00
+                        </div>
                       </div>
-                      <div
-                        class="pe-4 text-warning text-center align-self-center"
-                      >
-                        Chiều
-                      </div>
-                      <div class="pe-4">
+                      <div class="col-9 col-sm-5">
                         <div>
                           <strong>Tiêu đề: </strong>
-                          <span class="text-primary"
-                            >Đào tạo Office cho các đơn vị trong doanh
-                            nghiệp</span
+                          <span class="text-warning"
+                            >Kế hoạch tuyển dụng thực tập sinh các sinh viên mới
+                            ra trường các trường đại học</span
                           >
                         </div>
                         <div>
                           <strong>Địa điểm: </strong>
-                          <span class="text-primary"
+                          <span class="text-warning"
                             >Họp online trên E-office</span
                           >
                         </div>
@@ -5261,48 +5440,54 @@
                           <strong>Thành phần tham dự: </strong> <br />
                           <div>
                             - Lãnh đạo:
-                            <span class="text-primary">Ngô Mạnh Anh</span>
+                            <span class="text-warning">Nguyễn Đăng Đức</span>
                           </div>
                         </div>
-                        <div>- Chủ trì: Tổng giám đốc doanh nghiệp Đức Anh</div>
+                        <div>- Chủ trì: Chủ tịch doanh nghiệp Đức Anh</div>
+                        <div class="d-block d-sm-none">
+                          <div>
+                            <strong>Nội dung công việc: </strong> Kế hoạch thông
+                            báo hướng dẫn tuyển dụng
+                          </div>
+                          <div>
+                            <strong>Link phòng họp: </strong>https//dangduc.vn
+                          </div>
+                        </div>
                       </div>
-                      <div>
+                      <div class="col-5 d-none d-sm-block">
                         <div>
-                          <strong>Nội dung công việc: </strong> đào tạo nghiệp
-                          vụ trên hệ thống E-office cho nhân viên
+                          <strong>Nội dung công việc: </strong> Kế hoạch thông
+                          báo hướng dẫn tuyển dụng
                         </div>
                         <div>
-                          <strong>Link phòng họp: </strong
-                          >https//manhanhwithlove.vn
+                          <strong>Link phòng họp: </strong>https//dangduc.vn
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div class="border-4 border-start border-warning">
-                    <div
-                      class="d-flex justify-content-between pt-2 pb-2 border-bottom ">
+                  <div
+                    class="container-fluid affternoon-item border-4 border-start border-warning"
+                  >
+                    <div class="row pt-2 pb-2 border-bottom">
                       <div
-                        class="pe-4 ps-2 text-center align-self-center"
-                        style="width: 150px;"
+                        class="col-3 col-sm-2 d-flex flex-column flex-xl-row justify-content-center align-items-center ps-xl-2 gap-xl-5"
                       >
-                        15:00 - 17:00
+                        <div class="text-center text-warning">Chiều</div>
+                        <div class="text-center text-nowrap mt-2 mt-xl-0 fs-12">
+                          14:00 - 15:00
+                        </div>
                       </div>
-                      <div
-                        class="pe-4 text-warning text-center align-self-center"
-                      >
-                        Chiều
-                      </div>
-                      <div class="pe-4">
+                      <div class="col-9 col-sm-5">
                         <div>
                           <strong>Tiêu đề: </strong>
-                          <span class="text-primary"
-                            >Đào tạo Office cho các đơn vị trong doanh
-                            nghiệp</span
+                          <span class="text-warning"
+                            >Kế hoạch đào tạo e-office cho nhân viên doanh
+                            nghiệp lần 2</span
                           >
                         </div>
                         <div>
                           <strong>Địa điểm: </strong>
-                          <span class="text-primary"
+                          <span class="text-warning"
                             >Họp online trên E-office</span
                           >
                         </div>
@@ -5310,14 +5495,24 @@
                           <strong>Thành phần tham dự: </strong> <br />
                           <div>
                             - Lãnh đạo:
-                            <span class="text-primary">Ngô Mạnh Anh</span>
+                            <span class="text-warning">Ngô Mạnh Anh</span>
                           </div>
                         </div>
-                        <div>- Chủ trì: Tổng giám đốc doanh nghiệp Đức Anh</div>
+                        <div>- Chủ trì: Chủ tịch doanh nghiệp Đức Anh</div>
+                        <div class="d-block d-sm-none">
+                          <div>
+                            <strong>Nội dung công việc: </strong> Đào tạo nghiệp
+                            vụ trên hệ thống E-office cho nhân viên
+                          </div>
+                          <div>
+                            <strong>Link phòng họp: </strong
+                            >https//manhanhwithlove.vn
+                          </div>
+                        </div>
                       </div>
-                      <div>
+                      <div class="col-5 d-none d-sm-block">
                         <div>
-                          <strong>Nội dung công việc: </strong> đào tạo nghiệp
+                          <strong>Nội dung công việc: </strong> Đào tạo nghiệp
                           vụ trên hệ thống E-office cho nhân viên
                         </div>
                         <div>
@@ -5380,10 +5575,16 @@
                       <div>1-1 / 1</div>
                       <div class="d-flex gap-4">
                         <div style="cursor: pointer;">
-                          <i class="fas fa-chevron-left icon"></i>
+                          <i
+                            class="fas fa-chevron-left icon"
+                            aria-hidden="true"
+                          ></i>
                         </div>
                         <div style="cursor: pointer;">
-                          <i class="fas fa-chevron-right icon"></i>
+                          <i
+                            class="fas fa-chevron-right icon"
+                            aria-hidden="true"
+                          ></i>
                         </div>
                       </div>
                     </div>
@@ -5391,21 +5592,23 @@
                 </div>
                 <table class="table text-center table-hover">
                   <thead class="">
-                    <th>
-                      <div>STT</div>
-                    </th>
-                    <th>
-                      <div>Tiêu đề</div>
-                    </th>
-                    <th>
-                      <div>Người thực hiện</div>
-                    </th>
-                    <th>
-                      <div>Ngày tạo</div>
-                    </th>
-                    <th>
-                      <div>Trạng thái</div>
-                    </th>
+                    <tr>
+                      <th>
+                        <div>STT</div>
+                      </th>
+                      <th>
+                        <div>Tiêu đề</div>
+                      </th>
+                      <th>
+                        <div>Người thực hiện</div>
+                      </th>
+                      <th>
+                        <div>Ngày tạo</div>
+                      </th>
+                      <th>
+                        <div>Trạng thái</div>
+                      </th>
+                    </tr>
                   </thead>
                   <tbody>
                     <tr>
@@ -5413,21 +5616,29 @@
                       <td>
                         <div class="fs-6">
                           Các bước khởi tạo một hệ thống E-Office &nbsp;
-                          <i class="fa-regular fa-solid fa-heart heart-icon-js heart-icon"></i>
+                          <i
+                            class="fa-regular fa-solid fa-heart heart-icon-js heart-icon"
+                            aria-hidden="true"
+                            style="cursor: pointer; opacity: 0.6;"
+                          ></i>
                         </div>
                         <div
                           class="d-flex justify-content-center align-items-center"
                         >
                           <div>
                             <a href="#" class="text-decoration-none">
-                              &#8810; Xem thêm &#8811;</a
+                              ≪ Xem thêm ≫</a
                             >
                           </div>
                         </div>
                       </td>
                       <td>
                         <div>
-                          <i class="fa-solid fa-circle-user"></i> Ngô Mạnh Anh
+                          <i
+                            class="fa-solid fa-circle-user"
+                            aria-hidden="true"
+                          ></i>
+                          Ngô Mạnh Anh
                         </div>
                       </td>
                       <td>
@@ -5435,82 +5646,98 @@
                           type="date"
                           value="2024-04-10"
                           class="border border-0"
+                          max="2024-06-10"
+                          min="1940-01-01"
                         />
                       </td>
                       <td>
-                        <div class="text-success">
-                          Đã duyệt
-                        </div>
+                        <div class="text-success">Đã duyệt</div>
                       </td>
                     </tr>
                     <tr>
                       <td><div>2</div></td>
                       <td>
                         <div class="fs-6">
-                          Các bước khởi tạo một hệ thống E-Office &nbsp;
-                          <i class="fa-regular fa-heart heart-icon-js"></i>
+                          Cách marketing cho sản phẩm hiệu quả &nbsp;
+                          <i
+                            class="fa-regular fa-heart heart-icon-js"
+                            aria-hidden="true"
+                            style="cursor: pointer; opacity: 0.6;"
+                          ></i>
                         </div>
                         <div
                           class="d-flex justify-content-center align-items-center"
                         >
                           <div>
                             <a href="#" class="text-decoration-none">
-                              &#8810; Xem thêm &#8811;</a
+                              ≪ Xem thêm ≫</a
                             >
                           </div>
                         </div>
                       </td>
                       <td>
                         <div>
-                          <i class="fa-solid fa-circle-user"></i> Ngô Mạnh Anh
+                          <i
+                            class="fa-solid fa-circle-user"
+                            aria-hidden="true"
+                          ></i>
+                          Nguyễn Đăng Đức
                         </div>
                       </td>
                       <td>
                         <input
                           type="date"
-                          value="2024-04-10"
+                          value="2024-04-15"
                           class="border border-0"
+                          max="2024-06-10"
+                          min="1940-01-01"
                         />
                       </td>
                       <td>
-                        <div class="text-success">
-                          Đã duyệt
-                        </div>
+                        <div class="text-success">Đã duyệt</div>
                       </td>
                     </tr>
                     <tr>
                       <td><div>3</div></td>
                       <td>
                         <div class="fs-6">
-                          Các bước khởi tạo một hệ thống E-Office &nbsp;
-                          <i class="fa-regular fa-heart heart-icon-js"></i>
+                          Kỹ năng giao tiếp bán hàng hiệu quả &nbsp;
+                          <i
+                            class="fa-regular fa-heart heart-icon-js"
+                            aria-hidden="true"
+                            style="cursor: pointer; opacity: 0.6;"
+                          ></i>
                         </div>
                         <div
                           class="d-flex justify-content-center align-items-center"
                         >
                           <div>
                             <a href="#" class="text-decoration-none">
-                              &#8810; Xem thêm &#8811;</a
+                              ≪ Xem thêm ≫</a
                             >
                           </div>
                         </div>
                       </td>
                       <td>
                         <div>
-                          <i class="fa-solid fa-circle-user"></i> Nguyễn Anh Đức
+                          <i
+                            class="fa-solid fa-circle-user"
+                            aria-hidden="true"
+                          ></i>
+                          Nguyễn Anh Đức
                         </div>
                       </td>
                       <td>
                         <input
                           type="date"
-                          value="2024-04-10"
+                          value="2024-05-17"
                           class="border border-0"
+                          max="2024-06-10"
+                          min="1940-01-01"
                         />
                       </td>
                       <td>
-                        <div class="text-warning">
-                          Chờ xử lý
-                        </div>
+                        <div class="text-warning">Chờ xử lý</div>
                       </td>
                     </tr>
                   </tbody>
@@ -5521,10 +5748,141 @@
         </div>
       </div>
     </main>
+
+    <!-- Modal -->
+    <div class="modal fade" id="modal-user" tabindex="-1">
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5">Tài khoản của tôi</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="container-fluid">
+              <div class="row">
+                <form action="" class="col-12 col-lg-6">
+                  <div class="mt-4 mb-3">
+                    <label
+                      style="width: 90px;"
+                      for="name"
+                      class="mb-2 mb-lg-0 me-lg-4 text-lg-end"
+                      >Họ và tên
+                    </label>
+                    <input
+                      class="outline-none border-1 border border-secondary-subtle rounded px-2"
+                      type="text"
+                      name="name"
+                      id="nam"
+                      value="Ngô Mạnh Anh"
+                    />
+                  </div>
+                  <div class="mb-4 d-lg-flex align-items-lg-center">
+                    <div
+                      style="width: 90px;"
+                      class="mb-2 mb-lg-0 me-lg-4 text-lg-end"
+                    >
+                      Email
+                    </div>
+                    <div
+                      class="d-flex flex-wrap gap-2 justify-content-between"
+                      style="width: 240px;"
+                    >
+                      <div>
+                        linh***@gmail.com
+                      </div>
+                      <a href="#" class="ms-5">Thay đổi</a>
+                    </div>
+                  </div>
+                  <div class="my-4 d-lg-flex align-items-lg-center">
+                    <div
+                      style="width: 90px;"
+                      class="mb-2 mb-lg-0 me-lg-4 text-lg-end"
+                    >
+                      Số điện thoại
+                    </div>
+                    <div
+                      class="d-flex flex-wrap gap-2 justify-content-between"
+                      style="width: 240px;"
+                    >
+                      <div>
+                        098*******
+                      </div>
+                      <a href="#" class="ms-5">Thay đổi</a>
+                    </div>
+                  </div>
+                  <div class="my-4 d-flex align-items-center">
+                    <div style="width: 90px;" class="text-end me-3">
+                      Giới tính
+                    </div>
+                    <input
+                      type="radio"
+                      class="me-1"
+                      name="sex"
+                      id="male"
+                      checked
+                    />
+                    <label for="male" class="me-2">Nam</label>
+
+                    <input type="radio" class="me-1" name="sex" id="female" />
+                    <label for="female" class="me-2">Nữ</label>
+
+                    <input type="radio" class="me-1" name="sex" id="other" />
+                    <label for="other" class="me-2">Khác</label>
+                  </div>
+
+                  <div class="my-4">
+                    <label class="text-end me-3" style="width: 90px;" for="date"
+                      >Ngày sinh</label
+                    >
+                    <input
+                      type="date"
+                      class="outline-none border-0"
+                      name="data"
+                      id="date"
+                      value="2003-09-12"
+                    />
+                  </div>
+                </form>
+                <div class="col-12 col-lg-6 mt-4 pt-2 pt-lg-0 text-center">
+                  <div class="mb-4">
+                    <img
+                      width="160"
+                      height="160"
+                      id="image-preview"
+                      src="https://down-vn.img.susercontent.com/file/9c56f697b694cbc2531371b60ea65166"
+                      alt=""
+                    />
+                  </div>
+                  <input
+                    type="file"
+                    onchange="chooseFile(this)"
+                    value="Chọn ảnh"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Đóng
+            </button>
+            <button type="button" class="btn btn-primary">Lưu thay đổi</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 
   <script src="./assets/jquery/jquery-3.7.1.min.js"></script>
   <script src="./assets/bootstraps/js/bootstrap.bundle.js"></script>
   <script src="./index.js"></script>
 </html>
-

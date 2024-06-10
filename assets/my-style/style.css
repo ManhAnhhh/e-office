@@ -7,7 +7,7 @@
 }
 
 body {
-  transition: all 0.5s ease;
+  transition: all 0.3s ease;
   font-size: 0.875rem;
   line-height: 1.6;
   font-weight: 400;
@@ -26,31 +26,39 @@ body {
 .fs-10 {
   font-size: 0.6rem !important;
 }
+
 .fs-12 {
   font-size: 0.8rem !important;
 }
+
 .fs-14 {
   font-size: 0.875rem !important;
 }
+
 .cursor-pointer {
   cursor: pointer;
 }
+
 .outline-none {
-  outline: none!important;
+  outline: none !important;
 }
+
 .border-bottom-active {
   border-bottom: 2px solid #377dff !important;
   transition: border-color .6s ease;
 }
+
 i.icon {
   color: #677788 !important;
 }
+
 i.heart-icon {
-  color: red!important;
+  color: red !important;
 }
+
 i.icon:hover {
   cursor: pointer;
-  color: #377dff!important;
+  color: #377dff !important;
 }
 
 /* aside */
@@ -90,8 +98,12 @@ body::-webkit-scrollbar-thumb {
   cursor: pointer;
 }
 
-a.active i {
+.wrapper-list-group-js a.active i {
   color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.navMobile-index a.active i {
+  color: #fff !important;
 }
 
 .btn-toggle::before {
@@ -130,17 +142,41 @@ span.img-infor:hover {
   color: #377dff;
 }
 
+.notice-icon .notice-bubble {
+  display: none;
+  animation: .4s ease-out fade_in_and_out;
+}
+
+@keyframes fade_in_and_out {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.notice-icon:hover .notice-bubble {
+  display: block;
+}
+
 .notice-icon:hover i {
   color: #377dff;
 }
 
+.notice-item:hover {
+  background-color: #eeeef0;
+}
+
 span.img-infor {
-  width: 32px;
-  height: 32px;
   border-radius: 50%;
   background-color: #f7dcb9;
-  color: var(--icon);
-  padding: 6px 12px;
+  padding: 8px 14px;
 }
 
 span.img-infor,
@@ -253,6 +289,17 @@ a.nav-link.active {
 .calendar-content {
   height: calc(100vh - var(--h-header) - 54px);
 }
+
+.calendar-content .morning-item:hover {
+  background-color: #cff4fc;
+  /* #cff4fc */
+}
+
+.calendar-content .affternoon-item:hover {
+  background-color: #fff3cd;
+  /* #cff4fc */
+}
+
 @media (max-width: 576px) {
   .calendar-content {
     height: calc(100vh - var(--h-header) - 96px);

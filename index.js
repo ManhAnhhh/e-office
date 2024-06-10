@@ -127,3 +127,15 @@ const sendMessage = () => {
   document.getElementById("send-js").style.display = "none";
   document.getElementById("message-js").value = "";
 };
+
+
+//
+function chooseFile (fileInput) {
+  if(fileInput.files && fileInput.files[0]){
+    var reader = new FileReader();
+    reader.onload = function (e) {
+      document.getElementById("image-preview").src = e.target.result;
+    }
+    reader.readAsDataURL(fileInput.files[0]); // convert to base64 string
+  }
+}

@@ -7,7 +7,6 @@ $(document).ready(function () {
     });
   });
 
-
   const navList = $(".list-js");
   const title = $(".title-js");
   navList.each(function (index, e) {

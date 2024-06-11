@@ -259,7 +259,7 @@
           <div class="ms-md-4 mx-sm-auto fs-3 title-js text-primary">
             Tổng quan
           </div>
-          <div class="d-flex align-items-center">
+          <div class="d-flex align-items-center my-3 my-sm-3">
             <div
               class="notice-icon mx-3 position-relative rounded-circle border border-secondary-subtle"
             >
@@ -569,7 +569,7 @@
               <div
                 class="col-lg-9 col-md-8 d-flex flex-column wrapper-main-index"
               >
-                <div class="main-top border border-1 col-12">
+                <div class="main-top border border-1 col-12 mt-2 mt-sm-0">
                   <section
                     class="text-center d-flex justify-content-center align-items-center gap-4 border-bottom border-2"
                   >
@@ -682,7 +682,7 @@
                             Văn bản dự thảo
                           </div>
                           <div class="fz-12">
-                            3 chờ xử lý
+                            4 chờ xử lý
                             <span class="news-span">0 mới</span>
                           </div>
                         </div>
@@ -1536,7 +1536,12 @@
                       </button>
                     </li>
                   </ul>
-                  <button class="btn btn-primary" type="button">
+                  <button
+                    class="btn btn-primary"
+                    type="button"
+                    data-bs-toggle="modal"
+                    data-bs-target="#add-text-modal"
+                  >
                     <i class="text-light fas fa-plus-circle"></i>
                     Thêm mới
                   </button>
@@ -1587,9 +1592,7 @@
                       >
                         <thead class="table-light border-end-0">
                           <tr>
-                            <th class="pt-3 pb-3 text-light-emphasis">
-                              STT
-                            </th>
+                            <th class="pt-3 pb-3 text-light-emphasis">STT</th>
                             <th class="pt-3 pb-3 text-light-emphasis">
                               Trích yếu
                             </th>
@@ -1611,9 +1614,7 @@
                           <tr>
                             <td>1</td>
                             <td>
-                              <div>
-                                Thông báo về việc thi đua tháng 4
-                              </div>
+                              <div>Thông báo về việc thi đua tháng 4</div>
                               <div
                                 class="d-flex justify-content-center gap-3 mt-1"
                               >
@@ -1635,12 +1636,17 @@
                                 type="date"
                                 class="border border-0"
                                 value="2024-04-10"
+                                max="2024-06-11"
+                                min="1940-01-01"
                               />
                             </td>
                             <td>
                               <div>
-                                <i class="fa-solid fa-circle-user"></i> &nbsp;
-                                Ngô Mạnh Anh
+                                <i
+                                  class="fa-solid fa-circle-user"
+                                  aria-hidden="true"
+                                ></i>
+                                &nbsp; Ngô Mạnh Anh
                               </div>
                             </td>
                             <td>
@@ -1648,6 +1654,8 @@
                                 type="date"
                                 class="border border-0"
                                 value="2024-04-20"
+                                max="2024-06-11"
+                                min="1940-01-01"
                               />
                             </td>
                             <td>
@@ -1655,15 +1663,15 @@
                                 type="date"
                                 class="border border-0"
                                 value="2024-04-21"
+                                max="2024-06-11"
+                                min="1940-01-01"
                               />
                             </td>
                           </tr>
                           <tr>
                             <td>2</td>
                             <td>
-                              <div>
-                                Thông báo về việc thi đua tháng 4
-                              </div>
+                              <div>Thông báo về việc tăng hệ số lương mới</div>
                               <div
                                 class="d-flex justify-content-center gap-3 mt-1"
                               >
@@ -1684,13 +1692,18 @@
                               <input
                                 type="date"
                                 class="border border-0"
-                                value="2024-04-10"
+                                value="2024-04-11"
+                                max="2024-06-11"
+                                min="1940-01-01"
                               />
                             </td>
                             <td>
                               <div>
-                                <i class="fa-solid fa-circle-user"></i>
-                                &nbsp;Ngô Mạnh Anh
+                                <i
+                                  class="fa-solid fa-circle-user"
+                                  aria-hidden="true"
+                                ></i>
+                                &nbsp;Nguyễn Đăng Đức
                               </div>
                             </td>
                             <td>
@@ -1698,13 +1711,17 @@
                                 type="date"
                                 class="border border-0"
                                 value="2024-04-20"
+                                max="2024-06-11"
+                                min="1940-01-01"
                               />
                             </td>
                             <td>
                               <input
                                 type="date"
                                 class="border border-0"
-                                value="2024-04-21"
+                                value="2024-04-22"
+                                max="2024-06-11"
+                                min="1940-01-01"
                               />
                             </td>
                           </tr>
@@ -1712,7 +1729,8 @@
                             <td>3</td>
                             <td>
                               <div>
-                                Thông báo về việc thi đua tháng 4
+                                Kế hoạch xây dựng cơ sở hạ tầng mới của doanh
+                                nghiệp
                               </div>
                               <div
                                 class="d-flex justify-content-center gap-3 mt-1"
@@ -1734,27 +1752,36 @@
                               <input
                                 type="date"
                                 class="border border-0"
-                                value="2024-04-10"
+                                value="2024-04-15"
+                                max="2024-06-11"
+                                min="1940-01-01"
                               />
                             </td>
                             <td>
                               <div>
-                                <i class="fa-solid fa-circle-user"></i>
-                                &nbsp;Ngô Mạnh Anh
+                                <i
+                                  class="fa-solid fa-circle-user"
+                                  aria-hidden="true"
+                                ></i>
+                                &nbsp;Ngô Linh Anh
                               </div>
                             </td>
                             <td>
                               <input
                                 type="date"
                                 class="border border-0"
-                                value="2024-04-20"
+                                value="2024-04-23"
+                                max="2024-06-11"
+                                min="1940-01-01"
                               />
                             </td>
                             <td>
                               <input
                                 type="date"
                                 class="border border-0"
-                                value="2024-04-21"
+                                value="2024-04-25"
+                                max="2024-06-11"
+                                min="1940-01-01"
                               />
                             </td>
                           </tr>
@@ -1762,7 +1789,8 @@
                             <td>4</td>
                             <td>
                               <div>
-                                Thông báo về việc thi đua tháng 4
+                                Thông báo về việc tuyển dụng nhân sự phòng
+                                Marketing tháng 5
                               </div>
                               <div
                                 class="d-flex justify-content-center gap-3 mt-1"
@@ -1784,27 +1812,36 @@
                               <input
                                 type="date"
                                 class="border border-0"
-                                value="2024-04-10"
+                                value="2024-04-17"
+                                max="2024-06-11"
+                                min="1940-01-01"
                               />
                             </td>
                             <td>
                               <div>
-                                <i class="fa-solid fa-circle-user"></i>
-                                &nbsp;Ngô Mạnh Anh
+                                <i
+                                  class="fa-solid fa-circle-user"
+                                  aria-hidden="true"
+                                ></i>
+                                &nbsp;Nguyễn Anh Đức
                               </div>
                             </td>
                             <td>
                               <input
                                 type="date"
                                 class="border border-0"
-                                value="2024-04-20"
+                                value="2024-04-25"
+                                max="2024-06-11"
+                                min="1940-01-01"
                               />
                             </td>
                             <td>
                               <input
                                 type="date"
                                 class="border border-0"
-                                value="2024-04-21"
+                                value="2024-04-29"
+                                max="2024-06-11"
+                                min="1940-01-01"
                               />
                             </td>
                           </tr>
@@ -2778,7 +2815,12 @@
                       class="col-12 d-flex justify-content-end align-items-center gap-4"
                     >
                       <div>Ngày chuyển</div>
-                      <input type="date" class="border-0" />
+                      <input
+                        type="date"
+                        class="border-0"
+                        max="2024-06-11"
+                        min="1940-01-01"
+                      />
                       <div class="d-flex align-items-center">
                         <div class="mt-1">
                           <i class="fi fi-rr-settings-sliders"></i>
@@ -2789,7 +2831,7 @@
                           id="selectItem"
                           title="Tất cả"
                         >
-                          <option class="text-start" value="all" selected>
+                          <option class="text-start" value="all" selected="">
                             Tất cả
                           </option>
                           <option class="text-start" value="unread">
@@ -2811,9 +2853,7 @@
                       >
                         <thead class="table-light border-end-0">
                           <tr>
-                            <th class="pt-3 pb-3 text-light-emphasis">
-                              STT
-                            </th>
+                            <th class="pt-3 pb-3 text-light-emphasis">STT</th>
                             <th class="pt-3 pb-3 text-light-emphasis">
                               Trích yếu
                             </th>
@@ -2857,12 +2897,17 @@
                                 type="date"
                                 class="border border-0"
                                 value="2024-04-10"
+                                max="2024-06-11"
+                                min="1940-01-01"
                               />
                             </td>
                             <td>
                               <div class="text-nowrap">
-                                <i class="fa-solid fa-circle-user"></i> &nbsp;
-                                Ngô Mạnh Anh
+                                <i
+                                  class="fa-solid fa-circle-user"
+                                  aria-hidden="true"
+                                ></i>
+                                &nbsp; Ngô Mạnh Anh
                               </div>
                             </td>
                             <td>
@@ -2870,18 +2915,23 @@
                                 type="date"
                                 class="border border-0"
                                 value="2024-04-20"
+                                max="2024-06-11"
+                                min="1940-01-01"
                               />
                             </td>
                             <td>
-                              <div><i class="fa-solid fa-trash icon"></i></div>
+                              <div>
+                                <i
+                                  class="fa-solid fa-trash icon"
+                                  aria-hidden="true"
+                                ></i>
+                              </div>
                             </td>
                           </tr>
                           <tr>
                             <td>2</td>
                             <td>
-                              <div>
-                                Thông báo về việc thi đua tháng 4
-                              </div>
+                              <div>Thông báo về việc thi đua tháng 5</div>
                               <div
                                 class="d-flex justify-content-center gap-3 mt-1"
                               >
@@ -2902,31 +2952,44 @@
                               <input
                                 type="date"
                                 class="border border-0"
-                                value="2024-04-10"
+                                value="2024-04-20"
+                                max="2024-06-11"
+                                min="1940-01-01"
                               />
                             </td>
                             <td>
                               <div>
-                                <i class="fa-solid fa-circle-user"></i>
-                                &nbsp;Ngô Mạnh Anh
+                                <i
+                                  class="fa-solid fa-circle-user"
+                                  aria-hidden="true"
+                                ></i>
+                                &nbsp;Nguyễn Đăng Đức
                               </div>
                             </td>
                             <td>
                               <input
                                 type="date"
                                 class="border border-0"
-                                value="2024-04-20"
+                                value="2024-04-28"
+                                max="2024-06-11"
+                                min="1940-01-01"
                               />
                             </td>
                             <td>
-                              <div><i class="fa-solid fa-trash icon"></i></div>
+                              <div>
+                                <i
+                                  class="fa-solid fa-trash icon"
+                                  aria-hidden="true"
+                                ></i>
+                              </div>
                             </td>
                           </tr>
                           <tr>
                             <td>3</td>
                             <td>
                               <div>
-                                Thông báo về việc thi đua tháng 4
+                                Thông báo về việc phòng cháy chữa cháy của doanh
+                                nghiệp
                               </div>
                               <div
                                 class="d-flex justify-content-center gap-3 mt-1"
@@ -2948,31 +3011,44 @@
                               <input
                                 type="date"
                                 class="border border-0"
-                                value="2024-04-10"
+                                value="2024-05-10"
+                                max="2024-06-11"
+                                min="1940-01-01"
                               />
                             </td>
                             <td>
                               <div>
-                                <i class="fa-solid fa-circle-user"></i>
-                                &nbsp;Ngô Mạnh Anh
+                                <i
+                                  class="fa-solid fa-circle-user"
+                                  aria-hidden="true"
+                                ></i>
+                                &nbsp;Ngô Linh Anh
                               </div>
                             </td>
                             <td>
                               <input
                                 type="date"
                                 class="border border-0"
-                                value="2024-04-20"
+                                value="2024-05-20"
+                                max="2024-06-11"
+                                min="1940-01-01"
                               />
                             </td>
                             <td>
-                              <div><i class="fa-solid fa-trash icon"></i></div>
+                              <div>
+                                <i
+                                  class="fa-solid fa-trash icon"
+                                  aria-hidden="true"
+                                ></i>
+                              </div>
                             </td>
                           </tr>
                           <tr>
                             <td>4</td>
                             <td>
                               <div>
-                                Thông báo về việc thi đua tháng 4
+                                Kế hoạch hướng dẫn đội ngũ mới tại sơ sở miền
+                                Nam
                               </div>
                               <div
                                 class="d-flex justify-content-center gap-3 mt-1"
@@ -2994,24 +3070,36 @@
                               <input
                                 type="date"
                                 class="border border-0"
-                                value="2024-04-10"
+                                value="2024-05-17"
+                                max="2024-06-11"
+                                min="1940-01-01"
                               />
                             </td>
                             <td>
                               <div>
-                                <i class="fa-solid fa-circle-user"></i>
-                                &nbsp;Ngô Mạnh Anh
+                                <i
+                                  class="fa-solid fa-circle-user"
+                                  aria-hidden="true"
+                                ></i>
+                                &nbsp;Nguyễn Anh Đức
                               </div>
                             </td>
                             <td>
                               <input
                                 type="date"
                                 class="border border-0"
-                                value="2024-04-20"
+                                value="2024-05-20"
+                                max="2024-06-11"
+                                min="1940-01-01"
                               />
                             </td>
                             <td>
-                              <div><i class="fa-solid fa-trash icon"></i></div>
+                              <div>
+                                <i
+                                  class="fa-solid fa-trash icon"
+                                  aria-hidden="true"
+                                ></i>
+                              </div>
                             </td>
                           </tr>
                         </tbody>
@@ -3029,7 +3117,12 @@
                       class="col-12 d-flex justify-content-end align-items-center gap-4"
                     >
                       <div>Ngày chuyển</div>
-                      <input type="date" class="border-0" />
+                      <input
+                        type="date"
+                        class="border-0"
+                        max="2024-06-11"
+                        min="1940-01-01"
+                      />
                       <div class="d-flex align-items-center">
                         <div class="mt-1">
                           <i class="fi fi-rr-settings-sliders"></i>
@@ -3040,7 +3133,7 @@
                           id="selectItem"
                           title="Tất cả"
                         >
-                          <option class="text-start" value="all" selected>
+                          <option class="text-start" value="all" selected="">
                             Tất cả
                           </option>
                           <option class="text-start" value="unread">
@@ -3062,9 +3155,7 @@
                       >
                         <thead class="table-light border-end-0">
                           <tr>
-                            <th class="pt-3 pb-3 text-light-emphasis">
-                              STT
-                            </th>
+                            <th class="pt-3 pb-3 text-light-emphasis">STT</th>
                             <th class="pt-3 pb-3 text-light-emphasis">
                               Trích yếu
                             </th>
@@ -3096,14 +3187,20 @@
                             </td>
                             <td>
                               <div class="text-start">
-                                <i class="fa-solid fa-circle-user"></i> &nbsp;
-                                Nguyễn Đăng Đức
+                                <i
+                                  class="fa-solid fa-circle-user"
+                                  aria-hidden="true"
+                                ></i>
+                                &nbsp; Nguyễn Đăng Đức
                               </div>
                             </td>
                             <td>
                               <div class="text-start text-nowrap">
-                                <i class="fa-solid fa-circle-user"></i> &nbsp;
-                                Nguyễn Đăng Đức
+                                <i
+                                  class="fa-solid fa-circle-user"
+                                  aria-hidden="true"
+                                ></i>
+                                &nbsp; Nguyễn Đăng Đức
                               </div>
                             </td>
                             <td>
@@ -3111,10 +3208,15 @@
                                 type="date"
                                 class="border border-0"
                                 value="2024-04-05"
+                                max="2024-06-11"
+                                min="1940-01-01"
                               />
                             </td>
                             <td class="">
-                              <i class="fa-solid fa-trash-can icon"></i>
+                              <i
+                                class="fa-solid fa-trash-can icon"
+                                aria-hidden="true"
+                              ></i>
                             </td>
                           </tr>
                           <tr>
@@ -3133,13 +3235,19 @@
 
                             <td>
                               <div class="text-start">
-                                <i class="fa-solid fa-circle-user"></i>
+                                <i
+                                  class="fa-solid fa-circle-user"
+                                  aria-hidden="true"
+                                ></i>
                                 &nbsp;Ngô Mạnh Anh
                               </div>
                             </td>
                             <td>
                               <div class="text-start text-nowrap">
-                                <i class="fa-solid fa-circle-user"></i>
+                                <i
+                                  class="fa-solid fa-circle-user"
+                                  aria-hidden="true"
+                                ></i>
                                 &nbsp;Ngô Linh Anh
                               </div>
                             </td>
@@ -3148,10 +3256,15 @@
                                 type="date"
                                 class="border border-0"
                                 value="2024-04-03"
+                                max="2024-06-11"
+                                min="1940-01-01"
                               />
                             </td>
                             <td class="">
-                              <i class="fa-solid fa-trash-can icon"></i>
+                              <i
+                                class="fa-solid fa-trash-can icon"
+                                aria-hidden="true"
+                              ></i>
                             </td>
                           </tr>
                           <tr>
@@ -3167,14 +3280,20 @@
 
                             <td>
                               <div class="text-start">
-                                <i class="fa-solid fa-circle-user"></i> &nbsp;
-                                Nguyễn Đăng Đức
+                                <i
+                                  class="fa-solid fa-circle-user"
+                                  aria-hidden="true"
+                                ></i>
+                                &nbsp; Nguyễn Đăng Đức
                               </div>
                             </td>
                             <td>
                               <div class="text-start text-nowrap">
-                                <i class="fa-solid fa-circle-user"></i> &nbsp;
-                                Nguyễn Anh Đức
+                                <i
+                                  class="fa-solid fa-circle-user"
+                                  aria-hidden="true"
+                                ></i>
+                                &nbsp; Nguyễn Anh Đức
                               </div>
                             </td>
                             <td>
@@ -3182,10 +3301,15 @@
                                 type="date"
                                 class="border border-0"
                                 value="2024-04-05"
+                                max="2024-06-11"
+                                min="1940-01-01"
                               />
                             </td>
                             <td class="">
-                              <i class="fa-solid fa-trash-can icon"></i>
+                              <i
+                                class="fa-solid fa-trash-can icon"
+                                aria-hidden="true"
+                              ></i>
                             </td>
                           </tr>
                           <tr>
@@ -3200,14 +3324,20 @@
                             </td>
                             <td>
                               <div class="text-start">
-                                <i class="fa-solid fa-circle-user"></i> &nbsp;
-                                Ngô Đức Anh
+                                <i
+                                  class="fa-solid fa-circle-user"
+                                  aria-hidden="true"
+                                ></i>
+                                &nbsp; Ngô Đức Anh
                               </div>
                             </td>
                             <td>
                               <div class="text-start text-nowrap">
-                                <i class="fa-solid fa-circle-user"></i> &nbsp;
-                                Ngô Đức Linh
+                                <i
+                                  class="fa-solid fa-circle-user"
+                                  aria-hidden="true"
+                                ></i>
+                                &nbsp; Ngô Đức Linh
                               </div>
                             </td>
                             <td>
@@ -3215,10 +3345,15 @@
                                 type="date"
                                 class="border border-0"
                                 value="2024-04-02"
+                                max="2024-06-11"
+                                min="1940-01-01"
                               />
                             </td>
                             <td>
-                              <i class="fa-solid fa-trash-can icon"></i>
+                              <i
+                                class="fa-solid fa-trash-can icon"
+                                aria-hidden="true"
+                              ></i>
                             </td>
                           </tr>
                         </tbody>
@@ -3236,7 +3371,12 @@
                       class="col-12 d-flex justify-content-end align-items-center gap-4"
                     >
                       <div>Ngày chuyển</div>
-                      <input type="date" class="border-0" />
+                      <input
+                        type="date"
+                        class="border-0"
+                        max="2024-06-11"
+                        min="1940-01-01"
+                      />
                       <div class="d-flex align-items-center">
                         <div class="mt-1">
                           <i class="fi fi-rr-settings-sliders"></i>
@@ -3247,7 +3387,7 @@
                           id="selectItem"
                           title="Tất cả"
                         >
-                          <option class="text-start" value="all" selected>
+                          <option class="text-start" value="all" selected="">
                             Tất cả
                           </option>
                           <option class="text-start" value="unread">
@@ -3269,9 +3409,7 @@
                       >
                         <thead class="table-light border-end-0">
                           <tr>
-                            <th class="pt-3 pb-3 text-light-emphasis">
-                              STT
-                            </th>
+                            <th class="pt-3 pb-3 text-light-emphasis">STT</th>
                             <th class="pt-3 pb-3 text-light-emphasis">
                               Trích yếu
                             </th>
@@ -3304,29 +3442,32 @@
                               <div class="text-danger">
                                 <i
                                   class="fa-solid fa-circle-minus text-danger"
+                                  aria-hidden="true"
                                 ></i>
                                 Từ chối ban hành
                               </div>
                             </td>
                             <td>
                               <div>
-                                <i class="fa-solid fa-circle-user"></i> &nbsp;
-                                Nguyễn Đăng Đức
+                                <i
+                                  class="fa-solid fa-circle-user"
+                                  aria-hidden="true"
+                                ></i>
+                                &nbsp; Nguyễn Đăng Đức
                               </div>
                             </td>
-                            <td>
-                              08/04/2024 21:10
-                            </td>
+                            <td>08/04/2024 21:10</td>
                             <td class="">
-                              <i class="fa-solid fa-trash-can icon"></i>
+                              <i
+                                class="fa-solid fa-trash-can icon"
+                                aria-hidden="true"
+                              ></i>
                             </td>
                           </tr>
                           <tr>
                             <td>2</td>
                             <td>
-                              <div class="text-start">
-                                Báo cáo dự án quý I
-                              </div>
+                              <div class="text-start">Báo cáo dự án quý I</div>
                               <div
                                 class="fs-10 fw-bold text-start text-warning"
                               >
@@ -3337,29 +3478,32 @@
                               <div class="text-danger">
                                 <i
                                   class="fa-solid fa-circle-minus text-danger"
+                                  aria-hidden="true"
                                 ></i>
                                 Từ chối ban hành
                               </div>
                             </td>
                             <td>
                               <div>
-                                <i class="fa-solid fa-circle-user"></i> &nbsp;
-                                Nguyễn Đăng Đức
+                                <i
+                                  class="fa-solid fa-circle-user"
+                                  aria-hidden="true"
+                                ></i>
+                                &nbsp; Nguyễn Đăng Đức
                               </div>
                             </td>
-                            <td>
-                              03/04/2024 13:10
-                            </td>
+                            <td>03/04/2024 13:10</td>
                             <td class="">
-                              <i class="fa-solid fa-trash-can icon"></i>
+                              <i
+                                class="fa-solid fa-trash-can icon"
+                                aria-hidden="true"
+                              ></i>
                             </td>
                           </tr>
                           <tr>
                             <td>3</td>
                             <td>
-                              <div class="text-start">
-                                Công văn họp nội bộ
-                              </div>
+                              <div class="text-start">Công văn họp nội bộ</div>
                               <div class="fs-10 fw-bold text-start text-info">
                                 Công văn
                               </div>
@@ -3368,21 +3512,26 @@
                               <div class="text-danger">
                                 <i
                                   class="fa-solid fa-circle-minus text-danger"
+                                  aria-hidden="true"
                                 ></i>
                                 Từ chối ban hành
                               </div>
                             </td>
                             <td>
                               <div>
-                                <i class="fa-solid fa-circle-user"></i> &nbsp;
-                                Nguyễn Anh Đức
+                                <i
+                                  class="fa-solid fa-circle-user"
+                                  aria-hidden="true"
+                                ></i>
+                                &nbsp; Nguyễn Anh Đức
                               </div>
                             </td>
-                            <td>
-                              04/04/2024 09:10
-                            </td>
+                            <td>04/04/2024 09:10</td>
                             <td class="">
-                              <i class="fa-solid fa-trash-can icon"></i>
+                              <i
+                                class="fa-solid fa-trash-can icon"
+                                aria-hidden="true"
+                              ></i>
                             </td>
                           </tr>
                           <tr>
@@ -3399,21 +3548,26 @@
                               <div class="text-danger">
                                 <i
                                   class="fa-solid fa-circle-minus text-danger"
+                                  aria-hidden="true"
                                 ></i>
                                 Từ chối ban hành
                               </div>
                             </td>
                             <td>
                               <div>
-                                <i class="fa-solid fa-circle-user"></i> &nbsp;
-                                Ngô Đức Anh
+                                <i
+                                  class="fa-solid fa-circle-user"
+                                  aria-hidden="true"
+                                ></i>
+                                &nbsp; Ngô Đức Anh
                               </div>
                             </td>
-                            <td>
-                              07/04/2024 07:10
-                            </td>
+                            <td>07/04/2024 07:10</td>
                             <td class="">
-                              <i class="fa-solid fa-trash-can icon"></i>
+                              <i
+                                class="fa-solid fa-trash-can icon"
+                                aria-hidden="true"
+                              ></i>
                             </td>
                           </tr>
                         </tbody>
@@ -3526,7 +3680,7 @@
                       </button>
                     </li>
                   </ul>
-                  <button class="btn btn-primary" type="button">
+                  <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#add-work-modal">
                     <i class="text-light fas fa-plus-circle"></i>
                     Giao việc
                   </button>
@@ -5880,6 +6034,133 @@
         </div>
       </div>
     </div>
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="add-text-modal"
+      tabindex="-1"
+      aria-labelledby="add-text-modal-label"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="add-text-modal-label">
+              Thêm mới văn bản
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div>
+              Người thực hiện: Ngô Mạnh Anh
+            </div>
+            <div class="my-2">
+              <div class="d-inline-block me-2">Thể loại: </div>
+              <select name="" id="">
+                <option value="text-1">Công văn</option>
+                <option value="text-2">Báo cáo</option>
+                <option value="text-3">Biên bản</option>
+                <option value="text-4">Quyết định</option>
+              </select>
+            </div>
+            <div class="my-2">
+                <input
+                type="text"
+                class="w-100 border-0 border-bottom border-secondary-subtle outline-none"
+                placeholder="Tiêu đề"
+                />
+            </div>
+            <div class="mt-4 mb-2">
+              <div>
+                Nội dung: 
+              </div>
+              <textarea name="text" id="text" rows="5" class="w-100"></textarea>
+            </div>
+            <div class="my-3">
+              <input type="file" />
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Đóng
+            </button>
+            <button type="button" class="btn btn-primary">Thêm</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+    class="modal fade"
+    id="add-work-modal"
+    tabindex="-1"
+    aria-labelledby="add-work-modal-label"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="add-work-modal-label">
+            Giao việc
+          </h1>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <div>
+            Người thực hiện: Ngô Mạnh Anh
+          </div>
+          <div class="my-2">
+            <div class="d-inline-block me-2">Mức độ: </div>
+            <select name="" id="">
+              <option value="level-1">Cao</option>
+              <option value="level-2">Trung bình</option>
+              <option value="level-3">Thấp</option>
+            </select>
+          </div>
+          <div class="my-2">
+              <input
+              type="text"
+              class="w-100 border-0 border-bottom border-secondary-subtle outline-none"
+              placeholder="Tiêu đề"
+              />
+          </div>
+          <div class="mt-4 mb-2">
+            <div>
+              Nội dung: 
+            </div>
+            <textarea name="text" id="text" rows="5" class="w-100"></textarea>
+          </div>
+          <div class="my-3">
+            <input type="file" />
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+          >
+            Đóng
+          </button>
+          <button type="button" class="btn btn-primary">Thêm</button>
+        </div>
+      </div>
+    </div>
+  </div>
   </body>
 
   <script src="./assets/jquery/jquery-3.7.1.min.js"></script>
